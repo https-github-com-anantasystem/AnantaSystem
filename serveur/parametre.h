@@ -30,7 +30,6 @@ private:
 private slots:
     QPalette darkmode();
     QPalette whitemode();
-    void startSetings();
     void on_checkBox_3_toggled(bool checked);
     void on_checkBox_2_toggled(bool checked);
     void on_checkBox_toggled(bool checked);

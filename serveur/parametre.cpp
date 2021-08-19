@@ -5,16 +5,32 @@ parametre::parametre(QWidget *parent) :
     QDialog(parent),
     ui(new Ui::parametre)
 {
-
     ui->setupUi(this);
-    settings = new QSettings("%appdata%ananta system/settings.ini", QSettings::IniFormat, this);
+    settings = new QSettings("ananta system","tchat 4.1",this);
+    if(!settings->contains("settings/SaveMessage")){
+        settings->setValue("settings/SaveMessage",true);
+    }if(!settings->contains("settings/visualNotification")){
+        settings->setValue("settings/visualNotification",true);
+    }if(!settings->contains("settings/SoundNotification")){
+        settings->setValue("settings/SoundNotification",true);
+    }if(!settings->contains("settings/color")){
+        settings->setValue("settings/color","white");
+    }if(!settings->contains("settings/path")){
+        settings->setValue("settings/path",":/sound/notifdefault.wav");
+    }if(!settings->contains("settings/transparency")){
+        settings->setValue("settings/transparency","0.5");
+    }
     ui->checkBox_3->setChecked(settings->value("settings/SaveMessage").toBool());
     ui->checkBox_2->setChecked(settings->value("settings/visualNotification").toBool());
     ui->checkBox->setChecked(settings->value("settings/SoundNotification").toBool());
     ui->comboBox_3->setCurrentText(settings->value("settings/color").toString());
     ui->comboBox->setCurrentText(settings->value("settings/path").toString());
     ui->comboBox_2->setCurrentText(settings->value("settings/langage").toString());
-    ui->checkboxmodecondensee->setChecked(settings->value("settings/transparency").toBool());
+    if(settings->value("settings/transparency").toString()=="0.5"){
+        ui->checkboxmodecondensee->setChecked(true);
+    }else if(settings->value("settings/transparency").toString()=="1.0"){
+        ui->checkboxmodecondensee->setChecked(false);
+    }
 }
 
 parametre::~parametre()
@@ -73,9 +89,6 @@ QPalette parametre::whitemode(){
     qApp->setPalette(darkPalette);
     qApp->setStyleSheet("QToolTip { color: #ffffff; background-color: #2a82da; border: 1px solid white; }");
     return darkPalette;
-}
-void parametre::startSetings(){
-
 }
 void parametre::on_checkBox_3_toggled(bool checked)
 {
