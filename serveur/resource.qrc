@@ -11,6 +11,8 @@
         <file>suprimer.png</file>
         <file>Twitter_bird_logo_2012.svg.png</file>
         <file>image0.jpg</file>
+        <file>success.png</file>
+        <file>Check_green.png</file>
     </qresource>
     <qresource prefix="/sound">
         <file>notifdefault.wav</file>

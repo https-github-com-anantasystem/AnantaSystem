@@ -19,6 +19,7 @@
 #include <QFileDialog>
 #include <QDesktopServices>
 #include <QInputDialog>
+#include <QSettings>
 #include "utilisateur.h"
 #include "parametre.h"
 
@@ -28,30 +29,27 @@ QT_END_NAMESPACE
 
 class Widget : public QWidget
 {
+    parametre parametres;
     Q_OBJECT
 
 public:
+    QList<QMap<QString,QString>> saveMessage;
     Widget(QWidget *parent = nullptr);
     ~Widget();
 
 private:
-    parametre parametres;
+    QSettings* settings;
     Ui::Widget *ui;
     QString version;
     bool condenser;
-
-    //serveur
     QTcpServer* m_serveur;
     QList<utilisateur*> clientsList;
     int NbOfMessage;
-    QMap<int,QMap<QString,QString>> saveMessage;
-    //client
     QSystemTrayIcon* sticon;
     QLabel *text;
     QMenu *stmenu;
     QTcpSocket *socket;
     quint16 messagesize;
-    QString path;
 private slots:
     //ui
     void startTrayIcon();

@@ -223,6 +223,7 @@ Makefile: ../serveur/serveur.pro C:/Qt/5.15.2/mingw81_64/mkspecs/win32-g++/qmake
 		C:/Qt/5.15.2/mingw81_64/mkspecs/features/qt_config.prf \
 		C:/Qt/5.15.2/mingw81_64/mkspecs/win32-g++/qmake.conf \
 		C:/Qt/5.15.2/mingw81_64/mkspecs/features/spec_post.prf \
+		.qmake.stash \
 		C:/Qt/5.15.2/mingw81_64/mkspecs/features/exclusive_builds.prf \
 		C:/Qt/5.15.2/mingw81_64/mkspecs/features/toolchain.prf \
 		C:/Qt/5.15.2/mingw81_64/mkspecs/features/default_pre.prf \
@@ -253,7 +254,6 @@ Makefile: ../serveur/serveur.pro C:/Qt/5.15.2/mingw81_64/mkspecs/win32-g++/qmake
 		C:/Qt/5.15.2/mingw81_64/lib/Qt5Network.prl \
 		C:/Qt/5.15.2/mingw81_64/lib/Qt5Core.prl \
 		C:/Qt/5.15.2/mingw81_64/lib/qtmain.prl \
-		.qmake.stash \
 		C:/Qt/5.15.2/mingw81_64/mkspecs/features/build_pass.prf \
 		../serveur/resource.qrc
 	$(QMAKE) -o Makefile ..\serveur\serveur.pro -spec win32-g++ "CONFIG+=debug" "CONFIG+=qml_debug"
@@ -410,6 +410,7 @@ C:/Qt/5.15.2/mingw81_64/mkspecs/features/qt_functions.prf:
 C:/Qt/5.15.2/mingw81_64/mkspecs/features/qt_config.prf:
 C:/Qt/5.15.2/mingw81_64/mkspecs/win32-g++/qmake.conf:
 C:/Qt/5.15.2/mingw81_64/mkspecs/features/spec_post.prf:
+.qmake.stash:
 C:/Qt/5.15.2/mingw81_64/mkspecs/features/exclusive_builds.prf:
 C:/Qt/5.15.2/mingw81_64/mkspecs/features/toolchain.prf:
 C:/Qt/5.15.2/mingw81_64/mkspecs/features/default_pre.prf:
@@ -440,7 +441,6 @@ C:/Qt/5.15.2/mingw81_64/lib/Qt5Gui.prl:
 C:/Qt/5.15.2/mingw81_64/lib/Qt5Network.prl:
 C:/Qt/5.15.2/mingw81_64/lib/Qt5Core.prl:
 C:/Qt/5.15.2/mingw81_64/lib/qtmain.prl:
-.qmake.stash:
 C:/Qt/5.15.2/mingw81_64/mkspecs/features/build_pass.prf:
 ../serveur/resource.qrc:
 qmake: FORCE

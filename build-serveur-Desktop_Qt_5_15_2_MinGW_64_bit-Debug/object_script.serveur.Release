@@ -1,0 +1,11 @@
+release/main.o
+release/parametre.o
+release/remouvefile.o
+release/succees.o
+release/utilisateur.o
+release/widget.o
+release/qrc_resource.o
+release/moc_parametre.o
+release/moc_remouvefile.o
+release/moc_succees.o
+release/moc_widget.o

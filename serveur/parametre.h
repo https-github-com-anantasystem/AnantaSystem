@@ -2,13 +2,15 @@
 #define PARAMETRE_H
 
 #include <QDialog>
-#include <QMap>
+#include <QList>
 #include <QFile>
 #include <QStyleFactory>
 #include <QMessageBox>
 #include <QFileDialog>
 #include <QDesktopServices>
 #include <QSettings>
+#include "remouvefile.h"
+#include "succees.h"
 
 namespace Ui {
 class parametre;
@@ -16,12 +18,12 @@ class parametre;
 
 class parametre : public QDialog
 {
+    remouveFile remouveFiles;
+    sucees *succes;
     Q_OBJECT
-
 public:
-    //QMap<QString,QString> settings;
     QSettings* settings;
-    explicit parametre(QWidget *parent = nullptr);
+    explicit parametre(QList<QMap<QString, QString> > &ref, QWidget *parent = nullptr);
     ~parametre();
 public slots:
     QPalette starttheme();
@@ -41,6 +43,7 @@ private slots:
     void on_discord_clicked();
     void on_tweter_clicked();
     void on_checkboxmodecondensee_toggled(bool checked);
+    void on_pushButton_3_clicked();
 };
 
 #endif // PARAMETRE_H

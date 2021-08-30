@@ -2,15 +2,34 @@
 #include "ui_widget.h"
 
 Widget::Widget(QWidget *parent)
-    : QWidget(parent)
-    , ui(new Ui::Widget)
+    : QWidget(parent),
+    parametres(saveMessage,this),
+    ui(new Ui::Widget)
 {
+    parametre parametres(saveMessage,this);
+    settings = new QSettings("ananta system","tchat 4.1",this);
+    if(!settings->contains("succes/succes")){
+        settings->setValue("succes/succes",true);
+    }if(!settings->contains("succes/nbmessage")){
+        settings->setValue("succes/nbmessage",0);
+    }if(!settings->contains("settings/SaveMessage")){
+        settings->setValue("settings/SaveMessage",true);
+    }if(!settings->contains("settings/visualNotification")){
+        settings->setValue("settings/visualNotification",true);
+    }if(!settings->contains("settings/SoundNotification")){
+        settings->setValue("settings/SoundNotification",true);
+    }if(!settings->contains("settings/color")){
+        settings->setValue("settings/color","white");
+    }if(!settings->contains("settings/path")){
+        settings->setValue("settings/path",":/sound/notifdefault.wav");
+    }if(!settings->contains("settings/transparency")){
+        settings->setValue("settings/transparency","0.5");
+    }
     ui->setupUi(this);
     startserveur();// j'ai peur que le serveur se start trop tard
    version = "4.3.0";
-   path = ":/sound/notifdefault.wav";
    server_recoverallfile();
-
+   NbOfMessage = 0;
    startTrayIcon();
 
    QString name = qgetenv("USER");
@@ -27,9 +46,7 @@ Widget::Widget(QWidget *parent)
    //conexion
    client_connectto("127.0.0.1", ui->serveurport->value());
    //selection de la couleur du theme
-   parametre* parametres = new parametre();
-   condenser = false;
-   qApp->setPalette(parametres->starttheme());
+   qApp->setPalette(parametres.starttheme());
 }
 
 Widget::~Widget()
@@ -89,7 +106,7 @@ void Widget::on_parametrebuton_clicked()
 void Widget::changetransparency(Qt::ApplicationState state){
     if(state == Qt::ApplicationInactive){
         if(condenser){
-            this->setWindowOpacity(parametres.settings->value("transparency").toDouble());
+            this->setWindowOpacity(settings->value("transparency").toDouble());
         }
     }else if(state == Qt::ApplicationActive){
         this->setWindowOpacity(1);
@@ -304,7 +321,7 @@ void Widget::server_datareceived()
                 }
             }else{*/
                 server_sentmessagetoall(message);
-                if(parametres.settings->value("settings/SaveMessage").toBool()){
+                if(settings->value("settings/SaveMessage").toBool()){
                     server_writetofile(message);
                 }
             }
@@ -348,8 +365,8 @@ int Widget::server_findIndex(QTcpSocket* socket)
 }
 void Widget::server_writetofile(QMap<QString, QString> FluxFile)
 {
+    saveMessage.push_back(FluxFile);
     ++NbOfMessage;
-    saveMessage[NbOfMessage]=FluxFile;
     QFile file("chat.dat");
     if (!file.open(QIODevice::WriteOnly)){
             server_displayMessagelist(server_generatemesage(tr("il est imposible d'ecrire dans le fichier"),tr("chatbot")));
@@ -438,11 +455,11 @@ QString Widget::server_generatemesage(QString message, QString psedo)
 //client
 void Widget::client_displayMessagelist(QString message)
 {
-    if(parametres.settings->value("settings/SoundNotification").toBool())
+    if(settings->value("settings/SoundNotification").toBool())
     {
-        QSound::play(parametres.settings->value("settings/path").toString());
+        QSound::play(settings->value("settings/path").toString());
     }
-    if(parametres.settings->value("settings/visualNotification").toBool())
+    if(settings->value("settings/visualNotification").toBool())
     {
         if(!QApplication::activeWindow()){
             auto text = QTextDocumentFragment::fromHtml(message);
@@ -480,6 +497,9 @@ void Widget::on_sentbuton_clicked()
     if(message==""){
         QMessageBox::information(this,tr("erreur pasive | securitée anti DDOS"),tr("vous ne pouvez pas envoyer un message vide"));
         return;
+    }
+    if(settings->value("succes/succes").toBool()==true){
+        settings->setValue("nbmessage",settings->value("nbmessage").toInt()+1);
     }
     //supression des widgetule de politesse des point et des majuscule
     message = message.toLower();

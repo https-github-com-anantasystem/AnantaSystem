@@ -1,25 +1,15 @@
 #include "parametre.h"
 #include "ui_parametre.h"
 
-parametre::parametre(QWidget *parent) :
-    QDialog(parent),
-    ui(new Ui::parametre)
+parametre::parametre(QList<QMap<QString,QString>> &ref,QWidget *parent) :
+   QDialog(parent),
+   remouveFiles(ref,this),
+   ui(new Ui::parametre)
 {
+    setWindowFlags(windowFlags() & ~Qt::WindowContextHelpButtonHint);
+    remouveFile remouveFiles(ref,this);
     ui->setupUi(this);
     settings = new QSettings("ananta system","tchat 4.1",this);
-    if(!settings->contains("settings/SaveMessage")){
-        settings->setValue("settings/SaveMessage",true);
-    }if(!settings->contains("settings/visualNotification")){
-        settings->setValue("settings/visualNotification",true);
-    }if(!settings->contains("settings/SoundNotification")){
-        settings->setValue("settings/SoundNotification",true);
-    }if(!settings->contains("settings/color")){
-        settings->setValue("settings/color","white");
-    }if(!settings->contains("settings/path")){
-        settings->setValue("settings/path",":/sound/notifdefault.wav");
-    }if(!settings->contains("settings/transparency")){
-        settings->setValue("settings/transparency","0.5");
-    }
     ui->checkBox_3->setChecked(settings->value("settings/SaveMessage").toBool());
     ui->checkBox_2->setChecked(settings->value("settings/visualNotification").toBool());
     ui->checkBox->setChecked(settings->value("settings/SoundNotification").toBool());
@@ -32,7 +22,6 @@ parametre::parametre(QWidget *parent) :
         ui->checkboxmodecondensee->setChecked(false);
     }
 }
-
 parametre::~parametre()
 {
     delete ui;
@@ -139,7 +128,8 @@ void parametre::on_comboBox_activated(const QString &arg1)
 }
 void parametre::on_deletbuton_clicked()
 {
-    int reponse = QMessageBox::warning(this,tr("atention supression"),tr("atention le fichier va etre definitivement suprimer il ne sera pas deplacer dans la corbeille voulez vous continuer"), QMessageBox ::Yes | QMessageBox::No);
+    remouveFiles.show();
+    /*int reponse = QMessageBox::warning(this,tr("atention supression"),tr("atention le fichier va etre definitivement suprimer il ne sera pas deplacer dans la corbeille voulez vous continuer"), QMessageBox ::Yes | QMessageBox::No);
     if (reponse == QMessageBox::Yes)
     {
         if (remove("chat.ants")){
@@ -147,7 +137,7 @@ void parametre::on_deletbuton_clicked()
         }else{
              QMessageBox::information(this,tr("supression loupé"),tr("la spression a été un echeque pour une raison indefini"));
         }
-    }
+    }*/
 }
 void parametre::on_site_clicked()
 {
@@ -178,3 +168,10 @@ void parametre::on_checkboxmodecondensee_toggled(bool checked)
         QMessageBox::warning(this,tr("erreur checkbox"),tr("cette boite de dialogue contien normalenet que deux etat la elle en a troisfaite nous un raport dans le discord"));
     }
 }
+
+void parametre::on_pushButton_3_clicked()
+{
+    succes = new sucees(this);
+    succes->show();
+}
+

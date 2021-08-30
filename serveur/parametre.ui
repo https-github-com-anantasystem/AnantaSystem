@@ -6,8 +6,8 @@
    <rect>
     <x>0</x>
     <y>0</y>
-    <width>396</width>
-    <height>595</height>
+    <width>369</width>
+    <height>699</height>
    </rect>
   </property>
   <property name="windowTitle">
@@ -17,55 +17,16 @@
    <iconset resource="resource.qrc">
     <normaloff>:/image/Fichier_4.png</normaloff>:/image/Fichier_4.png</iconset>
   </property>
+  <property name="statusTip">
+   <string/>
+  </property>
+  <property name="whatsThis">
+   <string/>
+  </property>
+  <property name="accessibleDescription">
+   <string/>
+  </property>
   <layout class="QGridLayout" name="gridLayout">
-   <item row="0" column="0">
-    <widget class="QGroupBox" name="groupBox">
-     <property name="title">
-      <string>notification</string>
-     </property>
-     <layout class="QGridLayout" name="gridLayout_2">
-      <item row="1" column="0">
-       <widget class="QCheckBox" name="checkBox_2">
-        <property name="text">
-         <string>notification visuelle</string>
-        </property>
-        <property name="checked">
-         <bool>true</bool>
-        </property>
-       </widget>
-      </item>
-      <item row="0" column="0">
-       <widget class="QCheckBox" name="checkBox">
-        <property name="text">
-         <string>notification sonore</string>
-        </property>
-        <property name="checked">
-         <bool>true</bool>
-        </property>
-       </widget>
-      </item>
-      <item row="0" column="1">
-       <widget class="QComboBox" name="comboBox">
-        <item>
-         <property name="text">
-          <string>son par default</string>
-         </property>
-        </item>
-        <item>
-         <property name="text">
-          <string>blup blup</string>
-         </property>
-        </item>
-        <item>
-         <property name="text">
-          <string>selectioner une musique</string>
-         </property>
-        </item>
-       </widget>
-      </item>
-     </layout>
-    </widget>
-   </item>
    <item row="2" column="0">
     <widget class="QGroupBox" name="groupBox_3">
      <property name="title">
@@ -116,7 +77,7 @@
       <item row="1" column="0" colspan="2">
        <widget class="QPushButton" name="deletbuton">
         <property name="text">
-         <string>suprimer tout les message enregistrer</string>
+         <string>suprimer des message enregistrer</string>
         </property>
         <property name="icon">
          <iconset resource="resource.qrc">
@@ -233,7 +194,7 @@
      </layout>
     </widget>
    </item>
-   <item row="3" column="0">
+   <item row="4" column="0">
     <widget class="QGroupBox" name="groupBox_4">
      <property name="title">
       <string>contact</string>
@@ -253,7 +214,7 @@
       <item row="1" column="0">
        <widget class="QPushButton" name="discord">
         <property name="text">
-         <string>le discord (aide/bug)</string>
+         <string>le discord (aide/bug/probleme de traduction)</string>
         </property>
         <property name="icon">
          <iconset resource="resource.qrc">
@@ -280,6 +241,96 @@
         <property name="icon">
          <iconset resource="resource.qrc">
           <normaloff>:/image/image0.jpg</normaloff>:/image/image0.jpg</iconset>
+        </property>
+       </widget>
+      </item>
+     </layout>
+    </widget>
+   </item>
+   <item row="0" column="0">
+    <widget class="QGroupBox" name="groupBox">
+     <property name="title">
+      <string>notification</string>
+     </property>
+     <layout class="QGridLayout" name="gridLayout_2">
+      <item row="1" column="0">
+       <widget class="QCheckBox" name="checkBox_2">
+        <property name="toolTip">
+         <string>permet de definire lactivation des notification visuelle</string>
+        </property>
+        <property name="whatsThis">
+         <string>permet de definire lactivation des notification visuelle</string>
+        </property>
+        <property name="accessibleDescription">
+         <string>permet de definire lactivation des notification visuelle</string>
+        </property>
+        <property name="text">
+         <string>notification visuelle</string>
+        </property>
+        <property name="checked">
+         <bool>true</bool>
+        </property>
+       </widget>
+      </item>
+      <item row="0" column="0">
+       <widget class="QCheckBox" name="checkBox">
+        <property name="toolTip">
+         <string>permet de definire lactivation des notification sonore</string>
+        </property>
+        <property name="accessibleDescription">
+         <string>permet de definire lactivation des notification sonore</string>
+        </property>
+        <property name="text">
+         <string>notification sonore</string>
+        </property>
+        <property name="checked">
+         <bool>true</bool>
+        </property>
+       </widget>
+      </item>
+      <item row="0" column="1">
+       <widget class="QComboBox" name="comboBox">
+        <item>
+         <property name="text">
+          <string>son par default</string>
+         </property>
+        </item>
+        <item>
+         <property name="text">
+          <string>blup blup</string>
+         </property>
+        </item>
+        <item>
+         <property name="text">
+          <string>selectioner une musique</string>
+         </property>
+        </item>
+       </widget>
+      </item>
+     </layout>
+    </widget>
+   </item>
+   <item row="3" column="0">
+    <widget class="QGroupBox" name="groupBox_5">
+     <property name="title">
+      <string>sucées</string>
+     </property>
+     <layout class="QGridLayout" name="gridLayout_6">
+      <item row="1" column="0">
+       <widget class="QPushButton" name="pushButton_3">
+        <property name="text">
+         <string>voir mes sucée</string>
+        </property>
+        <property name="icon">
+         <iconset resource="resource.qrc">
+          <normaloff>:/image/success.png</normaloff>:/image/success.png</iconset>
+        </property>
+       </widget>
+      </item>
+      <item row="0" column="0">
+       <widget class="QLabel" name="label_3">
+        <property name="text">
+         <string>nombre de message :</string>
         </property>
        </widget>
       </item>
