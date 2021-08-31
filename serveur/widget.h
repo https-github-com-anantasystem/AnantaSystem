@@ -45,6 +45,7 @@ private:
     QTcpServer* m_serveur;
     QList<utilisateur*> clientsList;
     int NbOfMessage;
+    int nbuser;
     QSystemTrayIcon* sticon;
     QLabel *text;
     QMenu *stmenu;

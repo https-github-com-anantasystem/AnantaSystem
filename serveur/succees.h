@@ -25,6 +25,10 @@ private slots:
 
     void on_messagemaxint_clicked();
 
+    void on_saveNbMessage_toggled(bool checked);
+
+    void on_pushButton_2_clicked();
+
 private:
     QSettings* settings;
     Ui::sucees *ui;

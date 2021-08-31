@@ -13,6 +13,7 @@
         <file>image0.jpg</file>
         <file>success.png</file>
         <file>Check_green.png</file>
+        <file>Refresh_icon.png</file>
     </qresource>
     <qresource prefix="/sound">
         <file>notifdefault.wav</file>

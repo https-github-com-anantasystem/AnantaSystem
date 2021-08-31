@@ -21,6 +21,8 @@ private slots:
     void on_deleteAllMessage_clicked();
     void on_deleteNMessage_editingFinished();
 
+    void on_pushButton_clicked();
+
 private:
     QList<QMap<QString, QString>>* listeOfMessage;
     Ui::remouveFile *ui;

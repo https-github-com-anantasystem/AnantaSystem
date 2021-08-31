@@ -126,6 +126,7 @@ compiler_rcc_clean:
 	-$(DEL_FILE) release\qrc_resource.cpp
 release/qrc_resource.cpp: ../serveur/resource.qrc \
 		C:/Qt/5.15.2/mingw81_64/bin/rcc.exe \
+		../serveur/Refresh_icon.png \
 		../serveur/Blue_question_mark_icon.svg.png \
 		../serveur/Check_green.png \
 		../serveur/sent.png \
@@ -1289,6 +1290,10 @@ release/succees.o: ../serveur/succees.cpp ../serveur/succees.h \
 		C:/Qt/5.15.2/mingw81_64/include/QtWidgets/qdesktopwidget.h \
 		C:/Qt/5.15.2/mingw81_64/include/QtGui/qguiapplication.h \
 		C:/Qt/5.15.2/mingw81_64/include/QtGui/qinputmethod.h \
+		C:/Qt/5.15.2/mingw81_64/include/QtWidgets/QCheckBox \
+		C:/Qt/5.15.2/mingw81_64/include/QtWidgets/qcheckbox.h \
+		C:/Qt/5.15.2/mingw81_64/include/QtWidgets/qabstractbutton.h \
+		C:/Qt/5.15.2/mingw81_64/include/QtGui/qicon.h \
 		C:/Qt/5.15.2/mingw81_64/include/QtWidgets/QFrame \
 		C:/Qt/5.15.2/mingw81_64/include/QtWidgets/qframe.h \
 		C:/Qt/5.15.2/mingw81_64/include/QtWidgets/QGridLayout \
@@ -1301,9 +1306,7 @@ release/succees.o: ../serveur/succees.cpp ../serveur/succees.h \
 		C:/Qt/5.15.2/mingw81_64/include/QtWidgets/QLabel \
 		C:/Qt/5.15.2/mingw81_64/include/QtWidgets/qlabel.h \
 		C:/Qt/5.15.2/mingw81_64/include/QtWidgets/QPushButton \
-		C:/Qt/5.15.2/mingw81_64/include/QtWidgets/qpushbutton.h \
-		C:/Qt/5.15.2/mingw81_64/include/QtWidgets/qabstractbutton.h \
-		C:/Qt/5.15.2/mingw81_64/include/QtGui/qicon.h
+		C:/Qt/5.15.2/mingw81_64/include/QtWidgets/qpushbutton.h
 	$(CXX) -c $(CXXFLAGS) $(INCPATH) -o release\succees.o ..\serveur\succees.cpp
 
 release/utilisateur.o: ../serveur/utilisateur.cpp ../serveur/utilisateur.h \

@@ -3,11 +3,11 @@
 
 parametre::parametre(QList<QMap<QString,QString>> &ref,QWidget *parent) :
    QDialog(parent),
-   remouveFiles(ref,this),
+   remouveFiles(ref,nullptr),
    ui(new Ui::parametre)
 {
     setWindowFlags(windowFlags() & ~Qt::WindowContextHelpButtonHint);
-    remouveFile remouveFiles(ref,this);
+    remouveFile remouveFiles(ref,nullptr);
     ui->setupUi(this);
     settings = new QSettings("ananta system","tchat 4.1",this);
     ui->checkBox_3->setChecked(settings->value("settings/SaveMessage").toBool());

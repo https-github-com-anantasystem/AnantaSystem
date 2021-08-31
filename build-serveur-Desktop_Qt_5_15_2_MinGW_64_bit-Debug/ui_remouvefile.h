@@ -10,11 +10,14 @@
 #define UI_REMOUVEFILE_H
 
 #include <QtCore/QVariant>
+#include <QtGui/QIcon>
 #include <QtWidgets/QApplication>
 #include <QtWidgets/QDialog>
 #include <QtWidgets/QGridLayout>
+#include <QtWidgets/QHBoxLayout>
 #include <QtWidgets/QLabel>
 #include <QtWidgets/QPushButton>
+#include <QtWidgets/QSpacerItem>
 #include <QtWidgets/QSpinBox>
 
 QT_BEGIN_NAMESPACE
@@ -23,44 +26,82 @@ class Ui_remouveFile
 {
 public:
     QGridLayout *gridLayout;
-    QPushButton *deleteAllMessage;
-    QSpinBox *deleteNMessage;
-    QLabel *TextLabeldisplayingNumberDessage;
-    QLabel *label_2;
+    QGridLayout *gridLayout_2;
     QPushButton *delete10message;
+    QSpinBox *deleteNMessage;
+    QPushButton *deleteAllMessage;
+    QGridLayout *gridLayout_3;
+    QLabel *label_2;
+    QHBoxLayout *horizontalLayout;
+    QSpacerItem *horizontalSpacer;
+    QLabel *TextLabeldisplayingNumberDessage;
+    QPushButton *pushButton;
+    QSpacerItem *horizontalSpacer_2;
 
     void setupUi(QDialog *remouveFile)
     {
         if (remouveFile->objectName().isEmpty())
             remouveFile->setObjectName(QString::fromUtf8("remouveFile"));
-        remouveFile->resize(350, 113);
+        remouveFile->resize(352, 119);
         gridLayout = new QGridLayout(remouveFile);
         gridLayout->setObjectName(QString::fromUtf8("gridLayout"));
-        deleteAllMessage = new QPushButton(remouveFile);
-        deleteAllMessage->setObjectName(QString::fromUtf8("deleteAllMessage"));
+        gridLayout_2 = new QGridLayout();
+        gridLayout_2->setObjectName(QString::fromUtf8("gridLayout_2"));
+        delete10message = new QPushButton(remouveFile);
+        delete10message->setObjectName(QString::fromUtf8("delete10message"));
 
-        gridLayout->addWidget(deleteAllMessage, 2, 2, 1, 1);
+        gridLayout_2->addWidget(delete10message, 0, 0, 1, 1);
 
         deleteNMessage = new QSpinBox(remouveFile);
         deleteNMessage->setObjectName(QString::fromUtf8("deleteNMessage"));
         deleteNMessage->setMaximum(10000);
 
-        gridLayout->addWidget(deleteNMessage, 2, 1, 1, 1);
+        gridLayout_2->addWidget(deleteNMessage, 0, 1, 1, 1);
+
+        deleteAllMessage = new QPushButton(remouveFile);
+        deleteAllMessage->setObjectName(QString::fromUtf8("deleteAllMessage"));
+
+        gridLayout_2->addWidget(deleteAllMessage, 0, 2, 1, 1);
+
+
+        gridLayout->addLayout(gridLayout_2, 3, 0, 1, 2);
+
+        gridLayout_3 = new QGridLayout();
+        gridLayout_3->setObjectName(QString::fromUtf8("gridLayout_3"));
+        label_2 = new QLabel(remouveFile);
+        label_2->setObjectName(QString::fromUtf8("label_2"));
+
+        gridLayout_3->addWidget(label_2, 2, 0, 1, 2);
+
+        horizontalLayout = new QHBoxLayout();
+        horizontalLayout->setObjectName(QString::fromUtf8("horizontalLayout"));
+        horizontalSpacer = new QSpacerItem(20, 20, QSizePolicy::Expanding, QSizePolicy::Minimum);
+
+        horizontalLayout->addItem(horizontalSpacer);
 
         TextLabeldisplayingNumberDessage = new QLabel(remouveFile);
         TextLabeldisplayingNumberDessage->setObjectName(QString::fromUtf8("TextLabeldisplayingNumberDessage"));
 
-        gridLayout->addWidget(TextLabeldisplayingNumberDessage, 0, 0, 1, 3);
+        horizontalLayout->addWidget(TextLabeldisplayingNumberDessage);
 
-        label_2 = new QLabel(remouveFile);
-        label_2->setObjectName(QString::fromUtf8("label_2"));
+        pushButton = new QPushButton(remouveFile);
+        pushButton->setObjectName(QString::fromUtf8("pushButton"));
+        QIcon icon;
+        icon.addFile(QString::fromUtf8(":/image/Refresh_icon.png"), QSize(), QIcon::Normal, QIcon::Off);
+        pushButton->setIcon(icon);
+        pushButton->setFlat(true);
 
-        gridLayout->addWidget(label_2, 1, 0, 1, 3);
+        horizontalLayout->addWidget(pushButton);
 
-        delete10message = new QPushButton(remouveFile);
-        delete10message->setObjectName(QString::fromUtf8("delete10message"));
+        horizontalSpacer_2 = new QSpacerItem(20, 20, QSizePolicy::Expanding, QSizePolicy::Minimum);
 
-        gridLayout->addWidget(delete10message, 2, 0, 1, 1);
+        horizontalLayout->addItem(horizontalSpacer_2);
+
+
+        gridLayout_3->addLayout(horizontalLayout, 0, 0, 1, 2);
+
+
+        gridLayout->addLayout(gridLayout_3, 0, 0, 1, 2);
 
 
         retranslateUi(remouveFile);
@@ -71,11 +112,12 @@ public:
     void retranslateUi(QDialog *remouveFile)
     {
         remouveFile->setWindowTitle(QCoreApplication::translate("remouveFile", "Dialog", nullptr));
-        deleteAllMessage->setText(QCoreApplication::translate("remouveFile", "tout les message", nullptr));
-        deleteNMessage->setSuffix(QCoreApplication::translate("remouveFile", " messages", nullptr));
-        TextLabeldisplayingNumberDessage->setText(QCoreApplication::translate("remouveFile", "<html><head/><body><p align=\"center\"><span style=\" font-size:14pt;\">il y a &quot;non defini&quot; message</span></p></body></html>", nullptr));
-        label_2->setText(QCoreApplication::translate("remouveFile", "<html><head/><body><p align=\"center\"><span style=\" font-size:12pt;\">combien voulez vous en suprimer</span></p></body></html>", nullptr));
         delete10message->setText(QCoreApplication::translate("remouveFile", "10 message", nullptr));
+        deleteNMessage->setSuffix(QCoreApplication::translate("remouveFile", " messages", nullptr));
+        deleteAllMessage->setText(QCoreApplication::translate("remouveFile", "tout les message", nullptr));
+        label_2->setText(QCoreApplication::translate("remouveFile", "<html><head/><body><p align=\"center\"><span style=\" font-size:12pt;\">combien voulez vous en suprimer</span></p></body></html>", nullptr));
+        TextLabeldisplayingNumberDessage->setText(QCoreApplication::translate("remouveFile", "<html><head/><body><p align=\"center\"><span style=\" font-size:14pt;\">il y a &quot;non defini&quot; message</span></p></body></html>", nullptr));
+        pushButton->setText(QString());
     } // retranslateUi
 
 };

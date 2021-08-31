@@ -30,6 +30,7 @@ Widget::Widget(QWidget *parent)
    version = "4.3.0";
    server_recoverallfile();
    NbOfMessage = 0;
+   nbuser=0;
    startTrayIcon();
 
    QString name = qgetenv("USER");
@@ -346,8 +347,8 @@ void Widget::server_disconnectclients()
 
     int index = server_findIndex(disconnectingClientSocket);
     utilisateur* disconnectingClient = clientsList[index];
-
-    server_sentmessagetoall("msg",disconnectingClient->getpseudo()+tr("</strong> vient de se déconnecter !"),tr("serveur bot"));
+    serveur_sentcommende("desconnected",disconnectingClient->getpseudo());
+    //server_sentmessagetoall("msg",disconnectingClient->getpseudo()+tr("</strong> vient de se déconnecter !"),tr("serveur bot"));
 
     clientsList.removeOne(disconnectingClient);
     delete disconnectingClient;
@@ -850,6 +851,13 @@ void Widget::client_processcomand(QMap<QString, QString> commend)
         client_displayMessagelist(commend["arg"]);
     }else if (commend["message"]=="isconnected"){
         ui->clientlist->addItem(commend["arg"]);
+        ++nbuser;
+    }else if(commend["message"]=="desconnected"){
+        for (int compteur {ui->clientlist->findItems(commend["arg"],Qt::MatchCaseSensitive).size()-1}; compteur > 0; --compteur) //tan que des utilistateur porte le nom specifier
+        {
+            ui->clientlist->removeItemWidget(ui->clientlist->findItems(commend["arg"],Qt::MatchCaseSensitive)[1]); //on suprime le nom specifier
+            QMessageBox::critical(this, tr("supression de client"), tr("le client vien d'etre suprimer"));
+        }
     }else{
         QMessageBox::critical(this, tr("erreur"), tr("un packet de comande a été recu mais la comande est incomprise."));
     }
@@ -880,3 +888,5 @@ QString Widget::client_generatemesage(QMap<QString, QString> message){
     }
     return(tr("<span style=\"font-size: 12px; font-weight: bold;\">")+message["psedo"]+tr("</span>")+client_generatedate(message)+tr("<span style=\"font-size: 14px; \">")+message["message"]+tr("</span><br/><br/>"));
 }
+
+

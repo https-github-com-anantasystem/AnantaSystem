@@ -90,4 +90,12 @@ void sucees::on_messagemaxint_clicked()
         QMessageBox::information(this,tr("info"),tr("vous avez reusis a avoir ce succée"));
     }
 }
-
+void sucees::on_saveNbMessage_toggled(bool checked)
+{
+    settings->setValue("succes/succes",checked);
+}
+void sucees::on_pushButton_2_clicked()
+{
+    settings->setValue("succes/nbmessage",0);
+    QMessageBox::critical(this,tr("supression prise en compte"),tr("la supression du nombre de message a bien fonctionée vous avez actuellement 0 message"));
+}
