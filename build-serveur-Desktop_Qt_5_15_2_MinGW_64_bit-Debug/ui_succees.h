@@ -42,12 +42,12 @@ public:
     QLabel *label_3;
     QLabel *label_8;
     QLabel *label_6;
-    QLabel *label_9;
-    QLabel *label;
-    QPushButton *userdifferent30;
-    QLabel *label_2;
-    QPushButton *pushButton_3;
     QPushButton *userdifferent100;
+    QLabel *label_9;
+    QPushButton *userdifferent30;
+    QLabel *label;
+    QLabel *label_2;
+    QPushButton *server20;
     QLabel *label_10;
     QGroupBox *groupBox_2;
     QGridLayout *gridLayout_3;
@@ -152,15 +152,16 @@ public:
 
         gridLayout_2->addWidget(label_6, 4, 0, 1, 1);
 
+        userdifferent100 = new QPushButton(groupBox);
+        userdifferent100->setObjectName(QString::fromUtf8("userdifferent100"));
+        userdifferent100->setFlat(true);
+
+        gridLayout_2->addWidget(userdifferent100, 8, 2, 1, 1);
+
         label_9 = new QLabel(groupBox);
         label_9->setObjectName(QString::fromUtf8("label_9"));
 
         gridLayout_2->addWidget(label_9, 7, 0, 1, 1);
-
-        label = new QLabel(groupBox);
-        label->setObjectName(QString::fromUtf8("label"));
-
-        gridLayout_2->addWidget(label, 0, 0, 1, 1);
 
         userdifferent30 = new QPushButton(groupBox);
         userdifferent30->setObjectName(QString::fromUtf8("userdifferent30"));
@@ -168,22 +169,21 @@ public:
 
         gridLayout_2->addWidget(userdifferent30, 7, 2, 1, 1);
 
+        label = new QLabel(groupBox);
+        label->setObjectName(QString::fromUtf8("label"));
+
+        gridLayout_2->addWidget(label, 0, 0, 1, 1);
+
         label_2 = new QLabel(groupBox);
         label_2->setObjectName(QString::fromUtf8("label_2"));
 
         gridLayout_2->addWidget(label_2, 2, 0, 1, 1);
 
-        pushButton_3 = new QPushButton(groupBox);
-        pushButton_3->setObjectName(QString::fromUtf8("pushButton_3"));
-        pushButton_3->setFlat(true);
+        server20 = new QPushButton(groupBox);
+        server20->setObjectName(QString::fromUtf8("server20"));
+        server20->setFlat(true);
 
-        gridLayout_2->addWidget(pushButton_3, 9, 2, 1, 1);
-
-        userdifferent100 = new QPushButton(groupBox);
-        userdifferent100->setObjectName(QString::fromUtf8("userdifferent100"));
-        userdifferent100->setFlat(true);
-
-        gridLayout_2->addWidget(userdifferent100, 8, 2, 1, 1);
+        gridLayout_2->addWidget(server20, 9, 2, 1, 1);
 
         label_10 = new QLabel(groupBox);
         label_10->setObjectName(QString::fromUtf8("label_10"));
@@ -250,12 +250,12 @@ public:
         label_3->setText(QCoreApplication::translate("sucees", "etat du succes", nullptr));
         label_8->setText(QCoreApplication::translate("sucees", "fait pet\303\251 le int", nullptr));
         label_6->setText(QCoreApplication::translate("sucees", "un boss", nullptr));
-        label_9->setText(QCoreApplication::translate("sucees", "a ramener sa classe", nullptr));
-        label->setText(QCoreApplication::translate("sucees", "nom du succes", nullptr));
-        userdifferent30->setText(QCoreApplication::translate("sucees", "30 utilisateur connecter", nullptr));
-        label_2->setText(QCoreApplication::translate("sucees", "a trouver le bouton envoyer", nullptr));
-        pushButton_3->setText(QCoreApplication::translate("sucees", "5 utilisateur connecter", nullptr));
         userdifferent100->setText(QCoreApplication::translate("sucees", "100 utilisateur connecter", nullptr));
+        label_9->setText(QCoreApplication::translate("sucees", "a ramener sa classe", nullptr));
+        userdifferent30->setText(QCoreApplication::translate("sucees", "30 utilisateur connecter", nullptr));
+        label->setText(QCoreApplication::translate("sucees", "nom du succes", nullptr));
+        label_2->setText(QCoreApplication::translate("sucees", "a trouver le bouton envoyer", nullptr));
+        server20->setText(QCoreApplication::translate("sucees", "connexion a 20 serveur", nullptr));
         label_10->setText(QCoreApplication::translate("sucees", "amene ca comunot\303\251e", nullptr));
         groupBox_2->setTitle(QCoreApplication::translate("sucees", "parametre des succ\303\251s", nullptr));
         pushButton->setText(QCoreApplication::translate("sucees", "generer ma clef de de syconysation", nullptr));

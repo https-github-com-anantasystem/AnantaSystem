@@ -30,6 +30,10 @@ Widget::Widget(QWidget *parent)
         settings->setValue("succes/30userSimultaneously", false);
     }if(!settings->contains("succes/100userSimultaneously")){
         settings->setValue("succes/100userSimultaneously", false);
+    }if(!settings->contains("succes/server/nbserveur")){
+        settings->setValue("succes/server/nbserveur", 0);
+    }if(!settings->contains("succes/10server")){
+        settings->setValue("succes/20server", false);
     }
     ui->setupUi(this);
     startserveur();// j'ai peur que le serveur se start trop tard
@@ -622,7 +626,18 @@ void Widget::client_connected()
     client_sentdatamap("connection");
     client_displayMessagelist(textmessage);
     client_changestateconnectbuton(true);
-     client_displayconnectlabel(tr("<font color=\"#70AD47\">connecté</font>"));
+    client_displayconnectlabel(tr("<font color=\"#70AD47\">connecté</font>"));
+    for (int compteur {settings->value("succes/server/nbserveur").toInt()}; compteur > 0; --compteur)
+    {
+        if(socket->peerAddress().Any==settings->value("succes/server/"+QString::number(settings->value("succes/server/nbserveur").toInt()))){
+            return;
+        }
+    }
+    settings->setValue("succes/server/"+QString::number(settings->value("succes/server/nbserveur").toInt()),socket->peerAddress().Any);
+    settings->setValue("succes/server/nbserveur", settings->value("succes/server/nbserveur").toInt()+1);
+    if(settings->value("succes/server/nbserveur").toInt()==20){
+        settings->setValue("succes/20server", true);
+    }
 }
 void Widget::client_desconnect()
 {
