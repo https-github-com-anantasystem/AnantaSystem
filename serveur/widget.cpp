@@ -24,6 +24,8 @@ Widget::Widget(QWidget *parent)
         settings->setValue("settings/path",":/sound/notifdefault.wav");
     }if(!settings->contains("settings/transparency")){
         settings->setValue("settings/transparency","0.5");
+    }if(!settings->contains("succes/10userSimultaneously")){
+        settings->setValue("succes/10userSimultaneously", false);
     }
     ui->setupUi(this);
     startserveur();// j'ai peur que le serveur se start trop tard
@@ -504,7 +506,7 @@ void Widget::on_sentbuton_clicked()
         return;
     }
     if(settings->value("succes/succes").toBool()==true){
-        settings->setValue("nbmessage",settings->value("nbmessage").toInt()+1);
+        settings->setValue("succes/nbmessage",settings->value("succes/nbmessage").toInt()+1);
     }
     //supression des widgetule de politesse des point et des majuscule
     message = message.toLower();
@@ -614,8 +616,6 @@ void Widget::client_connected()
 {
     QString textmessage = client_generatemesage(tr("conexion reusi"), tr("chat bot"));
     client_sentdatamap("connection");
-    client_sentcommende("vertion", version);
-    client_sentcommende("psedo",client_returnpsedo());
     client_displayMessagelist(textmessage);
     client_changestateconnectbuton(true);
      client_displayconnectlabel(tr("<font color=\"#70AD47\">connecté</font>"));
@@ -851,6 +851,10 @@ void Widget::client_processthemessage(QMap<QString,QString> message)
         client_displayMessagelist(client_generatemesage(message));
     }else if(message["type"]=="connection"){
         ui->clientlist->addItem(message["psedo"]);
+        ++nbuser;
+        if(nbuser==10){
+            settings->setValue("succes/10userSimultaneously", true);
+        }
     }else{
         QMessageBox::critical(this, tr("erreur"), tr("un packet a été recu mais l'indantificateur : ") + message["type"] + tr(" est inconu."));
     }
@@ -882,6 +886,7 @@ void Widget::client_processcomand(QMap<QString, QString> commend)
             {
                 ui->clientlist->removeItemWidget(ui->clientlist->findItems(commend["arg"],Qt::MatchCaseSensitive)[1]); //on suprime le nom specifier
                 QMessageBox::critical(this, tr("supression de client"), tr("le client vien d'etre suprimer"));
+                --nbuser;
             }
         }
     }else{

@@ -17,6 +17,8 @@ public:
     ~sucees();
 
 private slots:
+    //void scan();
+
     void on_message10_clicked();
 
     void on_message100_clicked();
