@@ -117,6 +117,9 @@ public:
         deleteAllMessage->setText(QCoreApplication::translate("remouveFile", "tout les message", nullptr));
         label_2->setText(QCoreApplication::translate("remouveFile", "<html><head/><body><p align=\"center\"><span style=\" font-size:12pt;\">combien voulez vous en suprimer</span></p></body></html>", nullptr));
         TextLabeldisplayingNumberDessage->setText(QCoreApplication::translate("remouveFile", "<html><head/><body><p align=\"center\"><span style=\" font-size:14pt;\">il y a &quot;non defini&quot; message</span></p></body></html>", nullptr));
+#if QT_CONFIG(tooltip)
+        pushButton->setToolTip(QCoreApplication::translate("remouveFile", "sycroniser", nullptr));
+#endif // QT_CONFIG(tooltip)
         pushButton->setText(QString());
     } // retranslateUi
 

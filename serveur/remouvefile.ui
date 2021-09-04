@@ -78,6 +78,9 @@
        </item>
        <item>
         <widget class="QPushButton" name="pushButton">
+         <property name="toolTip">
+          <string>sycroniser</string>
+         </property>
          <property name="text">
           <string/>
          </property>

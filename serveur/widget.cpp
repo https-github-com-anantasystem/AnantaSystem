@@ -267,8 +267,10 @@ void Widget::server_newconect()
     {
         server_sentmessageto(saveMessage[i],clientsList.size()-1);
     }
-    //server_sentcomandto("psedo?",size));
-    //server_sentcomandto("vertion?",size);
+}
+void Widget::server_connect(const QMap<QString, QString> &connectpack, int usernaime){
+    clientsList[usernaime]->editpsedo(connectpack["psedo"]);
+    clientsList[usernaime]->editvertion(connectpack["version"]);
 }
 void Widget::server_datareceived()
 {
@@ -325,6 +327,9 @@ void Widget::server_datareceived()
                 if(settings->value("settings/SaveMessage").toBool()){
                     server_writetofile(message);
                 }
+            }else if(message["type"]=="connection"){
+                server_connect(message, index);
+                server_sentmessagetoall(message);
             }
 
         //}else{
@@ -394,7 +399,6 @@ void Widget::server_processcomand(QMap<QString, QString> command, int noclient)
                 }
             }
             clientsList[noclient]->editpsedo(command["arg"]);
-            //server_sentmessageto(server_recoverallfile(),clientsList.size());
             srand (time(NULL));
             int random = rand() % 4 + 1;
             if(random == 1){
@@ -406,7 +410,7 @@ void Widget::server_processcomand(QMap<QString, QString> command, int noclient)
             }else if(random == 4){
                 server_sentmessagetoall("msg",tr("il ne nous manquer plus que ")+clientsList[noclient]->getpseudo()+ tr(" heureusement il nous a rejoint"),tr("serveur chat bot"));
             }
-            serveur_sentcommende("isconnected", clientsList[noclient]->getpseudo());
+            //serveur_sentcommende("isconnected", clientsList[noclient]->getpseudo());
             if(noclient==0){return;}
             for(int i = 1; i < clientsList.size(); i++)
             {
@@ -609,6 +613,7 @@ void Widget::client_connectto(QString ip, int port)
 void Widget::client_connected()
 {
     QString textmessage = client_generatemesage(tr("conexion reusi"), tr("chat bot"));
+    client_sentdatamap("connection");
     client_sentcommende("vertion", version);
     client_sentcommende("psedo",client_returnpsedo());
     client_displayMessagelist(textmessage);
@@ -733,6 +738,20 @@ void Widget::client_sentdatamap(const QMap<QString,QString> sendmap)
     out << (quint16) (paquet.size() - sizeof(quint16));
     socket->write(paquet); // On envoie le paquet
 }
+void Widget::client_sentdatamap(const QString type){
+    QMap<QString,QString> sendmap;
+    sendmap["type"]=type;
+    sendmap["psedo"]=client_returnpsedo();
+    sendmap["secondofsending"]=QDateTime::currentDateTime().toString("ss");;
+    sendmap["minuteofsending"]=QDateTime::currentDateTime().toString("mm");;
+    sendmap["sendingtime"]=QDateTime::currentDateTime().toString("hh");
+    sendmap["sendingdate"]=QDateTime::currentDateTime().toString("d");
+    sendmap["shippingday"]=QDateTime::currentDateTime().toString("dddd");
+    sendmap["shippingmonth"]=QDateTime::currentDateTime().toString("MMMM");
+    sendmap["shippingyears"]=QDateTime::currentDateTime().toString("yyyy");
+    client_sentdatamap(sendmap);
+
+}
 void Widget::client_sentdatamap(const QString type, QString message, QString psedo, QDateTime seconde, QDateTime minute, QDateTime heurs, QDateTime NoJour, QDate jour){
     QMap<QString,QString> sendmap;
     sendmap["type"]=type;
@@ -830,6 +849,8 @@ void Widget::client_processthemessage(QMap<QString,QString> message)
         client_processcomand(message);
     }else if(message["type"]=="msg"){
         client_displayMessagelist(client_generatemesage(message));
+    }else if(message["type"]=="connection"){
+        ui->clientlist->addItem(message["psedo"]);
     }else{
         QMessageBox::critical(this, tr("erreur"), tr("un packet a été recu mais l'indantificateur : ") + message["type"] + tr(" est inconu."));
     }
@@ -853,10 +874,15 @@ void Widget::client_processcomand(QMap<QString, QString> commend)
         ui->clientlist->addItem(commend["arg"]);
         ++nbuser;
     }else if(commend["message"]=="desconnected"){
-        for (int compteur {ui->clientlist->findItems(commend["arg"],Qt::MatchCaseSensitive).size()-1}; compteur > 0; --compteur) //tan que des utilistateur porte le nom specifier
-        {
+        if(ui->clientlist->findItems(commend["arg"],Qt::MatchCaseSensitive).size()==1){
             ui->clientlist->removeItemWidget(ui->clientlist->findItems(commend["arg"],Qt::MatchCaseSensitive)[1]); //on suprime le nom specifier
             QMessageBox::critical(this, tr("supression de client"), tr("le client vien d'etre suprimer"));
+        }else{
+            for (int compteur {ui->clientlist->findItems(commend["arg"],Qt::MatchCaseSensitive).size()-1}; compteur > 0; --compteur) //tan que des utilistateur porte le nom specifier
+            {
+                ui->clientlist->removeItemWidget(ui->clientlist->findItems(commend["arg"],Qt::MatchCaseSensitive)[1]); //on suprime le nom specifier
+                QMessageBox::critical(this, tr("supression de client"), tr("le client vien d'etre suprimer"));
+            }
         }
     }else{
         QMessageBox::critical(this, tr("erreur"), tr("un packet de comande a été recu mais la comande est incomprise."));
@@ -888,5 +914,3 @@ QString Widget::client_generatemesage(QMap<QString, QString> message){
     }
     return(tr("<span style=\"font-size: 12px; font-weight: bold;\">")+message["psedo"]+tr("</span>")+client_generatedate(message)+tr("<span style=\"font-size: 14px; \">")+message["message"]+tr("</span><br/><br/>"));
 }
-
-

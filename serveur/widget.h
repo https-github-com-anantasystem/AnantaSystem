@@ -67,6 +67,7 @@ private slots:
     void server_sentcomandto(const QString &message,QString arg ,int usernaime);
     void serveur_sentcommende(const QString commende, QString arg);
     void server_newconect();
+    void server_connect(const QMap<QString, QString> &connectpack,int usernaime);
     void server_datareceived();
     void server_disconnectclients();
     void server_writetofile(QMap<QString, QString> FluxFile);
@@ -88,6 +89,7 @@ private slots:
     void client_desconnect();
     void client_socketerror(QAbstractSocket::SocketError error);
     void client_sentdatamap(const QMap<QString,QString> sendmap);
+    void client_sentdatamap(const QString type);
     void client_sentdatamap(const QString type, QString message, QString psedo, QDateTime seconde, QDateTime minute, QDateTime heurs, QDateTime NoJour, QDate jour);
     void client_sentdatamap(const QString type, QString message, QString psedo);
     void client_sentdatamap(const QString type, QString message);
