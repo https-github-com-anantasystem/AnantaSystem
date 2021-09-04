@@ -27,54 +27,20 @@
       <string>sucées :</string>
      </property>
      <layout class="QGridLayout" name="gridLayout_2">
-      <item row="2" column="0">
-       <widget class="QLabel" name="label_2">
-        <property name="text">
-         <string>a trouver le bouton envoyer</string>
-        </property>
-       </widget>
-      </item>
-      <item row="5" column="2">
-       <widget class="QPushButton" name="messagemaxint">
-        <property name="toolTip">
-         <string>il vous faut 2 147 483 647  message</string>
-        </property>
-        <property name="text">
-         <string>2 147 483 647 messages</string>
-        </property>
-        <property name="flat">
-         <bool>true</bool>
-        </property>
-       </widget>
-      </item>
-      <item row="3" column="0">
-       <widget class="QLabel" name="label_4">
-        <property name="text">
-         <string>s'est converser</string>
-        </property>
-       </widget>
-      </item>
-      <item row="8" column="0">
+      <item row="9" column="0">
        <widget class="QLabel" name="label_5">
         <property name="text">
          <string>amateur</string>
         </property>
        </widget>
       </item>
-      <item row="2" column="1" rowspan="7">
-       <widget class="Line" name="line">
-        <property name="orientation">
-         <enum>Qt::Vertical</enum>
-        </property>
-       </widget>
-      </item>
-      <item row="2" column="2">
-       <widget class="QPushButton" name="message10">
+      <item row="3" column="2">
+       <widget class="QPushButton" name="message100">
         <property name="toolTip">
-         <string>il vous faut 10 message</string>
+         <string>il vous faut 100 message</string>
         </property>
         <property name="text">
-         <string>10 messages</string>
+         <string>100 messages</string>
         </property>
         <property name="flat">
          <bool>true</bool>
@@ -94,34 +60,34 @@
         </property>
        </widget>
       </item>
-      <item row="1" column="0" colspan="3">
-       <widget class="Line" name="line_2">
+      <item row="0" column="1">
+       <widget class="Line" name="line_3">
         <property name="orientation">
-         <enum>Qt::Horizontal</enum>
+         <enum>Qt::Vertical</enum>
         </property>
        </widget>
       </item>
-      <item row="5" column="0">
-       <widget class="QLabel" name="label_8">
+      <item row="3" column="0">
+       <widget class="QLabel" name="label_4">
         <property name="text">
-         <string>fait peté le int</string>
+         <string>s'est converser</string>
         </property>
        </widget>
       </item>
-      <item row="0" column="2">
-       <widget class="QLabel" name="label_3">
+      <item row="6" column="0">
+       <widget class="QLabel" name="label_7">
         <property name="text">
-         <string>etat du succes</string>
+         <string>a des relation</string>
         </property>
        </widget>
       </item>
-      <item row="3" column="2">
-       <widget class="QPushButton" name="message100">
+      <item row="5" column="2">
+       <widget class="QPushButton" name="messagemaxint">
         <property name="toolTip">
-         <string>il vous faut 100 message</string>
+         <string>il vous faut 2 147 483 647  message</string>
         </property>
         <property name="text">
-         <string>100 messages</string>
+         <string>2 147 483 647 messages</string>
         </property>
         <property name="flat">
          <bool>true</bool>
@@ -138,20 +104,44 @@
         </property>
        </widget>
       </item>
-      <item row="0" column="1">
-       <widget class="Line" name="line_3">
+      <item row="2" column="2">
+       <widget class="QPushButton" name="message10">
+        <property name="toolTip">
+         <string>il vous faut 10 message</string>
+        </property>
+        <property name="text">
+         <string>10 messages</string>
+        </property>
+        <property name="flat">
+         <bool>true</bool>
+        </property>
+       </widget>
+      </item>
+      <item row="2" column="1" rowspan="8">
+       <widget class="Line" name="line">
         <property name="orientation">
          <enum>Qt::Vertical</enum>
         </property>
        </widget>
       </item>
-      <item row="8" column="2">
-       <widget class="QPushButton" name="pushButton_3">
-        <property name="text">
-         <string>5 utilisateur connecter</string>
+      <item row="1" column="0" colspan="3">
+       <widget class="Line" name="line_2">
+        <property name="orientation">
+         <enum>Qt::Horizontal</enum>
         </property>
-        <property name="flat">
-         <bool>true</bool>
+       </widget>
+      </item>
+      <item row="0" column="2">
+       <widget class="QLabel" name="label_3">
+        <property name="text">
+         <string>etat du succes</string>
+        </property>
+       </widget>
+      </item>
+      <item row="5" column="0">
+       <widget class="QLabel" name="label_8">
+        <property name="text">
+         <string>fait peté le int</string>
         </property>
        </widget>
       </item>
@@ -162,24 +152,17 @@
         </property>
        </widget>
       </item>
-      <item row="0" column="0">
-       <widget class="QLabel" name="label">
-        <property name="text">
-         <string>nom du succes</string>
-        </property>
-       </widget>
-      </item>
-      <item row="6" column="0">
-       <widget class="QLabel" name="label_7">
-        <property name="text">
-         <string>a des relation</string>
-        </property>
-       </widget>
-      </item>
       <item row="7" column="0">
        <widget class="QLabel" name="label_9">
         <property name="text">
          <string>a ramener sa classe</string>
+        </property>
+       </widget>
+      </item>
+      <item row="0" column="0">
+       <widget class="QLabel" name="label">
+        <property name="text">
+         <string>nom du succes</string>
         </property>
        </widget>
       </item>
@@ -190,6 +173,40 @@
         </property>
         <property name="flat">
          <bool>true</bool>
+        </property>
+       </widget>
+      </item>
+      <item row="2" column="0">
+       <widget class="QLabel" name="label_2">
+        <property name="text">
+         <string>a trouver le bouton envoyer</string>
+        </property>
+       </widget>
+      </item>
+      <item row="9" column="2">
+       <widget class="QPushButton" name="pushButton_3">
+        <property name="text">
+         <string>5 utilisateur connecter</string>
+        </property>
+        <property name="flat">
+         <bool>true</bool>
+        </property>
+       </widget>
+      </item>
+      <item row="8" column="2">
+       <widget class="QPushButton" name="userdifferent100">
+        <property name="text">
+         <string>100 utilisateur connecter</string>
+        </property>
+        <property name="flat">
+         <bool>true</bool>
+        </property>
+       </widget>
+      </item>
+      <item row="8" column="0">
+       <widget class="QLabel" name="label_10">
+        <property name="text">
+         <string>amene ca comunotée</string>
         </property>
        </widget>
       </item>
