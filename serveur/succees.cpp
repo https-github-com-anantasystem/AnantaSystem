@@ -16,33 +16,39 @@ sucees::sucees(QWidget *parent) :
         ui->message100->setToolTip("imposible de l'avoir vous avez tricher");
         ui->message1000->setToolTip("imposible de l'avoir vous avez tricher");
         ui->messagemaxint->setToolTip("imposible de l'avoir vous avez tricher");
-        ui->serverdifferent10->setToolTip("imposible de l'avoir vous avez tricher");
+        ui->userdifferent10->setToolTip("imposible de l'avoir vous avez tricher");
+        ui->userdifferent30->setToolTip("imposible de l'avoir vous avez tricher");
         ui->message10->setText("");
         ui->message100->setText("");
         ui->message1000->setText("");
         ui->messagemaxint->setText("");
-        ui->serverdifferent10->setText("");
+        ui->userdifferent10->setText("");
+        ui->userdifferent30->setText("");
         ui->message10->setIcon(QIcon(":/image/suprimer.png"));
         ui->message100->setIcon(QIcon(":/image/suprimer.png"));
         ui->message1000->setIcon(QIcon(":/image/suprimer.png"));
         ui->messagemaxint->setIcon(QIcon(":/image/suprimer.png"));
-        ui->serverdifferent10->setIcon(QIcon(":/image/suprimer.png"));
+        ui->userdifferent10->setIcon(QIcon(":/image/suprimer.png"));
+        ui->userdifferent30->setIcon(QIcon(":/image/suprimer.png"));
     }if(settings->value("succes/nbmessage").toInt()<0&&settings->value("succes/succes").toBool()==false){
         ui->message10->setToolTip("imposible de l'avoir vous avez desactiver les succés");
         ui->message100->setToolTip("imposible de l'avoir vous avez desactiver les succés");
         ui->message1000->setToolTip("imposible de l'avoir vous avez desactiver les succés");
         ui->messagemaxint->setToolTip("imposible de l'avoir vous avez desactiver les succés");
-        ui->serverdifferent10->setToolTip("imposible de l'avoir vous avez desactiver les succés");
+        ui->userdifferent10->setToolTip("imposible de l'avoir vous avez desactiver les succés");
+        ui->userdifferent30->setToolTip("imposible de l'avoir vous avez desactiver les succés");
         ui->message10->setText("");
         ui->message100->setText("");
         ui->message1000->setText("");
         ui->messagemaxint->setText("");
-        ui->serverdifferent10->setText("");
+        ui->userdifferent10->setText("");
+        ui->userdifferent30->setText("");
         ui->message10->setIcon(QIcon(":/image/suprimer.png"));
         ui->message100->setIcon(QIcon(":/image/suprimer.png"));
         ui->message1000->setIcon(QIcon(":/image/suprimer.png"));
         ui->messagemaxint->setIcon(QIcon(":/image/suprimer.png"));
-        ui->serverdifferent10->setIcon(QIcon(":/image/suprimer.png"));
+        ui->userdifferent10->setIcon(QIcon(":/image/suprimer.png"));
+        ui->userdifferent30->setIcon(QIcon(":/image/suprimer.png"));
     }if(settings->value("succes/nbmessage").toInt()>=10){
         ui->message10->setToolTip("obtenus");
         ui->message10->setText("");
@@ -60,10 +66,15 @@ sucees::sucees(QWidget *parent) :
         ui->messagemaxint->setText("");
         ui->messagemaxint->setIcon(QIcon(":/image/Check_green.png"));
     }if(settings->value("succes/10userSimultaneously").toBool()){
-        ui->serverdifferent10->setToolTip("obtenus");
-        ui->serverdifferent10->setText("");
-        ui->serverdifferent10->setIcon(QIcon(":/image/Check_green.png"));
+        ui->userdifferent10->setToolTip("obtenus");
+        ui->userdifferent10->setText("");
+        ui->userdifferent10->setIcon(QIcon(":/image/Check_green.png"));
+    }if(settings->value("succes/30userSimultaneously").toBool()){
+        ui->userdifferent30->setToolTip("obtenus");
+        ui->userdifferent30->setText("");
+        ui->userdifferent30->setIcon(QIcon(":/image/Check_green.png"));
     }
+
 }
 sucees::~sucees()
 {
@@ -110,3 +121,22 @@ void sucees::on_pushButton_2_clicked()
     settings->setValue("succes/nbmessage",0);
     QMessageBox::critical(this,tr("supression prise en compte"),tr("la supression du nombre de message a bien fonctionée vous avez actuellement 0 message"));
 }
+
+void sucees::on_userdifferent10_clicked()
+{
+    if(!settings->value("succes/10userSimultaneously").toBool()){
+        QMessageBox::information(this,tr("info"),tr("pour avoir ce suces il faut etre conecter en meme temps que 10 utilisateur"));
+    }else if(settings->value("succes/10userSimultaneously").toBool()){
+        QMessageBox::information(this,tr("info"),tr("vous avez reusis a avoir ce succée"));
+    }
+}
+
+void sucees::on_userdifferent30_clicked()
+{
+    if(!settings->value("succes/30userSimultaneously").toBool()){
+        QMessageBox::information(this,tr("info"),tr("pour avoir ce suces il faut etre conecter en meme temps que 30 utilisateur"));
+    }else if(settings->value("succes/30userSimultaneously").toBool()){
+        QMessageBox::information(this,tr("info"),tr("vous avez reusis a avoir ce succée"));
+    }
+}
+

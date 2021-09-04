@@ -26,6 +26,8 @@ Widget::Widget(QWidget *parent)
         settings->setValue("settings/transparency","0.5");
     }if(!settings->contains("succes/10userSimultaneously")){
         settings->setValue("succes/10userSimultaneously", false);
+    }if(!settings->contains("succes/30userSimultaneously")){
+        settings->setValue("succes/30userSimultaneously", false);
     }
     ui->setupUi(this);
     startserveur();// j'ai peur que le serveur se start trop tard
@@ -854,6 +856,8 @@ void Widget::client_processthemessage(QMap<QString,QString> message)
         ++nbuser;
         if(nbuser==10){
             settings->setValue("succes/10userSimultaneously", true);
+        }else if(nbuser==30){
+            settings->setValue("succes/30userSimultaneously", true);
         }
     }else{
         QMessageBox::critical(this, tr("erreur"), tr("un packet a été recu mais l'indantificateur : ") + message["type"] + tr(" est inconu."));

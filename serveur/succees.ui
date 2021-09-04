@@ -27,40 +27,6 @@
       <string>sucées :</string>
      </property>
      <layout class="QGridLayout" name="gridLayout_2">
-      <item row="0" column="1">
-       <widget class="Line" name="line_3">
-        <property name="orientation">
-         <enum>Qt::Vertical</enum>
-        </property>
-       </widget>
-      </item>
-      <item row="2" column="2">
-       <widget class="QPushButton" name="message10">
-        <property name="toolTip">
-         <string>il vous faut 10 message</string>
-        </property>
-        <property name="text">
-         <string>10 messages</string>
-        </property>
-        <property name="flat">
-         <bool>true</bool>
-        </property>
-       </widget>
-      </item>
-      <item row="5" column="0">
-       <widget class="QLabel" name="label_8">
-        <property name="text">
-         <string>fait peté le int</string>
-        </property>
-       </widget>
-      </item>
-      <item row="3" column="0">
-       <widget class="QLabel" name="label_4">
-        <property name="text">
-         <string>s'est converser</string>
-        </property>
-       </widget>
-      </item>
       <item row="2" column="0">
        <widget class="QLabel" name="label_2">
         <property name="text">
@@ -81,24 +47,34 @@
         </property>
        </widget>
       </item>
-      <item row="4" column="0">
-       <widget class="QLabel" name="label_6">
+      <item row="3" column="0">
+       <widget class="QLabel" name="label_4">
         <property name="text">
-         <string>un boss</string>
+         <string>s'est converser</string>
         </property>
        </widget>
       </item>
-      <item row="7" column="0">
+      <item row="8" column="0">
        <widget class="QLabel" name="label_5">
         <property name="text">
          <string>amateur</string>
         </property>
        </widget>
       </item>
-      <item row="7" column="2">
-       <widget class="QPushButton" name="pushButton_3">
+      <item row="2" column="1" rowspan="7">
+       <widget class="Line" name="line">
+        <property name="orientation">
+         <enum>Qt::Vertical</enum>
+        </property>
+       </widget>
+      </item>
+      <item row="2" column="2">
+       <widget class="QPushButton" name="message10">
+        <property name="toolTip">
+         <string>il vous faut 10 message</string>
+        </property>
         <property name="text">
-         <string>5 utilisateur connecter</string>
+         <string>10 messages</string>
         </property>
         <property name="flat">
          <bool>true</bool>
@@ -115,6 +91,20 @@
         </property>
         <property name="flat">
          <bool>true</bool>
+        </property>
+       </widget>
+      </item>
+      <item row="1" column="0" colspan="3">
+       <widget class="Line" name="line_2">
+        <property name="orientation">
+         <enum>Qt::Horizontal</enum>
+        </property>
+       </widget>
+      </item>
+      <item row="5" column="0">
+       <widget class="QLabel" name="label_8">
+        <property name="text">
+         <string>fait peté le int</string>
         </property>
        </widget>
       </item>
@@ -138,10 +128,37 @@
         </property>
        </widget>
       </item>
-      <item row="1" column="0" colspan="3">
-       <widget class="Line" name="line_2">
+      <item row="6" column="2">
+       <widget class="QPushButton" name="userdifferent10">
+        <property name="text">
+         <string>10 utilisateur connecter</string>
+        </property>
+        <property name="flat">
+         <bool>true</bool>
+        </property>
+       </widget>
+      </item>
+      <item row="0" column="1">
+       <widget class="Line" name="line_3">
         <property name="orientation">
-         <enum>Qt::Horizontal</enum>
+         <enum>Qt::Vertical</enum>
+        </property>
+       </widget>
+      </item>
+      <item row="8" column="2">
+       <widget class="QPushButton" name="pushButton_3">
+        <property name="text">
+         <string>5 utilisateur connecter</string>
+        </property>
+        <property name="flat">
+         <bool>true</bool>
+        </property>
+       </widget>
+      </item>
+      <item row="4" column="0">
+       <widget class="QLabel" name="label_6">
+        <property name="text">
+         <string>un boss</string>
         </property>
        </widget>
       </item>
@@ -159,20 +176,20 @@
         </property>
        </widget>
       </item>
-      <item row="6" column="2">
-       <widget class="QPushButton" name="serverdifferent10">
+      <item row="7" column="0">
+       <widget class="QLabel" name="label_9">
         <property name="text">
-         <string>10 serveur diferant</string>
-        </property>
-        <property name="flat">
-         <bool>true</bool>
+         <string>a ramener sa classe</string>
         </property>
        </widget>
       </item>
-      <item row="2" column="1" rowspan="6">
-       <widget class="Line" name="line">
-        <property name="orientation">
-         <enum>Qt::Vertical</enum>
+      <item row="7" column="2">
+       <widget class="QPushButton" name="userdifferent30">
+        <property name="text">
+         <string>30 utilisateur connecter</string>
+        </property>
+        <property name="flat">
+         <bool>true</bool>
         </property>
        </widget>
       </item>
