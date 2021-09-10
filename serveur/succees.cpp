@@ -147,9 +147,12 @@ void sucees::on_saveNbMessage_toggled(bool checked)
 void sucees::on_pushButton_2_clicked()
 {
     settings->setValue("succes/nbmessage",0);
-    QMessageBox::critical(this,tr("supression prise en compte"),tr("la supression du nombre de message a bien fonctionée vous avez actuellement 0 message"));
+    int reponse = QMessageBox::question(this, tr("confirmation"), tr("le nombre de vos message va etre supimer et uniquemment le nombre atention cette option ne suprimeras pas vos message ecrit. voulez vous continuer ?"), QMessageBox ::Yes | QMessageBox::No);
+    if (reponse == QMessageBox::Yes)
+    {
+        QMessageBox::critical(this,tr("supression prise en compte"),tr("la supression du nombre de message a bien fonctionée vous avez actuellement 0 message enregistrer"));
+    }
 }
-
 void sucees::on_userdifferent10_clicked()
 {
     if(!settings->value("succes/10userSimultaneously").toBool()&&settings->value("succes/succes").toBool()){

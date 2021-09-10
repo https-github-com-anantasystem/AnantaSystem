@@ -391,6 +391,23 @@ void Widget::server_writetofile(QMap<QString, QString> FluxFile)
     QDataStream out(&file);
     out << saveMessage;
 }
+void Widget::server_recoverallfile()
+{
+    QFile fichier("chat.dat");
+
+   if(fichier.open(QIODevice::ReadOnly))
+   {
+       QByteArray paquet;
+       paquet = fichier.readAll();// lecture entier de notre fichier en octet
+       QDataStream out(paquet);
+       out>>saveMessage;
+   }
+   else
+   {
+       server_displayMessagelist(server_generatemesage(tr("le fichier et inaxecible"), tr("chat bot")));
+
+   }
+}
 void Widget::server_processcomand(QMap<QString, QString> command, int noclient)
 {
     if (command["message"]=="psedo"){
@@ -437,23 +454,6 @@ void Widget::server_processcomand(QMap<QString, QString> command, int noclient)
     }else{
         QMessageBox::critical(this, tr("erreur"), tr("un packet de comande a été recu mais la comande est incomprise."));
     }
-}
-void Widget::server_recoverallfile()
-{
-    QFile fichier("chat.dat");
-
-   if(fichier.open(QIODevice::ReadOnly))
-   {
-       QByteArray paquet;
-       paquet = fichier.readAll();// lecture entier de notre fichier en octet
-       QDataStream out(paquet);
-       out>>saveMessage;
-   }
-   else
-   {
-       server_displayMessagelist(server_generatemesage(tr("le fichier et inaxecible"), tr("chat bot")));
-
-   }
 }
 QString Widget::server_generatedate()
 {
