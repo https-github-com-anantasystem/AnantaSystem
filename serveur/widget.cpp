@@ -63,7 +63,7 @@ Widget::Widget(QWidget *parent)
 Widget::~Widget()
 {
     delete ui;
-    sticon->setVisible(false);
+    delete sticon;
 }
 void Widget::startTrayIcon(){
     sticon = new QSystemTrayIcon(this); // on construit notre icône de notification
