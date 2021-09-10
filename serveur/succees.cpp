@@ -10,7 +10,7 @@ sucees::sucees(QWidget *parent) :
     settings = new QSettings("ananta system","tchat 4.1",this);
     ui->saveNbMessage->setChecked(settings->value("succes/succes").toBool());
     ui->nbmessage->setText("le monbre de tes message :"+QString::number(settings->value("succes/nbmessage").toInt()));
-    if(settings->value("succes/nbmessage").toInt()<0&&settings->value("succes/succes").toBool()==true){
+    if(settings->value("succes/nbmessage").toInt()<0&&settings->value("succes/succes").toBool()){
         QMessageBox::critical(this,tr("tchit detecter"),tr("alors comme ca on veut avoir des sucée gratuis ? c'est mal de tricher"));
         ui->message10->setToolTip("imposible de l'avoir vous avez tricher");
         ui->message100->setToolTip("imposible de l'avoir vous avez tricher");
@@ -102,34 +102,42 @@ sucees::~sucees()
 }
 void sucees::on_message10_clicked()
 {
-    if(settings->value("succes/nbmessage").toInt()<=10&&settings->value("succes/nbmessage").toInt()>0){
+    if(settings->value("succes/nbmessage").toInt()<=10&&settings->value("succes/nbmessage").toInt()>=0&&settings->value("succes/succes").toBool()){
         QMessageBox::information(this,tr("info"),tr("pour avoir ce succé il faux avoir envoyer 10 message"));
     }else if(settings->value("succes/nbmessage").toInt()>=10){
         QMessageBox::information(this,tr("info"),tr("vous avez reusis a avoir ce succée"));
+    }else if(!settings->value("succes/succes").toBool()){
+        QMessageBox::information(this,tr("info"),tr("pour avor ce succes il faut avoir 10 message mais vous avez desactiver l'option"));
     }
 }
 void sucees::on_message100_clicked()
 {
-    if(settings->value("succes/nbmessage").toInt()<=100&&settings->value("succes/nbmessage").toInt()>0){
+    if(settings->value("succes/nbmessage").toInt()<=100&&settings->value("succes/nbmessage").toInt()>=0&&settings->value("succes/succes").toBool()){
         QMessageBox::information(this,tr("info"),tr("pour avoir ce succé il faux avoir envoyer 100 message"));
     }else if(settings->value("succes/nbmessage").toInt()>=100){
         QMessageBox::information(this,tr("info"),tr("vous avez reusis a avoir ce succée"));
+    }else if(!settings->value("succes/succes").toBool()){
+        QMessageBox::information(this,tr("info"),tr("pour avor ce succes il faut avoir 100 message mais vous avez desactiver l'option"));
     }
 }
 void sucees::on_message1000_clicked()
 {
-    if(settings->value("succes/nbmessage").toInt()<=1000&&settings->value("succes/nbmessage").toInt()>0){
+    if(settings->value("succes/nbmessage").toInt()<=1000&&settings->value("succes/nbmessage").toInt()>=0&&settings->value("succes/succes").toBool()){
         QMessageBox::information(this,tr("info"),tr("pour avoir ce succé il faux avoir envoyer 1000 message"));
     }else if(settings->value("succes/nbmessage").toInt()>=1000){
         QMessageBox::information(this,tr("info"),tr("vous avez reusis a avoir ce succée"));
+    }else if(!settings->value("succes/succes").toBool()){
+        QMessageBox::information(this,tr("info"),tr("pour avor ce succes il faut avoir 1000 message mais vous avez desactiver l'option"));
     }
 }
 void sucees::on_messagemaxint_clicked()
 {
-    if(settings->value("succes/nbmessage").toInt()<=2147483647 &&settings->value("succes/nbmessage").toInt()>0){
+    if(settings->value("succes/nbmessage").toInt()<=2147483647 &&settings->value("succes/nbmessage").toInt()>=0&&settings->value("succes/succes").toBool()){
         QMessageBox::information(this,tr("info"),tr("pour avoir ce succé il faux avoir envoyer 2 147 483 647 message"));
     }else if(settings->value("succes/nbmessage").toInt()>=2147483647){
         QMessageBox::information(this,tr("info"),tr("vous avez reusis a avoir ce succée"));
+    }else if(!settings->value("succes/succes").toBool()){
+        QMessageBox::information(this,tr("info"),tr("pour avor ce succes il faut avoir 2147483647 message mais vous avez desactiver l'option"));
     }
 }
 void sucees::on_saveNbMessage_toggled(bool checked)
@@ -144,35 +152,42 @@ void sucees::on_pushButton_2_clicked()
 
 void sucees::on_userdifferent10_clicked()
 {
-    if(!settings->value("succes/10userSimultaneously").toBool()){
+    if(!settings->value("succes/10userSimultaneously").toBool()&&settings->value("succes/succes").toBool()){
         QMessageBox::information(this,tr("info"),tr("pour avoir ce suces il faut etre conecter en meme temps que 10 utilisateur"));
     }else if(settings->value("succes/10userSimultaneously").toBool()){
         QMessageBox::information(this,tr("info"),tr("vous avez reusis a avoir ce succée"));
-    }
-}
+    }else if(!settings->value("succes/succes").toBool()){
+        QMessageBox::information(this,tr("info"),tr("pour avoir ce suces il faut etre conecter en meme temps que 10 utilisateur mais vous avez desactiver l'option"));
+    }}
 
 void sucees::on_userdifferent30_clicked()
 {
-    if(!settings->value("succes/30userSimultaneously").toBool()){
+    if(!settings->value("succes/30userSimultaneously").toBool()&&settings->value("succes/succes").toBool()){
         QMessageBox::information(this,tr("info"),tr("pour avoir ce suces il faut etre conecter en meme temps que 30 utilisateur"));
     }else if(settings->value("succes/30userSimultaneously").toBool()){
         QMessageBox::information(this,tr("info"),tr("vous avez reusis a avoir ce succée"));
+    }else if(!settings->value("succes/succes").toBool()){
+        QMessageBox::information(this,tr("info"),tr("pour avoir ce suces il faut etre conecter en meme temps que 30 utilisateur mais vous avez desactiver l'option"));
     }
 }
 void sucees::on_userdifferent100_clicked()
 {
-    if(!settings->value("succes/100userSimultaneously").toBool()){
+    if(!settings->value("succes/100userSimultaneously").toBool()&&settings->value("succes/succes").toBool()){
         QMessageBox::information(this,tr("info"),tr("pour avoir ce suces il faut etre conecter en meme temps que 100 utilisateur"));
     }else if(settings->value("succes/100userSimultaneously").toBool()){
         QMessageBox::information(this,tr("info"),tr("vous avez reusis a avoir ce succée"));
+    }else if(!settings->value("succes/succes").toBool()){
+        QMessageBox::information(this,tr("info"),tr("pour avoir ce suces il faut etre conecter en meme temps que 100 utilisateur mais vous avez desactiver l'option"));
     }
 }
 void sucees::on_server20_clicked()
 {
-    if(!settings->value("succes/20server").toBool()){
+    if(!settings->value("succes/20server").toBool()&&settings->value("succes/succes").toBool()){
         QMessageBox::information(this,tr("info"),tr("pour avoir ce suces il faut s'etre conecter a 20 serveur"));
     }else if(settings->value("succes/20server").toBool()){
         QMessageBox::information(this,tr("info"),tr("vous avez reusis a avoir ce succée"));
+    }else if(!settings->value("succes/succes").toBool()){
+        QMessageBox::information(this,tr("info"),tr("pour avoir ce suces il faut s'etre conecter a 20 serveur mais vous avez desactiver l'option"));
     }
 }
 
