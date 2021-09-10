@@ -151,6 +151,7 @@ void sucees::on_pushButton_2_clicked()
     if (reponse == QMessageBox::Yes)
     {
         QMessageBox::critical(this,tr("supression prise en compte"),tr("la supression du nombre de message a bien fonctionée vous avez actuellement 0 message enregistrer"));
+            ui->nbmessage->setText("le monbre de tes message :"+QString::number(settings->value("succes/nbmessage").toInt()));
     }
 }
 void sucees::on_userdifferent10_clicked()
