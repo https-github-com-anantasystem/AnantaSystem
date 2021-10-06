@@ -54,7 +54,7 @@ private:
 private slots:
     //ui
     void startTrayIcon();
-    void changetransparency(Qt::ApplicationState state);
+    void changetransparency(Qt::ApplicationState);
     void condesed();
     void server_displayMessagelist(QString message);
     //serveur

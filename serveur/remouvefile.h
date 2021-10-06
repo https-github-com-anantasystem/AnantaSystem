@@ -4,6 +4,7 @@
 #include <QDialog>
 #include <QMessageBox>
 #include <QSettings>
+#include <QFile>
 namespace Ui {
 class remouveFile;
 }
@@ -20,7 +21,7 @@ private slots:
     void on_delete10message_clicked();
     void on_deleteAllMessage_clicked();
     void on_deleteNMessage_editingFinished();
-
+    void remouveOnFile(int NumberOfRemouve);
     void on_pushButton_clicked();
 
 private:

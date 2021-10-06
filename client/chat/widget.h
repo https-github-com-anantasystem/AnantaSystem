@@ -18,7 +18,9 @@ ANANTA SYSTEME  tchat 4.0.-1
 #include <QMenu>
 #include <QTextDocumentFragment>
 #include <QFileDialog>
+#include <QSettings>
 #include <QStyleFactory>
+#include <QNetworkInterface>
 #include "parametre.h"
 QT_BEGIN_NAMESPACE
 namespace Ui { class Widget; }
@@ -28,53 +30,57 @@ class Widget :public QWidget
     Q_OBJECT
 
 public:
-
     Widget(QWidget *parent = nullptr);
     ~Widget();
-private:
-    Ui::Widget *ui;
-    QSystemTrayIcon* sticon;
+    QList<QMap<QString,QString>> saveMessage;
     parametre parametres;
+private slots:
+    void on_parametrebuton_2_clicked();
+
+private:
+    QSettings* settings;
+    Ui::Widget *ui;
+    QString version;
+    bool condenser;
+    int NbOfMessage;
+    int nbuser;
+    QSystemTrayIcon* sticon;
     QLabel *text;
     QMenu *stmenu;
-    bool condenser;
-
-    QTcpSocket *socket;//serveur
+    QTcpSocket *socket;
     quint16 messagesize;
-    QString path;
-    QString version;
-
-private :
-    void readarg();
+private:
+    //ui
+    void startTrayIcon();
     void changetransparency(Qt::ApplicationState state);
-    void displayMessagelist(QString message);
-    void changestateconnectbuton(bool state);
-    void displayconnectlabel(QString text);
+    void condesed();
+    void helpcondesed();
+    //client
+    void client_displayMessagelist(QString message);
+    void client_changestateconnectbuton(bool state);
+    void client_displayconnectlabel(QString text);
     void on_conectbuton_clicked();
     void on_sentbuton_clicked();
-    void processechatbot(QString command);
-    void condesed();
-    //serveur
-    //vital pour le serveur
-    void connectto(QString ip, int port);
-    void connected();
-    void desconnect();
-    void socketerror(QAbstractSocket::SocketError error);
-    // optionelle
-    void sentdatamap(const QMap<QString,QString> sendmap);
-    void sentdatamap(const QString type, QString message, QString psedo, QDateTime seconde, QDateTime minute, QDateTime heurs, QDateTime NoJour, QDate jour);
-    void sentdatamap(const QString type, QString message, QString psedo);
-    void sentdatamap(const QString type, QString message);
-    void sentcommende(const QString commende);
-    void sentcommende(const QString commende, QString arg);
-    void datareceived();
-    void processthemessage(QMap<QString,QString> message);
-    void processcomand(QMap<QString,QString> commend);
-    QString generatedate();
-    QString generatedate(QMap<QString, QString> date);
-    QString generatemesage(QString message, QString psedo);
-    QString generatemesage(QMap<QString, QString> message);
-    QString returnpsedo();
+    void client_processechatbot(QString command);
+    void client_connectto(QString ip, int port);
+    void client_connected();
+    void client_desconnect();
+    void client_socketerror(QAbstractSocket::SocketError error);
+    void client_sentdatamap(const QMap<QString,QString> sendmap);
+    void client_sentdatamap(const QString type);
+    void client_sentdatamap(const QString type, QString message, QString psedo, QDateTime seconde, QDateTime minute, QDateTime heurs, QDateTime NoJour, QDate jour);
+    void client_sentdatamap(const QString type, QString message, QString psedo);
+    void client_sentdatamap(const QString type, QString message);
+    void client_sentcommende(const QString commende);
+    void client_sentcommende(const QString commende, QString arg);
+    void client_datareceived();
+    void client_processthemessage(QMap<QString,QString> message);
+    void client_processcomand(QMap<QString, QString> commend);
+    QString client_generatedate();
+    QString client_generatedate(QMap<QString, QString> date);
+    QString client_generatemesage(QString message, QString psedo);
+    QString client_generatemesage(QMap<QString, QString> message);
+    QString client_returnpsedo();
     void on_parametrebuton_clicked();
 };
 #endif // WIDGET_H

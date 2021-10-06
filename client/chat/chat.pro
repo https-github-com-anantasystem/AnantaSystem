@@ -11,15 +11,21 @@ CONFIG += c++11
 
 SOURCES += \
     main.cpp \
+    moreinformation.cpp \
     parametre.cpp \
+    succees.cpp \
     widget.cpp
 
 HEADERS += \
+    moreinformation.h \
     parametre.h \
+    succees.h \
     widget.h
 
 FORMS += \
+    moreinformation.ui \
     parametre.ui \
+    succees.ui \
     widget.ui
 
 TRANSLATIONS += \

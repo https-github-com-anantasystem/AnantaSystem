@@ -21,29 +21,49 @@
   </property>
   <property name="windowIcon">
    <iconset resource="resources.qrc">
-    <normaloff>:/images/Ananta.png</normaloff>:/images/Ananta.png</iconset>
+    <normaloff>:/image/Ananta.png</normaloff>:/image/Ananta.png</iconset>
   </property>
   <layout class="QGridLayout" name="gridLayout">
    <item row="1" column="1">
     <layout class="QGridLayout" name="gridLayout_4">
-     <item row="3" column="1">
-      <widget class="QLabel" name="conectstatelabel">
+     <item row="5" column="0" colspan="2">
+      <widget class="QPushButton" name="parametrebuton_2">
+       <property name="maximumSize">
+        <size>
+         <width>16777215</width>
+         <height>16777215</height>
+        </size>
+       </property>
        <property name="text">
-        <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;span style=&quot; color:#ff0000;&quot;&gt;déconécté&lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+        <string>Paramètres</string>
        </property>
       </widget>
      </item>
      <item row="1" column="0">
       <widget class="QLabel" name="label_5">
        <property name="text">
-        <string>connécté a :</string>
+        <string>Adresse:</string>
        </property>
       </widget>
      </item>
-     <item row="3" column="0">
-      <widget class="QLabel" name="label_6">
+     <item row="4" column="0" colspan="2">
+      <widget class="QPushButton" name="conectbuton">
        <property name="text">
-        <string>etat</string>
+        <string>Connection</string>
+       </property>
+      </widget>
+     </item>
+     <item row="2" column="0">
+      <widget class="QLabel" name="label_4">
+       <property name="text">
+        <string>Pin:</string>
+       </property>
+      </widget>
+     </item>
+     <item row="6" column="0" colspan="2">
+      <widget class="QListWidget" name="clientlist">
+       <property name="styleSheet">
+        <string notr="true"/>
        </property>
       </widget>
      </item>
@@ -55,6 +75,9 @@
          <height>16777215</height>
         </size>
        </property>
+       <property name="styleSheet">
+        <string notr="true"/>
+       </property>
        <property name="minimum">
         <number>1024</number>
        </property>
@@ -63,13 +86,6 @@
        </property>
        <property name="value">
         <number>2048</number>
-       </property>
-      </widget>
-     </item>
-     <item row="2" column="0">
-      <widget class="QLabel" name="label_4">
-       <property name="text">
-        <string>mot de passe</string>
        </property>
       </widget>
      </item>
@@ -86,33 +102,27 @@
        </property>
       </widget>
      </item>
-     <item row="4" column="0" colspan="2">
-      <widget class="QPushButton" name="conectbuton">
+     <item row="3" column="1">
+      <widget class="QLabel" name="conectstatelabel">
        <property name="text">
-        <string>connection</string>
+        <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;span style=&quot; color:#ff0000;&quot;&gt;Déconécté&lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
        </property>
       </widget>
      </item>
-     <item row="5" column="0" colspan="2">
-      <widget class="QPushButton" name="parametrebuton">
-       <property name="maximumSize">
-        <size>
-         <width>16777215</width>
-         <height>16777215</height>
-        </size>
-       </property>
+     <item row="3" column="0">
+      <widget class="QLabel" name="label_6">
        <property name="text">
-        <string>parametre</string>
+        <string>Etat:</string>
        </property>
       </widget>
-     </item>
-     <item row="6" column="0" colspan="2">
-      <widget class="QListWidget" name="clientlist"/>
      </item>
     </layout>
    </item>
    <item row="1" column="0">
     <widget class="QTextBrowser" name="messagelist">
+     <property name="styleSheet">
+      <string notr="true"/>
+     </property>
      <property name="html">
       <string>&lt;!DOCTYPE HTML PUBLIC &quot;-//W3C//DTD HTML 4.0//EN&quot; &quot;http://www.w3.org/TR/REC-html40/strict.dtd&quot;&gt;
 &lt;html&gt;&lt;head&gt;&lt;meta name=&quot;qrichtext&quot; content=&quot;1&quot; /&gt;&lt;style type=&quot;text/css&quot;&gt;
@@ -127,7 +137,7 @@ p, li { white-space: pre-wrap; }
      <item>
       <widget class="QLabel" name="label_psedo">
        <property name="text">
-        <string>psedo</string>
+        <string>Pseudo:</string>
        </property>
       </widget>
      </item>
@@ -137,7 +147,7 @@ p, li { white-space: pre-wrap; }
      <item>
       <widget class="QLabel" name="label_message_3">
        <property name="text">
-        <string>message</string>
+        <string>Message:</string>
        </property>
       </widget>
      </item>
@@ -150,10 +160,10 @@ p, li { white-space: pre-wrap; }
         <string notr="true"/>
        </property>
        <property name="text">
-        <string>envoyer</string>
+        <string>Envoyer</string>
        </property>
        <property name="icon">
-        <iconset resource="resources.qrc">
+        <iconset>
          <normaloff>:/images/sent.png</normaloff>:/images/sent.png</iconset>
        </property>
       </widget>

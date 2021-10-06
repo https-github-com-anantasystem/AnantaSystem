@@ -11,6 +11,7 @@ remouveFile::remouveFile(QList<QMap<QString, QString>> &ref, QWidget *parent) :
     listeOfMessage = &ref;
     ui->TextLabeldisplayingNumberDessage->setText("<html><head/><body><p align=\"center\"><span style=\" font-size:14pt;\">il y a "+QString::number(listeOfMessage->size())+" message</span></p></body></html>");
     ui->deleteNMessage->setMaximum(listeOfMessage->size());
+ //   on_deleteAllMessage_clicked();//les autre fonctionaliter sont en test
 }
 remouveFile::~remouveFile()
 {
@@ -19,10 +20,7 @@ remouveFile::~remouveFile()
 
 void remouveFile::on_delete10message_clicked()
 {
-    for (int compteur {10}; compteur > 0; --compteur)
-    {
-       if(listeOfMessage->isEmpty()){listeOfMessage->removeFirst();}
-    }
+    remouveOnFile(10);
     ui->TextLabeldisplayingNumberDessage->setText("<html><head/><body><p align=\"center\"><span style=\" font-size:14pt;\">il y a "+QString::number(listeOfMessage->size())+" message</span></p></body></html>");
     ui->deleteNMessage->setMaximum(listeOfMessage->size());
 }
@@ -30,18 +28,34 @@ void remouveFile::on_delete10message_clicked()
 
 void remouveFile::on_deleteAllMessage_clicked()
 {
-    listeOfMessage->clear();
+    remouveOnFile(listeOfMessage->size());
     ui->TextLabeldisplayingNumberDessage->setText("<html><head/><body><p align=\"center\"><span style=\" font-size:14pt;\">il y a "+QString::number(listeOfMessage->size())+" message</span></p></body></html>");
     ui->deleteNMessage->setMaximum(listeOfMessage->size());
 }
 void remouveFile::on_deleteNMessage_editingFinished()
 {
-    for (int compteur {ui->deleteNMessage->value()}; compteur > 0; --compteur)
-    {
-        if(listeOfMessage->isEmpty()){listeOfMessage->removeFirst();}
-    }
+    remouveOnFile(ui->deleteNMessage->value());
     ui->TextLabeldisplayingNumberDessage->setText("<html><head/><body><p align=\"center\"><span style=\" font-size:14pt;\">il y a "+QString::number(listeOfMessage->size())+" message</span></p></body></html>");
     ui->deleteNMessage->setMaximum(listeOfMessage->size());
+}
+void remouveFile::remouveOnFile(int NumberOfRemouve){
+    {
+        QFile file("chat.dat");
+        file.remove();
+        file.close();
+    }
+    for (int compteur {NumberOfRemouve}; compteur > 0; --compteur)
+    {
+       if(listeOfMessage->isEmpty()){listeOfMessage->removeFirst();}
+    }
+    QFile file("chat.dat");
+    if (!file.open(QIODevice::WriteOnly)){
+            QMessageBox::critical(this, tr("ERREUR passive"),tr("le fichier ne peut pas etre ouvet merci de retester plus tard"));
+            return;
+        }
+    QDataStream out(&file);
+    out << *listeOfMessage;
+    QMessageBox::critical(this, tr("ERREUR FATAL"),tr("les clients ne peuve pas etre suprimer tentaitve de resupression puis fermeture!"));
 }
 void remouveFile::on_pushButton_clicked()
 {

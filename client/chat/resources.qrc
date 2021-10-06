@@ -1,18 +1,22 @@
 <RCC>
+    <qresource prefix="/image">
+        <file>analyse.png</file>
+        <file>Ananta.png</file>
+        <file>Anantasite.png</file>
+        <file>Blue_question_mark_icon.svg.png</file>
+        <file>discord logo.png</file>
+        <file>Fichier_4.png</file>
+        <file>sent.png</file>
+        <file>Simpleicons_Interface_link-symbol.svg.png</file>
+        <file>suprimer.png</file>
+        <file>Twitter_bird_logo_2012.svg.png</file>
+        <file>image0.jpg</file>
+        <file>success.png</file>
+        <file>Check_green.png</file>
+        <file>Refresh_icon.png</file>
+    </qresource>
     <qresource prefix="/sound">
         <file>notifdefault.wav</file>
         <file>Sonnerie_Ananta.wav</file>
-    </qresource>
-    <qresource prefix="/images">
-        <file>Ananta.png</file>
-        <file>analyse.png</file>
-        <file>sent.png</file>
-        <file>suprimer.png</file>
-        <file>Simpleicons_Interface_link-symbol.svg.png</file>
-        <file>Blue_question_mark_icon.svg.png</file>
-        <file>Ballot_box_icon_color.svg.png</file>
-        <file>discord logo.png</file>
-        <file>Twitter_bird_logo_2012.svg.png</file>
-        <file>Fichier_4.png</file>
     </qresource>
 </RCC>

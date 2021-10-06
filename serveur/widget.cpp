@@ -52,7 +52,7 @@ Widget::Widget(QWidget *parent)
    connect(socket, &QTcpSocket::readyRead, this ,&Widget::client_datareceived);
    connect(socket, &QTcpSocket::connected,this,&Widget::client_connected);
    connect(socket, &QTcpSocket::disconnected,this,&Widget::client_desconnect);
-   connect(socket, &QTcpSocket::errorOccurred, this, &Widget::client_socketerror);
+   connect(socket, &QTcpSocket::errorOccurred, this, &Widget::client_socketerror);///////////////////////////
    messagesize = 0;
    //conexion
    client_connectto("127.0.0.1", ui->serveurport->value());
@@ -117,7 +117,7 @@ void Widget::on_parametrebuton_clicked()
 void Widget::changetransparency(Qt::ApplicationState state){
     if(state == Qt::ApplicationInactive){
         if(condenser){
-            this->setWindowOpacity(settings->value("transparency").toDouble());
+           this->setWindowOpacity(settings->value("transparency").toDouble());
         }
     }else if(state == Qt::ApplicationActive){
         this->setWindowOpacity(1);
@@ -389,7 +389,7 @@ void Widget::server_writetofile(QMap<QString, QString> FluxFile)
             return;
         }
     QDataStream out(&file);
-    out << saveMessage;
+    out << &saveMessage;
 }
 void Widget::server_recoverallfile()
 {

@@ -7,15 +7,24 @@
     <x>0</x>
     <y>0</y>
     <width>369</width>
-    <height>595</height>
+    <height>587</height>
    </rect>
   </property>
   <property name="windowTitle">
-   <string>ananta systeme tchat</string>
+   <string>parametre</string>
   </property>
   <property name="windowIcon">
    <iconset resource="resources.qrc">
-    <normaloff>:/images/Ananta.png</normaloff>:/images/Ananta.png</iconset>
+    <normaloff>:/image/Fichier_4.png</normaloff>:/image/Fichier_4.png</iconset>
+  </property>
+  <property name="statusTip">
+   <string/>
+  </property>
+  <property name="whatsThis">
+   <string/>
+  </property>
+  <property name="accessibleDescription">
+   <string/>
   </property>
   <layout class="QGridLayout" name="gridLayout">
    <item row="0" column="0">
@@ -26,6 +35,15 @@
      <layout class="QGridLayout" name="gridLayout_2">
       <item row="1" column="0">
        <widget class="QCheckBox" name="checkBox_2">
+        <property name="toolTip">
+         <string>permet de definire lactivation des notification visuelle</string>
+        </property>
+        <property name="whatsThis">
+         <string>permet de definire lactivation des notification visuelle</string>
+        </property>
+        <property name="accessibleDescription">
+         <string>permet de definire lactivation des notification visuelle</string>
+        </property>
         <property name="text">
          <string>notification visuelle</string>
         </property>
@@ -36,6 +54,12 @@
       </item>
       <item row="0" column="0">
        <widget class="QCheckBox" name="checkBox">
+        <property name="toolTip">
+         <string>permet de definire lactivation des notification sonore</string>
+        </property>
+        <property name="accessibleDescription">
+         <string>permet de definire lactivation des notification sonore</string>
+        </property>
         <property name="text">
          <string>notification sonore</string>
         </property>
@@ -61,6 +85,33 @@
           <string>selectioner une musique</string>
          </property>
         </item>
+       </widget>
+      </item>
+     </layout>
+    </widget>
+   </item>
+   <item row="2" column="0">
+    <widget class="QGroupBox" name="groupBox_5">
+     <property name="title">
+      <string>sucées</string>
+     </property>
+     <layout class="QGridLayout" name="gridLayout_6">
+      <item row="1" column="0">
+       <widget class="QPushButton" name="pushButton_3">
+        <property name="text">
+         <string>voir mes sucée</string>
+        </property>
+        <property name="icon">
+         <iconset resource="resources.qrc">
+          <normaloff>:/image/success.png</normaloff>:/image/success.png</iconset>
+        </property>
+       </widget>
+      </item>
+      <item row="0" column="0">
+       <widget class="QLabel" name="label_3">
+        <property name="text">
+         <string>nombre de message :</string>
+        </property>
        </widget>
       </item>
      </layout>
@@ -101,20 +152,10 @@
        </widget>
       </item>
       <item row="1" column="1">
-       <widget class="QComboBox" name="comboBox_3">
+       <widget class="QComboBox" name="setcollor">
         <item>
          <property name="text">
           <string>blanc</string>
-         </property>
-        </item>
-        <item>
-         <property name="text">
-          <string>noir</string>
-         </property>
-        </item>
-        <item>
-         <property name="text">
-          <string>Schtroumpfs</string>
          </property>
         </item>
        </widget>
@@ -131,7 +172,7 @@
          <string/>
         </property>
         <property name="icon">
-         <iconset>
+         <iconset resource="resources.qrc">
           <normaloff>:/image/Blue_question_mark_icon.svg.png</normaloff>:/image/Blue_question_mark_icon.svg.png</iconset>
         </property>
         <property name="flat">
@@ -151,7 +192,7 @@
          <string/>
         </property>
         <property name="icon">
-         <iconset>
+         <iconset resource="resources.qrc">
           <normaloff>:/image/Blue_question_mark_icon.svg.png</normaloff>:/image/Blue_question_mark_icon.svg.png</iconset>
         </property>
         <property name="flat">
@@ -172,68 +213,7 @@
      </layout>
     </widget>
    </item>
-   <item row="2" column="0">
-    <widget class="QGroupBox" name="groupBox_3">
-     <property name="title">
-      <string>serveur</string>
-     </property>
-     <layout class="QGridLayout" name="gridLayout_4">
-      <item row="0" column="0">
-       <widget class="QCheckBox" name="checkBox_3">
-        <property name="text">
-         <string>sauvgarder les message</string>
-        </property>
-        <property name="checked">
-         <bool>true</bool>
-        </property>
-       </widget>
-      </item>
-      <item row="2" column="0">
-       <widget class="QPushButton" name="pushButton_4">
-        <property name="text">
-         <string>faire un recapitulatif (mode debug)</string>
-        </property>
-        <property name="icon">
-         <iconset>
-          <normaloff>:/image/analyse.png</normaloff>:/image/analyse.png</iconset>
-        </property>
-       </widget>
-      </item>
-      <item row="2" column="1">
-       <widget class="QPushButton" name="pushButton_5">
-        <property name="sizePolicy">
-         <sizepolicy hsizetype="Fixed" vsizetype="Fixed">
-          <horstretch>0</horstretch>
-          <verstretch>0</verstretch>
-         </sizepolicy>
-        </property>
-        <property name="text">
-         <string/>
-        </property>
-        <property name="icon">
-         <iconset>
-          <normaloff>:/image/Blue_question_mark_icon.svg.png</normaloff>:/image/Blue_question_mark_icon.svg.png</iconset>
-        </property>
-        <property name="flat">
-         <bool>true</bool>
-        </property>
-       </widget>
-      </item>
-      <item row="1" column="0" colspan="2">
-       <widget class="QPushButton" name="deletbuton">
-        <property name="text">
-         <string>suprimer tout les message enregistrer</string>
-        </property>
-        <property name="icon">
-         <iconset>
-          <normaloff>:/image/suprimer.png</normaloff>:/image/suprimer.png</iconset>
-        </property>
-       </widget>
-      </item>
-     </layout>
-    </widget>
-   </item>
-   <item row="3" column="0">
+   <item row="4" column="0">
     <widget class="QGroupBox" name="groupBox_4">
      <property name="title">
       <string>contact</string>
@@ -245,7 +225,7 @@
          <string>le site</string>
         </property>
         <property name="icon">
-         <iconset>
+         <iconset resource="resources.qrc">
           <normaloff>:/image/Anantasite.png</normaloff>:/image/Anantasite.png</iconset>
         </property>
        </widget>
@@ -253,10 +233,10 @@
       <item row="1" column="0">
        <widget class="QPushButton" name="discord">
         <property name="text">
-         <string>le discord (aide/bug)</string>
+         <string>le discord (aide/bug/probleme de traduction)</string>
         </property>
         <property name="icon">
-         <iconset>
+         <iconset resource="resources.qrc">
           <normaloff>:/image/discord logo.png</normaloff>:/image/discord logo.png</iconset>
         </property>
        </widget>
@@ -267,7 +247,7 @@
          <string>le twiter</string>
         </property>
         <property name="icon">
-         <iconset>
+         <iconset resource="resources.qrc">
           <normaloff>:/image/Twitter_bird_logo_2012.svg.png</normaloff>:/image/Twitter_bird_logo_2012.svg.png</iconset>
         </property>
        </widget>
@@ -278,12 +258,19 @@
          <string>faire un don</string>
         </property>
         <property name="icon">
-         <iconset>
+         <iconset resource="resources.qrc">
           <normaloff>:/image/image0.jpg</normaloff>:/image/image0.jpg</iconset>
         </property>
        </widget>
       </item>
      </layout>
+    </widget>
+   </item>
+   <item row="5" column="0">
+    <widget class="QPushButton" name="pushButton_4">
+     <property name="text">
+      <string>plus d'informantion</string>
+     </property>
     </widget>
    </item>
   </layout>
