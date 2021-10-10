@@ -611,3 +611,9 @@ QString Widget::client_generatemesage(QMap<QString, QString> message){
     }
     return(tr("<span style=\"font-size: 12px; font-weight: bold;\">")+message["psedo"]+tr("</span>")+client_generatedate(message)+tr("<span style=\"font-size: 14px; \">")+message["message"]+tr("</span><br/><br/>"));
 }
+
+void Widget::on_psedo_editingFinished()
+{
+   client_sentcommende("change_psedo",ui->psedo->text());
+}
+

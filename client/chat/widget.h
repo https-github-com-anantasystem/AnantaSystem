@@ -37,6 +37,8 @@ public:
 private slots:
     void on_parametrebuton_2_clicked();
 
+    void on_psedo_editingFinished();
+
 private:
     QSettings* settings;
     Ui::Widget *ui;

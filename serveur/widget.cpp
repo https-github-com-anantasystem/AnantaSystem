@@ -459,7 +459,7 @@ void Widget::server_processcomand(QMap<QString, QString> command, int noclient)
                 return;
             }
         }
-        server_sentmessagetoall("msg",clientsList[noclient]->getpseudo()+"a changer son psedo en"+ command["arg"],"Tchat Bot");
+        server_sentmessagetoall("msg",clientsList[noclient]->getpseudo()+" a changer son psedo en "+ command["arg"],"Tchat Bot");
         clientsList[noclient]->editpseudo(command["arg"]);
     }else{
         QMessageBox::critical(this, tr("erreur"), tr("Un paquet de commande a été reçu mais la commande est incomprise."));
@@ -953,6 +953,5 @@ QString Widget::client_generatemesage(QMap<QString, QString> message){
 
 void Widget::on_pseudo_editingFinished()
 {
-    client_sentcommande("change_psedo",ui->pseudo->text());
-    QMessageBox::critical(this, tr("Suppression de client"), tr("Le client vient d'être supprimé."));
+    client_sentcommande("change_psedo",ui->psedo->text());
 }

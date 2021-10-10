@@ -32,15 +32,15 @@ parametre::~parametre()
 }
 QPalette parametre::starttheme(){
    if(settings->value("settings/color").toString()=="black"){
-       ui->comboBox_3->setCurrentIndex(1);
+       ui->setcollor->setCurrentIndex(1);
         return darkmode();
    }else if(settings->value("settings/color").toString()=="white"){
-       ui->comboBox_3->setCurrentIndex(0);
+       ui->setcollor->setCurrentIndex(0);
        return whitemode();
    }else{
        return whitemode();
        QMessageBox::warning(this,tr("erreur de lecture"),tr("il est imposible de lire la couleur par defaut. elle est donc par defaut a blanc"));
-       on_comboBox_3_activated(tr("blanc","atention meme chose que dans l'ui la combo box de coulleur"));
+       on_setcollor_activated(tr("blanc","atention meme chose que dans l'ui la combo box de coulleur"));
    }
 }
 QPalette parametre::darkmode(){
