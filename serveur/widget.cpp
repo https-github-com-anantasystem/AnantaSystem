@@ -281,6 +281,7 @@ void Widget::server_newconect()
 void Widget::server_connect(const QMap<QString, QString> &connectpack, int usernaime){
     clientsList[usernaime]->editpseudo(connectpack["pseudo"]);
     clientsList[usernaime]->editversion(connectpack["version"]);
+    server_sentmessagetoall(connectpack);
 }
 void Widget::server_datareceived()
 {
@@ -339,7 +340,6 @@ void Widget::server_datareceived()
                 }
             }else if(message["type"]=="connection"){
                 server_connect(message, index);
-                server_sentmessagetoall(message);
             }
 
         //}else{
@@ -389,7 +389,7 @@ void Widget::server_writetofile(QMap<QString, QString> FluxFile)
             return;
         }
     QDataStream out(&file);
-    out << &saveMessage;
+    out <<saveMessage;
 }
 void Widget::server_recoverallfile()
 {
@@ -446,11 +446,21 @@ void Widget::server_processcomand(QMap<QString, QString> command, int noclient)
                 server_sentcomandto("isconnected", clientsList[i-1]->getpseudo(),noclient);
             }
         }
-
     }else if(command["message"]=="version"){
         clientsList[noclient]->editversion(command["arg"]);
-    }else if (command["message"]=="updating") {
-        //server_sentcomandto("update_"+server_recoverallfile(),noclient);
+    }else if (command["message"]=="change_psedo") {
+        for(int i = 1; i < clientsList.size(); i++)
+        {
+            if(clientsList[i]->getpseudo()==command["arg"] && i != noclient){//si c'est le meme on coupe et on envoie une erreur
+                server_sentcomandto("pseudoalreadyuse",noclient);
+                return;
+            }else if(clientsList[i]->getpseudo().remove(" ")==command["arg"].remove(" ") && i != noclient){//si c'est resembleaut on coupe et on envoie une erreur
+                server_sentcomandto("pseudoresembling",noclient);
+                return;
+            }
+        }
+        server_sentmessagetoall("msg",clientsList[noclient]->getpseudo()+"a changer son psedo en"+ command["arg"],"Tchat Bot");
+        clientsList[noclient]->editpseudo(command["arg"]);
     }else{
         QMessageBox::critical(this, tr("erreur"), tr("Un paquet de commande a été reçu mais la commande est incomprise."));
     }
@@ -939,4 +949,10 @@ QString Widget::client_generatemesage(QMap<QString, QString> message){
         message["pseudo"] = "anonymous";
     }
     return(tr("<span style=\"font-size: 12px; font-weight: bold;\">")+message["pseudo"]+tr("</span>")+client_generatedate(message)+tr("<span style=\"font-size: 14px; \">")+message["message"]+tr("</span><br/><br/>"));
+}
+
+void Widget::on_pseudo_editingFinished()
+{
+    client_sentcommande("change_psedo",ui->pseudo->text());
+    QMessageBox::critical(this, tr("Suppression de client"), tr("Le client vient d'être supprimé."));
 }

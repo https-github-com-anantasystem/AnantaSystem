@@ -186,7 +186,7 @@ p, li { white-space: pre-wrap; }
       <widget class="QLineEdit" name="mesage"/>
      </item>
      <item>
-      <widget class="QPushButton" name="sentbuton">
+      <widget class="QPushButton" name="sentbutton">
        <property name="styleSheet">
         <string notr="true"/>
        </property>
@@ -210,7 +210,7 @@ p, li { white-space: pre-wrap; }
   <connection>
    <sender>mesage</sender>
    <signal>returnPressed()</signal>
-   <receiver>sentbuton</receiver>
+   <receiver>sentbutton</receiver>
    <slot>animateClick()</slot>
    <hints>
     <hint type="sourcelabel">
@@ -224,7 +224,7 @@ p, li { white-space: pre-wrap; }
    </hints>
   </connection>
   <connection>
-   <sender>sentbuton</sender>
+   <sender>sentbutton</sender>
    <signal>clicked()</signal>
    <receiver>mesage</receiver>
    <slot>setFocus()</slot>

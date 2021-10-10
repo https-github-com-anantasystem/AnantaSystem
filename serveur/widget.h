@@ -104,5 +104,6 @@ private slots:
     QString client_generatemesage(QMap<QString, QString> message);
     QString client_returnpseudo();
     void on_parametrebutton_clicked();
+    void on_pseudo_editingFinished();
 };
 #endif // WIDGET_H
