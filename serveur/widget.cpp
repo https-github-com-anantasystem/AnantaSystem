@@ -953,5 +953,5 @@ QString Widget::client_generatemesage(QMap<QString, QString> message){
 
 void Widget::on_pseudo_editingFinished()
 {
-    client_sentcommande("change_psedo",ui->psedo->text());
+    client_sentcommande("change_psedo",ui->pseudo->text());
 }

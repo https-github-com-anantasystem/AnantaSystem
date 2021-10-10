@@ -6,7 +6,7 @@
    <rect>
     <x>0</x>
     <y>0</y>
-    <width>369</width>
+    <width>556</width>
     <height>699</height>
    </rect>
   </property>
@@ -80,7 +80,7 @@
          <string>Supprimer les messages enregistrés</string>
         </property>
         <property name="icon">
-         <iconset resource="resource.qrc">
+         <iconset>
           <normaloff>:/image/suprimer.png</normaloff>:/image/suprimer.png</iconset>
         </property>
        </widget>
@@ -172,11 +172,6 @@
         <item>
          <property name="text">
           <string>Noir</string>
-         </property>
-        </item>
-        <item>
-         <property name="text">
-          <string>Schtroumpfs</string>
          </property>
         </item>
        </widget>
@@ -322,7 +317,7 @@
          <string>Voir mes succès</string>
         </property>
         <property name="icon">
-         <iconset resource="resource.qrc">
+         <iconset>
           <normaloff>:/image/success.png</normaloff>:/image/success.png</iconset>
         </property>
        </widget>
