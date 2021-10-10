@@ -10,8 +10,8 @@ public:
     utilisateur();
     utilisateur(QString pseudo, QTcpSocket* socket);
     utilisateur(QTcpSocket* socket);
-    void editpsedo(QString newpsedo);
-    void editvertion(QString newvertion);
+    void editpseudo(QString newpseudo);
+    void editversion(QString newvertion);
     void setmessageSize(quint16 size);
     QTcpSocket* getSocket();
     quint16 getmessageSize();

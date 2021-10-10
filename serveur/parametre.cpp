@@ -9,7 +9,7 @@ parametre::parametre(QList<QMap<QString,QString>> &ref,QWidget *parent) :
     setWindowFlags(windowFlags() & ~Qt::WindowContextHelpButtonHint);
     remouveFile remouveFiles(ref,nullptr);
     ui->setupUi(this);
-    settings = new QSettings("ananta system","tchat 4.1",this);
+    settings = new QSettings("Ananta System","Tchat 5.0",this);
     ui->checkBox_3->setChecked(settings->value("settings/SaveMessage").toBool());
     ui->checkBox_2->setChecked(settings->value("settings/visualNotification").toBool());
     ui->checkBox->setChecked(settings->value("settings/SoundNotification").toBool());
@@ -35,8 +35,8 @@ QPalette parametre::starttheme(){
        return whitemode();
    }else{
        return whitemode();
-       QMessageBox::warning(this,tr("erreur de lecture"),tr("il est imposible de lire la couleur par defaut. elle est donc par defaut a blanc"));
-       on_comboBox_3_activated(tr("blanc","atention meme chose que dans l'ui la combo box de coulleur"));
+       QMessageBox::warning(this,tr("Erreur de lecture"),tr("Il est impossible de lire la couleur par défaut. Elle est donc définit sur blanc"));
+       on_comboBox_3_activated(tr("Blanc","Attention même chose que dans l'ui la combo box de couleur"));
    }
 
 }
@@ -98,12 +98,12 @@ void parametre::on_comboBox_2_activated(const QString &arg1)
 }
 void parametre::on_comboBox_3_activated(const QString &arg1)
 {
-    if(arg1==tr("blanc","atention meme chose que dans l'ui la combo box de coulleur")){
+    if(arg1==tr("Blanc","Attention même chose que dans l'ui la combo box de couleur")){
         whitemode();
-    }else if(arg1==tr("noir","atention meme chose que dans l'ui la combo box de coulleur")){
+    }else if(arg1==tr("Noir","Attention même chose que dans l'ui la combo box de couleur")){
         darkmode();
     }else{
-        QMessageBox::warning(this,tr("couleur non trouver"),tr("atention cette couleur n'existe pas dans les version actuelle du tchat"));
+        QMessageBox::warning(this,tr("Couleur non trouvée"),tr("Attention cette couleur n'existe pas dans la version actuelle du tchat"));
         return;
     }
     settings->setValue("settings/color",arg1);
@@ -111,17 +111,17 @@ void parametre::on_comboBox_3_activated(const QString &arg1)
 void parametre::on_comboBox_activated(const QString &arg1)
 {
     {
-        if(arg1==tr("selectioner une musique","atention meme chose que dans l'ui la combo box de selection de musique")){
+        if(arg1==tr("Personnalisée","Attention même chose que dans l'ui la combo box de sélection de musique")){
             //path = reponse of message box
-            settings->setValue("settings/path",QFileDialog::getOpenFileName(this, tr("charger une musique"), nullptr , tr("fichier audio (*.MP3 *.WAV)")));
+            settings->setValue("settings/path",QFileDialog::getOpenFileName(this, tr("Charger une musique"), nullptr , tr("fichier audio (*.MP3 *.WAV)")));
             if(settings->value("settings/path")==""){
                 settings->setValue("settings/path",":/sound/notifdefault.wav");
-                QMessageBox::warning(this,tr("erreur de chemin"),tr("atention le chemin de fichier et inutilisablepassage en musique par default"));
+                QMessageBox::warning(this,tr("Erreur de chemin"),tr("Attention le chemin de fichier et inutilisable, passage en musique par défaut"));
 
             }
-        }else if(arg1==tr("blup blup","atention meme chose que dans l'ui la combo box de selection de musique")){
+        }else if(arg1==tr("Blup Blup","Attention même chose que dans l'ui la combo box de sélection de musique")){
             settings->setValue("sound/path",":/sound/Sonnerie_Ananta.wav");
-        }else if(arg1==tr("son par default","atention meme chose que dans l'ui la combo box de selection de musique")){
+        }else if(arg1==tr("Sonnerie par défaut","Attention même chose que dans l'ui la combo box de sélection de musique")){
             settings->setValue("sound/path",":/sound/notifdefault.wav");
         }
     }
@@ -133,28 +133,28 @@ void parametre::on_deletbuton_clicked()
     if (reponse == QMessageBox::Yes)
     {
         if (remove("chat.ants")){
-            QMessageBox::information(this,tr("supression resi"),tr("la spression a été un succès)"));
+            QMessageBox::information(this,tr("Supression réussi"),tr("La supression a été un effectuée)"));
         }else{
-             QMessageBox::information(this,tr("supression loupé"),tr("la spression a été un echeque pour une raison indefini"));
+             QMessageBox::information(this,tr("Supression raté"),tr("La supression a échouée pour une raison indéfini"));
         }
     }*/
 }
 void parametre::on_site_clicked()
 {
-    if(!QDesktopServices::openUrl(QUrl("anantasystem.com"))){
-        QMessageBox::information(this,tr("erreur a louverture du lien"),tr("le lien ne veut pas souvrir le probleme vien de votre navigateur par default taper anantasystem.com dans votre navigateur et faite nous un raport de bug sur le discord"));
+    if(!QDesktopServices::openUrl(QUrl("https://anantasystem.com"))){
+        QMessageBox::information(this,tr("Erreur a l'ouverture du lien"),tr("Le lien ne veut pas s'ouvrir le probleme vient de votre navigateur.Veuillez aller sur anantasystem.com et faites-nous un rapport de bug sur le Discord"));
     }
 }
 void parametre::on_discord_clicked()
 {
-    if(!QDesktopServices::openUrl(QUrl("anantasystem.com/discord.html"))){
-        QMessageBox::information(this,tr("erreur a louverture du lien"),tr("le lien ne veut pas souvrir le probleme vien de votre navigateur par default taper anantasystem.com/discord.html dans votre navigateur et faite nous un raport de bug sur le discord"));
+    if(!QDesktopServices::openUrl(QUrl("https://anantasystem.com/discord.html"))){
+        QMessageBox::information(this,tr("Erreur a l'ouverture du lien"),tr("Le lien ne veut pas s'ouvrir le probleme vient de votre navigateur. Veuillez aller sur anantasystem.com et faites-nous un rapport de bug sur le Discord"));
     }
 }
 void parametre::on_tweter_clicked()
 {
-    if(!QDesktopServices::openUrl(QUrl("anantasystem.com/twitter.html"))){
-        QMessageBox::information(this,tr("erreur a louverture du lien"),tr("le lien ne veut pas souvrir le probleme vien de votre navigateur par default taper anantasystem.com/twitter.html dans votre navigateur et faite nous un raport de bug sur le discord"));
+    if(!QDesktopServices::openUrl(QUrl("https://anantasystem.com/twitter.html"))){
+        QMessageBox::information(this,tr("Erreur a l'ouverture du lien"),tr("Le lien ne veut pas s'ouvrir le probleme vient de votre navigateur. Veuillez aller sur anantasystem.com et faites-nous un rapport de bug sur le Discord"));
     }
 }
 
@@ -165,7 +165,7 @@ void parametre::on_checkboxmodecondensee_toggled(bool checked)
     }else if (!checked) {
         settings->setValue("settings/transparency","1.0");
     }else{
-        QMessageBox::warning(this,tr("erreur checkbox"),tr("cette boite de dialogue contien normalenet que deux etat la elle en a troisfaite nous un raport dans le discord"));
+        QMessageBox::warning(this,tr("Erreur checkbox"),tr("Cette boite de dialogue est dans un troisème état inexistant. Veuillez nous faire un rapport de bug dans le Discord"));
     }
 }
 

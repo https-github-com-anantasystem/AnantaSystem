@@ -42,10 +42,10 @@ QString utilisateur::getversion()
 {
     return vertion;
 }
-void utilisateur::editvertion(QString newvertion){
+void utilisateur::editversion(QString newvertion){
     vertion = newvertion;
 }
-void utilisateur::editpsedo(QString newpsedo)
+void utilisateur::editpseudo(QString newpsedo)
 {
     pseudo = newpsedo;
 }

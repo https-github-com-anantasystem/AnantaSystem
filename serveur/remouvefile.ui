@@ -19,7 +19,7 @@
      <item row="0" column="0">
       <widget class="QPushButton" name="delete10message">
        <property name="text">
-        <string>10 message</string>
+        <string>10 messages</string>
        </property>
       </widget>
      </item>
@@ -36,7 +36,7 @@
      <item row="0" column="2">
       <widget class="QPushButton" name="deleteAllMessage">
        <property name="text">
-        <string>tout les message</string>
+        <string>Tout les messages</string>
        </property>
       </widget>
      </item>
@@ -47,7 +47,7 @@
      <item row="2" column="0" colspan="2">
       <widget class="QLabel" name="label_2">
        <property name="text">
-        <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p align=&quot;center&quot;&gt;&lt;span style=&quot; font-size:12pt;&quot;&gt;combien voulez vous en suprimer&lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+        <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p align=&quot;center&quot;&gt;&lt;span style=&quot; font-size:12pt;&quot;&gt;Combien voulez-vous en supprimer&lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
        </property>
       </widget>
      </item>
@@ -72,7 +72,7 @@
        <item>
         <widget class="QLabel" name="TextLabeldisplayingNumberDessage">
          <property name="text">
-          <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p align=&quot;center&quot;&gt;&lt;span style=&quot; font-size:14pt;&quot;&gt;il y a &amp;quot;non defini&amp;quot; message&lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+          <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p align=&quot;center&quot;&gt;&lt;span style=&quot; font-size:14pt;&quot;&gt;Il y a &amp;quot;non définit&amp;quot; message&lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
          </property>
         </widget>
        </item>
@@ -85,7 +85,7 @@
           <string/>
          </property>
          <property name="icon">
-          <iconset resource="resource.qrc">
+          <iconset>
            <normaloff>:/image/Refresh_icon.png</normaloff>:/image/Refresh_icon.png</iconset>
          </property>
          <property name="flat">

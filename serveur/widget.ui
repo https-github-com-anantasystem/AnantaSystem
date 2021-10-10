@@ -23,6 +23,71 @@
   <layout class="QGridLayout" name="gridLayout">
    <item row="0" column="0">
     <widget class="QTextBrowser" name="messagelist">
+     <property name="styleSheet">
+      <string notr="true">/*
+By Wiwok at 30/09/2021
+For Ananta Project
+*/
+
+QToolTip {
+    color: #ffffff;
+    background-color: #2a82da;
+    border: 1px solid white;
+    border-radius: 1px;
+}
+
+Window {
+    background-color: rgb(53, 53, 53);
+}
+
+WindowText {
+    color: white;
+}
+
+Base {
+    background-color: rgb(25, 25, 25)
+}
+
+AlternateBase {
+    background-color: rgb(53, 53, 53);
+}
+
+ToolTipBase,
+ToolTipText {
+    color: white;
+}
+
+Text {
+    color: white;
+}
+
+Button {
+    background-color: rgb(53, 53, 53);
+}
+
+ButtonText {
+    color: white;
+}
+
+BrightText {
+    color: red;
+}
+
+Link {
+    color: rgb(42, 130, 218);
+}
+
+Highlight {
+    background-color: rgb(42, 130, 218);
+}
+
+HighlightedText {
+    color: black;
+}</string>
+     </property>
+     <property name="lineWrapColumnOrWidth">
+      <number>0</number>
+     </property>
      <property name="html">
       <string>&lt;!DOCTYPE HTML PUBLIC &quot;-//W3C//DTD HTML 4.0//EN&quot; &quot;http://www.w3.org/TR/REC-html40/strict.dtd&quot;&gt;
 &lt;html&gt;&lt;head&gt;&lt;meta name=&quot;qrichtext&quot; content=&quot;1&quot; /&gt;&lt;style type=&quot;text/css&quot;&gt;
@@ -69,19 +134,19 @@ p, li { white-space: pre-wrap; }
      <item row="1" column="0">
       <widget class="QLabel" name="label_5">
        <property name="text">
-        <string>connécté a :</string>
+        <string>Adresse:</string>
        </property>
       </widget>
      </item>
      <item row="2" column="0">
       <widget class="QLabel" name="label_4">
        <property name="text">
-        <string>mot de passe</string>
+        <string>Pin:</string>
        </property>
       </widget>
      </item>
      <item row="3" column="0" colspan="2">
-      <widget class="QPushButton" name="parametrebuton">
+      <widget class="QPushButton" name="parametrebutton">
        <property name="maximumSize">
         <size>
          <width>16777215</width>
@@ -89,7 +154,7 @@ p, li { white-space: pre-wrap; }
         </size>
        </property>
        <property name="text">
-        <string>parametre</string>
+        <string>Parametres</string>
        </property>
       </widget>
      </item>
@@ -103,17 +168,17 @@ p, li { white-space: pre-wrap; }
      <item>
       <widget class="QLabel" name="label_psedo">
        <property name="text">
-        <string>psedo</string>
+        <string>Pseudo:</string>
        </property>
       </widget>
      </item>
      <item alignment="Qt::AlignLeft">
-      <widget class="QLineEdit" name="psedo"/>
+      <widget class="QLineEdit" name="pseudo"/>
      </item>
      <item>
       <widget class="QLabel" name="label_message_3">
        <property name="text">
-        <string>message</string>
+        <string>Message:</string>
        </property>
       </widget>
      </item>
@@ -126,7 +191,7 @@ p, li { white-space: pre-wrap; }
         <string notr="true"/>
        </property>
        <property name="text">
-        <string>envoyer</string>
+        <string>Envoyer</string>
        </property>
        <property name="icon">
         <iconset>

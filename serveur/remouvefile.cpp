@@ -9,9 +9,9 @@ remouveFile::remouveFile(QList<QMap<QString, QString>> &ref, QWidget *parent) :
     ui->setupUi(this);
     listeOfMessage =new QList<QMap<QString, QString>>;
     listeOfMessage = &ref;
-    ui->TextLabeldisplayingNumberDessage->setText("<html><head/><body><p align=\"center\"><span style=\" font-size:14pt;\">il y a "+QString::number(listeOfMessage->size())+" message</span></p></body></html>");
+    ui->TextLabeldisplayingNumberDessage->setText("<html><head/><body><p align=\"center\"><span style=\" font-size:14pt;\">Il y a "+QString::number(listeOfMessage->size())+" message(s)</span></p></body></html>");
     ui->deleteNMessage->setMaximum(listeOfMessage->size());
- //   on_deleteAllMessage_clicked();//les autre fonctionaliter sont en test
+ //   on_deleteAllMessage_clicked();//Les autres fonctionnalités sont en test
 }
 remouveFile::~remouveFile()
 {
@@ -21,7 +21,7 @@ remouveFile::~remouveFile()
 void remouveFile::on_delete10message_clicked()
 {
     remouveOnFile(10);
-    ui->TextLabeldisplayingNumberDessage->setText("<html><head/><body><p align=\"center\"><span style=\" font-size:14pt;\">il y a "+QString::number(listeOfMessage->size())+" message</span></p></body></html>");
+    ui->TextLabeldisplayingNumberDessage->setText("<html><head/><body><p align=\"center\"><span style=\" font-size:14pt;\">Il y a "+QString::number(listeOfMessage->size())+" message(s)</span></p></body></html>");
     ui->deleteNMessage->setMaximum(listeOfMessage->size());
 }
 
@@ -29,13 +29,13 @@ void remouveFile::on_delete10message_clicked()
 void remouveFile::on_deleteAllMessage_clicked()
 {
     remouveOnFile(listeOfMessage->size());
-    ui->TextLabeldisplayingNumberDessage->setText("<html><head/><body><p align=\"center\"><span style=\" font-size:14pt;\">il y a "+QString::number(listeOfMessage->size())+" message</span></p></body></html>");
+    ui->TextLabeldisplayingNumberDessage->setText("<html><head/><body><p align=\"center\"><span style=\" font-size:14pt;\">Il y a "+QString::number(listeOfMessage->size())+" message(s)</span></p></body></html>");
     ui->deleteNMessage->setMaximum(listeOfMessage->size());
 }
 void remouveFile::on_deleteNMessage_editingFinished()
 {
     remouveOnFile(ui->deleteNMessage->value());
-    ui->TextLabeldisplayingNumberDessage->setText("<html><head/><body><p align=\"center\"><span style=\" font-size:14pt;\">il y a "+QString::number(listeOfMessage->size())+" message</span></p></body></html>");
+    ui->TextLabeldisplayingNumberDessage->setText("<html><head/><body><p align=\"center\"><span style=\" font-size:14pt;\">Il y a "+QString::number(listeOfMessage->size())+" message(s)</span></p></body></html>");
     ui->deleteNMessage->setMaximum(listeOfMessage->size());
 }
 void remouveFile::remouveOnFile(int NumberOfRemouve){
@@ -50,16 +50,16 @@ void remouveFile::remouveOnFile(int NumberOfRemouve){
     }
     QFile file("chat.dat");
     if (!file.open(QIODevice::WriteOnly)){
-            QMessageBox::critical(this, tr("ERREUR passive"),tr("le fichier ne peut pas etre ouvet merci de retester plus tard"));
+            QMessageBox::critical(this, tr("Erreur passive"),tr("Le fichier ne peut pas être ouvert merci de réssayer plus tard."));
             return;
         }
     QDataStream out(&file);
     out << *listeOfMessage;
-    QMessageBox::critical(this, tr("ERREUR FATAL"),tr("les clients ne peuve pas etre suprimer tentaitve de resupression puis fermeture!"));
+    QMessageBox::critical(this, tr("Erreur Fatal"),tr("Les clients ne peuvent pas être supprimés. Nouvelle tentative puis fermeture!"));
 }
 void remouveFile::on_pushButton_clicked()
 {
-    ui->TextLabeldisplayingNumberDessage->setText("<html><head/><body><p align=\"center\"><span style=\" font-size:14pt;\">il y a "+QString::number(listeOfMessage->size())+" message</span></p></body></html>");
+    ui->TextLabeldisplayingNumberDessage->setText("<html><head/><body><p align=\"center\"><span style=\" font-size:14pt;\">Il y a "+QString::number(listeOfMessage->size())+" message(s)</span></p></body></html>");
     ui->deleteNMessage->setMaximum(listeOfMessage->size());
 }
 
