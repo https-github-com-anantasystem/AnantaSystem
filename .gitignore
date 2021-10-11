@@ -205,3 +205,5 @@ build-serveur-Desktop_Qt_5_14_2_MinGW_64_bit-Debug/ui_succees.h
 build-serveur-Desktop_Qt_5_14_2_MinGW_64_bit-Debug/ui_widget.h
 build-serveur-Desktop_Qt_5_15_1_MinGW_64_bit-Release/userseneepappdatalocaltemptmpanw9qt
 build-serveur-Desktop_Qt_5_15_1_MinGW_64_bit-Release/userseneepappdatalocaltemptmpwbyvsq
+serveur/serveur.pro.user
+*.user

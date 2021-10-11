@@ -7,7 +7,7 @@ Widget::Widget(QWidget *parent)
     ui(new Ui::Widget)
 {
     parametre parametres(this);
-    settings = new QSettings("ananta system","tchat 4.1",this);
+    settings = new QSettings("ananta system","tchat",this);
     if(!settings->contains("succes/succes")){
         settings->setValue("succes/succes",true);
     }if(!settings->contains("succes/nbmessage")){
@@ -38,7 +38,7 @@ Widget::Widget(QWidget *parent)
         settings->setValue("succes/server/nbserveur", 0);
     }
     ui->setupUi(this);
-   version = "4.3.0";
+   version = "5.1";
    NbOfMessage = 0;
    nbuser=0;
    startTrayIcon();
@@ -46,7 +46,7 @@ Widget::Widget(QWidget *parent)
    QString name = qgetenv("USER");
    if (name.isEmpty())
        name = qgetenv("USERNAME");
-   ui->psedo->setText(name);
+   ui->pseudo->setText(name);
 
    socket = new QTcpSocket; //serveur
    connect(socket, &QTcpSocket::readyRead, this ,&Widget::client_datareceived);

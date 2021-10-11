@@ -7,7 +7,7 @@ Widget::Widget(QWidget *parent)
     ui(new Ui::Widget)
 {
     parametre parametres(saveMessage,this);
-    settings = new QSettings("Ananta System","Tchat 5.0",this);
+    settings = new QSettings("Ananta System","Tchat",this);
     if(!settings->contains("succes/succes")){
         settings->setValue("succes/succes",true);
     }if(!settings->contains("succes/nbmessage")){
@@ -46,7 +46,7 @@ Widget::Widget(QWidget *parent)
    QString name = qgetenv("USER");
    if (name.isEmpty())
        name = qgetenv("USERNAME");
-   ui->pseudo->setText(name);
+   ui->psedo->setText(name);
 
    socket = new QTcpSocket; //serveur
    connect(socket, &QTcpSocket::readyRead, this ,&Widget::client_datareceived);

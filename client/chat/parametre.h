@@ -24,7 +24,6 @@ class parametre : public QDialog
     Q_OBJECT
 public:
     QSettings* settings;
-    QSettings* colors;
     explicit parametre(QWidget *parent = nullptr);
     ~parametre();
 public slots:

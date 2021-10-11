@@ -7,10 +7,8 @@ parametre::parametre(QWidget *parent) :
 {
     setWindowFlags(windowFlags() & ~Qt::WindowContextHelpButtonHint);
     ui->setupUi(this);
-    colors = new QSettings("color.ini",QSettings::IniFormat);
-    colors->setValue("test","test.qss");
     succes = new sucees(this);
-    settings = new QSettings("ananta system","tchat 4.1",this);
+    settings = new QSettings("ananta system","tchat",this);
     ui->checkBox_2->setChecked(settings->value("settings/visualNotification").toBool());
     ui->checkBox->setChecked(settings->value("settings/SoundNotification").toBool());
     ui->setcollor->setCurrentText(settings->value("settings/color").toString());
@@ -27,7 +25,6 @@ parametre::parametre(QWidget *parent) :
 parametre::~parametre()
 {
     delete ui;
-    delete colors;
     delete succes;
 }
 QPalette parametre::starttheme(){

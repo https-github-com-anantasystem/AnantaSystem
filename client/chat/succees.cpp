@@ -7,7 +7,7 @@ sucees::sucees(QWidget *parent) :
 {
     ui->setupUi(this);
     setWindowFlags(windowFlags() & ~Qt::WindowContextHelpButtonHint);
-    settings = new QSettings("ananta system","tchat 4.1",this);
+    settings = new QSettings("ananta system","tchat",this);
     ui->saveNbMessage->setChecked(settings->value("succes/succes").toBool());
     ui->nbmessage->setText("le monbre de tes message :"+QString::number(settings->value("succes/nbmessage").toInt()));
     if(settings->value("succes/nbmessage").toInt()<0&&settings->value("succes/succes").toBool()){
