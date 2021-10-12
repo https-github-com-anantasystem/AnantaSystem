@@ -21,6 +21,9 @@ utilisateur::utilisateur(QString pseudo, QTcpSocket* socket)
     messageSize = 0;
     vertion = "0";
 }
+utilisateur::~utilisateur(){
+    delete socket;
+}
 QTcpSocket* utilisateur::getSocket()
 {
     return socket;
@@ -57,7 +60,13 @@ bool utilisateur::isconnecteed()
         return true;
     }
 }
-utilisateur::~utilisateur()
-{
-    socket->deleteLater();
+QString utilisateur::issafe(QString psedo, QString version){
+    if((pseudo!="anonymous"&&pseudo!="")&&(vertion=="5.1")){
+        if(psedo==pseudo&&version==vertion){
+
+        }else{
+
+        }
+    }
 }
+

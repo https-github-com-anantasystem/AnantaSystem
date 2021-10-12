@@ -46,7 +46,7 @@ Widget::Widget(QWidget *parent)
    QString name = qgetenv("USER");
    if (name.isEmpty())
        name = qgetenv("USERNAME");
-   ui->psedo->setText(name);
+   ui->pseudo->setText(name);
 
    socket = new QTcpSocket; //serveur
    connect(socket, &QTcpSocket::readyRead, this ,&Widget::client_datareceived);

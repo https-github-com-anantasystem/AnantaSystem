@@ -7,7 +7,7 @@ sucees::sucees(QWidget *parent) :
 {
     ui->setupUi(this);
     setWindowFlags(windowFlags() & ~Qt::WindowContextHelpButtonHint);
-    settings = new QSettings("Ananta System","Tchat 5.0",this);
+    settings = new QSettings("Ananta System","Tchat",this);
     ui->saveNbMessage->setChecked(settings->value("succes/succes").toBool());
     ui->nbmessage->setText("Nombre de messages envoyés :"+QString::number(settings->value("succes/nbmessage").toInt()));
     if(settings->value("succes/nbmessage").toInt()<0&&settings->value("succes/succes").toBool()){

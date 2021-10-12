@@ -9,7 +9,7 @@ parametre::parametre(QList<QMap<QString,QString>> &ref,QWidget *parent) :
     setWindowFlags(windowFlags() & ~Qt::WindowContextHelpButtonHint);
     remouveFile remouveFiles(ref,nullptr);
     ui->setupUi(this);
-    settings = new QSettings("Ananta System","Tchat 5.0",this);
+    settings = new QSettings("Ananta System","Tchat",this);
     ui->checkBox_3->setChecked(settings->value("settings/SaveMessage").toBool());
     ui->checkBox_2->setChecked(settings->value("settings/visualNotification").toBool());
     ui->checkBox->setChecked(settings->value("settings/SoundNotification").toBool());
