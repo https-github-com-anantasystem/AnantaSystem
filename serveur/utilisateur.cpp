@@ -60,13 +60,15 @@ bool utilisateur::isconnecteed()
         return true;
     }
 }
-QString utilisateur::issafe(QString psedo, QString version){
-    if((pseudo!="anonymous"&&pseudo!="")&&(vertion=="5.1")){
+QString utilisateur::safe(QString psedo, QString version){
+    if((pseudo!="anonymous"&&pseudo!="")&&(vertion=="5.0")){
         if(psedo==pseudo&&version==vertion){
-
+            return "high";
         }else{
-
+            return "medium";
         }
+    }else{
+        return "low";
     }
 }
 

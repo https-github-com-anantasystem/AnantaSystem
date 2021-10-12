@@ -219,6 +219,21 @@ void Widget::server_sentmessageto(const QString &message, int NoUtilisateur)
     sendmap["shippingyears"]=QDateTime::currentDateTime().toString("yyyy");
     server_sentmessageto(sendmap,NoUtilisateur);
 }
+void Widget::server_sentmessageto(const QString &message,QString pseudo, int NoUtilisateur)
+{
+    QMap<QString,QString> sendmap;
+    sendmap["type"]="msg";
+    sendmap["message"]=message;
+    sendmap["pseudo"]=pseudo;
+    sendmap["secondofsending"]=QDateTime::currentDateTime().toString("ss");;
+    sendmap["minuteofsending"]=QDateTime::currentDateTime().toString("mm");;
+    sendmap["sendingtime"]=QDateTime::currentDateTime().toString("hh");
+    sendmap["sendingdate"]=QDateTime::currentDateTime().toString("d");
+    sendmap["shippingday"]=QDateTime::currentDateTime().toString("dddd");
+    sendmap["shippingmonth"]=QDateTime::currentDateTime().toString("MMMM");
+    sendmap["shippingyears"]=QDateTime::currentDateTime().toString("yyyy");
+    server_sentmessageto(sendmap,NoUtilisateur);
+}
 void Widget::server_sentcomandto(const QString &message ,int usernaime)
 {
     QMap<QString,QString> sendmap;
@@ -316,39 +331,25 @@ void Widget::server_datareceived()
         if(message["type"]=="cmd"){
             server_processcomand(message,index);
         }else if(message["type"]=="msg"){
-            //if(sendingClient->getpseudo()==""||sendingClient->getpseudo()=="anonymous"||(sendingClient->getversion()!="4.1.0 beta 1" && sendingClient->getversion()!="4.1.0 beta 2")){
-                /*if(sendingClient->getpseudo()=="anonymous"){
-                    server_sentmessageto(server_generatemesage(tr("erreur vous ne pouvez pas envoyer de message au serveur pour le moment le serveur nautorise pas le pseudo: ")+sendingClient->getpseudo(),tr("serveur bot")),index);
-                    server_sentcomandto("pseudo?",index);
-                    return;
-                }else if(sendingClient->getpseudo()==""){
-                    server_sentmessageto(server_generatemesage(tr("erreur vous ne pouvez pas envoyer de message au serveur pour le moment le serveur nautorise pas les pseudo vide"),tr("serveur bot")),index);
-                    server_sentcomandto("pseudo?",index);
-                    return;
-                }else if(sendingClient->getversion()!="4.1.0"){
-                    server_sentmessageto(server_generatemesage(tr("erreur vous ne pouvez pas envoyer de message. le serveur a pas une version du tchat compatible avec la vautre"),tr("serveur bot")),index);
-                    server_sentcomandto("version?",index);
-                    return;
-                }else{
-                    server_sentmessageto(tr("erreur indefini sur lidantfication de ton satut info de debug : pseudo: ")+sendingClient->getpseudo()+tr(" version ")+sendingClient->getversion(),index);
-                    return;
-                }
-            }else{*/
+            if(sendingClient->safe(message["pseudo"],message["version"])=="high"){//si la securitée est haute
                 server_sentmessagetoall(message);
                 if(settings->value("settings/SaveMessage").toBool()){
                     server_writetofile(message);
                 }
-            }else if(message["type"]=="connection"){
-                server_connect(message, index);
+            }else if(sendingClient->safe(message["pseudo"],message["version"])=="medium"){
+                server_sentmessageto(tr("erreur les metadonnée ne coresponde pas avec celle du serveur"),tr("Serveur Tchat Bot"),index);
+            }else if(sendingClient->safe(message["pseudo"],message["version"])=="low"){
+                server_sentmessageto(tr("erreur votre n° de vertion ou votre identifient est incorect"),tr("Serveur Tchat Bot"),index);
             }
-
-        //}else{
-            //QMessageBox::critical(this, tr("erreur"), tr("un paquet de comande a été recu mais la l'idantificateur ")+ message["type"] +tr("est incompri."));
-            //server_displayMessagelist(server_generatemesage(tr("un paquet de comande a été recu mais la l'idantificateur ")+ message["type"] +tr("est incompri."),tr("serveur bot")));
-        }
+        }else if(message["type"]=="connection"){
+            server_connect(message, index);
+        }else{
+        QMessageBox::critical(this, tr("erreur"), tr("un paquet de comande a été recu mais la l'idantificateur ")+ message["type"] +tr("est incompri."));
+        server_displayMessagelist(server_generatemesage(tr("un paquet de comande a été recu mais la l'idantificateur ")+ message["type"] +tr("est incompri."),tr("serveur bot")));
+    }
         sendingClient->setmessageSize(static_cast<quint16>(0));
     }
-//}
+}
 void Widget::server_disconnectclients()
 {
     QTcpSocket* disconnectingClientSocket = qobject_cast<QTcpSocket*>(sender());
@@ -769,6 +770,7 @@ void Widget::client_sentdatamap(const QString type){
     QMap<QString,QString> sendmap;
     sendmap["type"]=type;
     sendmap["pseudo"]=client_returnpseudo();
+    sendmap["version"]=version;
     sendmap["secondofsending"]=QDateTime::currentDateTime().toString("ss");;
     sendmap["minuteofsending"]=QDateTime::currentDateTime().toString("mm");;
     sendmap["sendingtime"]=QDateTime::currentDateTime().toString("hh");
@@ -784,6 +786,7 @@ void Widget::client_sentdatamap(const QString type, QString message, QString pse
     sendmap["type"]=type;
     sendmap["message"]=message;
     sendmap["pseudo"]=pseudo;
+    sendmap["version"]=version;
     sendmap["secondofsending"]=seconde.toString();
     sendmap["minuteofsending"]=minute.toString();
     sendmap["sendingtime"]=heures.toString();
@@ -796,6 +799,7 @@ void Widget::client_sentdatamap(const QString type, QString message, QString pse
     sendmap["type"]=type;
     sendmap["message"]=message;
     sendmap["pseudo"]=pseudo;
+    sendmap["version"]=version;
     sendmap["secondofsending"]=QDateTime::currentDateTime().toString("ss");;
     sendmap["minuteofsending"]=QDateTime::currentDateTime().toString("mm");;
     sendmap["sendingtime"]=QDateTime::currentDateTime().toString("hh");
@@ -810,6 +814,7 @@ void Widget::client_sentdatamap(const QString type, QString message){
     sendmap["type"]=type;
     sendmap["message"]=message;
     sendmap["pseudo"]=client_returnpseudo();
+    sendmap["version"]=version;
     sendmap["secondofsending"]=QDateTime::currentDateTime().toString("ss");;
     sendmap["minuteofsending"]=QDateTime::currentDateTime().toString("mm");;
     sendmap["sendingtime"]=QDateTime::currentDateTime().toString("hh");
@@ -824,6 +829,7 @@ void Widget::client_sentcommande(const QString commande){
     sendmap["type"]="cmd";
     sendmap["message"]=commande;
     sendmap["pseudo"]=client_returnpseudo();
+    sendmap["version"]=version;
     sendmap["secondofsending"]=QDateTime::currentDateTime().toString("ss");;
     sendmap["minuteofsending"]=QDateTime::currentDateTime().toString("mm");;
     sendmap["sendingtime"]=QDateTime::currentDateTime().toString("hh");
@@ -839,6 +845,7 @@ void Widget::client_sentcommande(const QString commande, QString arg){
     sendmap["message"]=commande;
     sendmap["arg"]=arg;
     sendmap["pseudo"]=client_returnpseudo();
+    sendmap["version"]=version;
     sendmap["secondofsending"]=QDateTime::currentDateTime().toString("ss");;
     sendmap["minuteofsending"]=QDateTime::currentDateTime().toString("m");;
     sendmap["sendingtime"]=QDateTime::currentDateTime().toString("hh");

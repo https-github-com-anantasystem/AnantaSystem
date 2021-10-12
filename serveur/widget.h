@@ -62,6 +62,7 @@ private slots:
     void server_sentmessagetoall(const QMap<QString, QString> &message);
     void server_sentmessageto(const QMap<QString, QString> &messag, int NoUtilisateure);
     void server_sentmessagetoall(const QString type, QString message, QString pseudo);
+    void server_sentmessageto(const QString &message , QString pseudo, int usernaime);
     void server_sentmessageto(const QString &message ,int usernaime);
     void server_sentcomandto(const QString &message ,int usernaime);
     void server_sentcomandto(const QString &message,QString arg ,int usernaime);
