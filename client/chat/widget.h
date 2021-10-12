@@ -69,7 +69,6 @@ private:
     void client_desconnect();
     void client_socketerror(QAbstractSocket::SocketError error);
     void client_sentdatamap(const QMap<QString,QString> sendmap);
-    void client_sentdatamap(const QString type);
     void client_sentdatamap(const QString type, QString message, QString psedo, QDateTime seconde, QDateTime minute, QDateTime heurs, QDateTime NoJour, QDate jour);
     void client_sentdatamap(const QString type, QString message, QString psedo);
     void client_sentdatamap(const QString type, QString message);

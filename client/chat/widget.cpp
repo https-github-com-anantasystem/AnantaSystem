@@ -46,7 +46,7 @@ Widget::Widget(QWidget *parent)
    QString name = qgetenv("USER");
    if (name.isEmpty())
        name = qgetenv("USERNAME");
-   ui->pseudo->setText(name);
+   ui->psedo->setText(name);
 
    socket = new QTcpSocket; //serveur
    connect(socket, &QTcpSocket::readyRead, this ,&Widget::client_datareceived);
@@ -292,7 +292,7 @@ void Widget::client_connectto(QString ip, int port)
 void Widget::client_connected()
 {
     QString textmessage = client_generatemesage(tr("conexion reusi"), tr("chat bot"));
-    client_sentdatamap("connection");
+    client_sentdatamap("connection","Serveur Tchat Bot");
     client_displayMessagelist(textmessage);
     client_changestateconnectbuton(true);
     client_displayconnectlabel(tr("<font color=\"#70AD47\">connecté</font>"));
@@ -426,37 +426,25 @@ void Widget::client_sentdatamap(const QMap<QString,QString> sendmap)
     out << (quint16) (paquet.size() - sizeof(quint16));
     socket->write(paquet); // On envoie le paquet
 }
-void Widget::client_sentdatamap(const QString type){
-    QMap<QString,QString> sendmap;
-    sendmap["type"]=type;
-    sendmap["psedo"]=client_returnpsedo();
-    sendmap["secondofsending"]=QDateTime::currentDateTime().toString("ss");;
-    sendmap["minuteofsending"]=QDateTime::currentDateTime().toString("mm");;
-    sendmap["sendingtime"]=QDateTime::currentDateTime().toString("hh");
-    sendmap["sendingdate"]=QDateTime::currentDateTime().toString("d");
-    sendmap["shippingday"]=QDateTime::currentDateTime().toString("dddd");
-    sendmap["shippingmonth"]=QDateTime::currentDateTime().toString("MMMM");
-    sendmap["shippingyears"]=QDateTime::currentDateTime().toString("yyyy");
-    client_sentdatamap(sendmap);
-
-}
-void Widget::client_sentdatamap(const QString type, QString message, QString psedo, QDateTime seconde, QDateTime minute, QDateTime heurs, QDateTime NoJour, QDate jour){
+void Widget::client_sentdatamap(const QString type, QString message, QString pseudo, QDateTime seconde, QDateTime minute, QDateTime heures, QDateTime NoJour, QDate jour){
     QMap<QString,QString> sendmap;
     sendmap["type"]=type;
     sendmap["message"]=message;
-    sendmap["psedo"]=psedo;
+    sendmap["pseudo"]=pseudo;
+    sendmap["version"]=version;
     sendmap["secondofsending"]=seconde.toString();
     sendmap["minuteofsending"]=minute.toString();
-    sendmap["sendingtime"]=heurs.toString();
+    sendmap["sendingtime"]=heures.toString();
     sendmap["sendingdate"]=NoJour.toString();
     sendmap["shippingday"]=jour.toString();
     client_sentdatamap(sendmap);
 }
-void Widget::client_sentdatamap(const QString type, QString message, QString psedo){
+void Widget::client_sentdatamap(const QString type, QString message, QString pseudo){
     QMap<QString,QString> sendmap;
     sendmap["type"]=type;
     sendmap["message"]=message;
-    sendmap["psedo"]=psedo;
+    sendmap["pseudo"]=pseudo;
+    sendmap["version"]=version;
     sendmap["secondofsending"]=QDateTime::currentDateTime().toString("ss");;
     sendmap["minuteofsending"]=QDateTime::currentDateTime().toString("mm");;
     sendmap["sendingtime"]=QDateTime::currentDateTime().toString("hh");
@@ -470,7 +458,8 @@ void Widget::client_sentdatamap(const QString type, QString message){
     QMap<QString,QString> sendmap;
     sendmap["type"]=type;
     sendmap["message"]=message;
-    sendmap["psedo"]=client_returnpsedo();
+    sendmap["pseudo"]=client_returnpsedo();
+    sendmap["version"]=version;
     sendmap["secondofsending"]=QDateTime::currentDateTime().toString("ss");;
     sendmap["minuteofsending"]=QDateTime::currentDateTime().toString("mm");;
     sendmap["sendingtime"]=QDateTime::currentDateTime().toString("hh");
@@ -480,11 +469,12 @@ void Widget::client_sentdatamap(const QString type, QString message){
     sendmap["shippingyears"]=QDateTime::currentDateTime().toString("yyyy");
     client_sentdatamap(sendmap);
 }
-void Widget::client_sentcommende(const QString commende){
+void Widget::client_sentcommende(const QString commande){
     QMap<QString,QString> sendmap;
     sendmap["type"]="cmd";
-    sendmap["message"]=commende;
-    sendmap["psedo"]=client_returnpsedo();
+    sendmap["message"]=commande;
+    sendmap["pseudo"]=client_returnpsedo();
+    sendmap["version"]=version;
     sendmap["secondofsending"]=QDateTime::currentDateTime().toString("ss");;
     sendmap["minuteofsending"]=QDateTime::currentDateTime().toString("mm");;
     sendmap["sendingtime"]=QDateTime::currentDateTime().toString("hh");
@@ -494,12 +484,13 @@ void Widget::client_sentcommende(const QString commende){
     sendmap["shippingyears"]=QDateTime::currentDateTime().toString("yyyy");
     client_sentdatamap(sendmap);
 }
-void Widget::client_sentcommende(const QString commende, QString arg){
+void Widget::client_sentcommende(const QString commande, QString arg){
     QMap<QString,QString> sendmap;
     sendmap["type"]="cmd";
-    sendmap["message"]=commende;
+    sendmap["message"]=commande;
     sendmap["arg"]=arg;
-    sendmap["psedo"]=client_returnpsedo();
+    sendmap["pseudo"]=client_returnpsedo();
+    sendmap["version"]=version;
     sendmap["secondofsending"]=QDateTime::currentDateTime().toString("ss");;
     sendmap["minuteofsending"]=QDateTime::currentDateTime().toString("m");;
     sendmap["sendingtime"]=QDateTime::currentDateTime().toString("hh");
