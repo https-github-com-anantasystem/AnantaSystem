@@ -1,13 +1,11 @@
 #include "parametre.h"
 #include "ui_parametre.h"
 
-parametre::parametre(QList<QMap<QString,QString>> &ref,QWidget *parent) :
+parametre::parametre(QList<QMap<QString, QString> > &ref, QWidget *parent) :
    QDialog(parent),
-   remouveFiles(ref,nullptr),
    ui(new Ui::parametre)
 {
     setWindowFlags(windowFlags() & ~Qt::WindowContextHelpButtonHint);
-    remouveFile remouveFiles(ref,nullptr);
     ui->setupUi(this);
     settings = new QSettings("Ananta System","Tchat",this);
     ui->checkBox_3->setChecked(settings->value("settings/SaveMessage").toBool());
@@ -128,8 +126,7 @@ void parametre::on_comboBox_activated(const QString &arg1)
 }
 void parametre::on_deletbuton_clicked()
 {
-    remouveFiles.show();
-    /*int reponse = QMessageBox::warning(this,tr("atention supression"),tr("atention le fichier va etre definitivement suprimer il ne sera pas deplacer dans la corbeille voulez vous continuer"), QMessageBox ::Yes | QMessageBox::No);
+    int reponse = QMessageBox::warning(this,tr("atention supression"),tr("atention le fichier va etre definitivement suprimer il ne sera pas deplacer dans la corbeille voulez vous continuer"), QMessageBox ::Yes | QMessageBox::No);
     if (reponse == QMessageBox::Yes)
     {
         if (remove("chat.ants")){
@@ -137,7 +134,7 @@ void parametre::on_deletbuton_clicked()
         }else{
              QMessageBox::information(this,tr("Supression raté"),tr("La supression a échouée pour une raison indéfini"));
         }
-    }*/
+    }
 }
 void parametre::on_site_clicked()
 {

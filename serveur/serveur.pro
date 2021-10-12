@@ -11,21 +11,18 @@ CONFIG += c++11
 SOURCES += \
     main.cpp \
     parametre.cpp \
-    remouvefile.cpp \
     succees.cpp \
     utilisateur.cpp \
     widget.cpp
 
 HEADERS += \
     parametre.h \
-    remouvefile.h \
     succees.h \
     utilisateur.h \
     widget.h
 
 FORMS += \
     parametre.ui \
-    remouvefile.ui \
     succees.ui \
     widget.ui
 

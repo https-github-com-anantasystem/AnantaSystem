@@ -6,7 +6,9 @@ Widget::Widget(QWidget *parent)
     parametres(saveMessage,this),
     ui(new Ui::Widget)
 {
-    parametre parametres(saveMessage,this);
+    ui->setupUi(this);
+    startserveur();// j'ai peur que le serveur se démmare trop tard
+    server_recoverallfile();
     settings = new QSettings("Ananta System","Tchat",this);
     if(!settings->contains("succes/succes")){
         settings->setValue("succes/succes",true);
@@ -37,10 +39,8 @@ Widget::Widget(QWidget *parent)
     }if(!settings->contains("settings/high")){
         settings->setValue("settings/level of secure","high");
     }
-    ui->setupUi(this);
-    startserveur();// j'ai peur que le serveur se démmare trop tard
    version = "5.0";
-   server_recoverallfile();
+   parametre parametres(saveMessage,this);
    NbOfMessage = 0;
    nbuser=0;
    startTrayIcon();

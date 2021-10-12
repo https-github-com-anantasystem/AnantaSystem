@@ -9,7 +9,6 @@
 #include <QFileDialog>
 #include <QDesktopServices>
 #include <QSettings>
-#include "remouvefile.h"
 #include "succees.h"
 
 namespace Ui {
@@ -18,7 +17,6 @@ class parametre;
 
 class parametre : public QDialog
 {
-    remouveFile remouveFiles;
     sucees *succes;
     Q_OBJECT
 public:
