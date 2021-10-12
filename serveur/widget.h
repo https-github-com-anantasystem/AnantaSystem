@@ -38,6 +38,7 @@ public:
     ~Widget();
 
 private:
+    QString levelOfSecure;
     QSettings* settings;
     Ui::Widget *ui;
     QString version;

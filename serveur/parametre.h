@@ -44,6 +44,7 @@ private slots:
     void on_tweter_clicked();
     void on_checkboxmodecondensee_toggled(bool checked);
     void on_pushButton_3_clicked();
+    void on_comboBox_4_currentIndexChanged(int index);
 };
 
 #endif // PARAMETRE_H

@@ -175,3 +175,15 @@ void parametre::on_pushButton_3_clicked()
     succes->show();
 }
 
+void parametre::on_comboBox_4_currentIndexChanged(int index)
+{
+    if(index==0){
+        settings->setValue("settings/level of secure","high");
+    }else if(index==1){
+        settings->setValue("settings/level of secure","medium");
+    }else if(index==2){
+        settings->setValue("settings/level of secure","low");
+    }
+    QMessageBox::information(this,tr("redemarage requis"),tr("il faut redemarer laplication pour apliquer les changement"));
+}
+

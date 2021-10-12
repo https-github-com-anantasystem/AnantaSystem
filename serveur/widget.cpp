@@ -34,6 +34,8 @@ Widget::Widget(QWidget *parent)
         settings->setValue("succes/server/nbserveur", 0);
     }if(!settings->contains("succes/10server")){
         settings->setValue("succes/20server", false);
+    }if(!settings->contains("settings/high")){
+        settings->setValue("settings/level of secure","high");
     }
     ui->setupUi(this);
     startserveur();// j'ai peur que le serveur se démmare trop tard
@@ -58,6 +60,7 @@ Widget::Widget(QWidget *parent)
    client_connectto("127.0.0.1", ui->serveurport->value());
    //Sélection de la couleur du theme
    qApp->setPalette(parametres.starttheme());
+    levelOfSecure=settings->value("settings/level of secure").toString();
 }
 
 Widget::~Widget()
@@ -331,7 +334,7 @@ void Widget::server_datareceived()
         if(message["type"]=="cmd"){
             server_processcomand(message,index);
         }else if(message["type"]=="msg"){
-            if(sendingClient->safe(message["pseudo"],message["version"])=="high"){//si la securitée est haute
+            if(sendingClient->safe(message["pseudo"],message["version"])==levelOfSecure){//si la securitée est a la hoteur choisie
                 server_sentmessagetoall(message);
                 if(settings->value("settings/SaveMessage").toBool()){
                     server_writetofile(message);
