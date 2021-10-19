@@ -175,5 +175,38 @@ p, li { white-space: pre-wrap; }
  <resources>
   <include location="resources.qrc"/>
  </resources>
- <connections/>
+ <connections>
+  <connection>
+   <sender>mesage</sender>
+   <signal>returnPressed()</signal>
+   <receiver>sentbuton</receiver>
+   <slot>click()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>545</x>
+     <y>424</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>647</x>
+     <y>436</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>serveurip</sender>
+   <signal>returnPressed()</signal>
+   <receiver>conectbuton</receiver>
+   <slot>setFocus()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>567</x>
+     <y>24</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>504</x>
+     <y>103</y>
+    </hint>
+   </hints>
+  </connection>
+ </connections>
 </ui>

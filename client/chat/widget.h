@@ -36,8 +36,10 @@ public:
     parametre parametres;
 private slots:
     void on_parametrebuton_2_clicked();
-
     void on_psedo_editingFinished();
+    void on_conectbuton_clicked();
+
+    void on_sentbuton_clicked();
 
 private:
     QSettings* settings;
@@ -58,11 +60,10 @@ private:
     void condesed();
     void helpcondesed();
     //client
+    void autoconnect();
     void client_displayMessagelist(QString message);
     void client_changestateconnectbuton(bool state);
     void client_displayconnectlabel(QString text);
-    void on_conectbuton_clicked();
-    void on_sentbuton_clicked();
     void client_processechatbot(QString command);
     void client_connectto(QString ip, int port);
     void client_connected();

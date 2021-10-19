@@ -52,10 +52,11 @@ Widget::Widget(QWidget *parent)
    connect(socket, &QTcpSocket::readyRead, this ,&Widget::client_datareceived);
    connect(socket, &QTcpSocket::connected,this,&Widget::client_connected);
    connect(socket, &QTcpSocket::disconnected,this,&Widget::client_desconnect);
-   connect(socket, &QTcpSocket::errorOccurred, this, &Widget::client_socketerror);///////////////////////////
+   connect(socket, &QTcpSocket::errorOccurred, this, &Widget::client_socketerror);
    messagesize = 0;
    //conexion
-   client_connectto("127.0.0.1", ui->serveurport->value());
+   ui->psedo->setText(QDir::home().dirName());//on afiche le nom d'utilisateur en psedo par defaut
+   autoconnect();
    //selection de la couleur du theme
 }
 
@@ -63,6 +64,20 @@ Widget::~Widget()
 {
     delete ui;
     delete sticon;
+}
+void Widget::autoconnect(){
+    QFile fichier("conect.temp"); //on ouvre le fichier de preconexion
+    if(fichier.open(QIODevice::ReadOnly | QIODevice::Text))
+    {
+        QTextStream flux(&fichier);
+        ui->serveurip->setText(flux.readLine());
+        ui->serveurport->setValue(flux.readAll().toInt());
+        ui->conectbuton->click();
+    }
+    else
+    {
+        QMessageBox::critical(this, "erreur de lecture de fichier","erreur imposible de lire le fichier de conexion... il faut rentrer les info manullement !");
+    }
 }
 void Widget::startTrayIcon(){
     sticon = new QSystemTrayIcon(this); // on construit notre icône de notification
