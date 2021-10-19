@@ -19,7 +19,7 @@ void startserveur::on_wifi_clicked()
     }
     qApp->quit();
 }
-void startserveur::starclient(){
+/*void startserveur::starclient(){
     socket = new QTcpSocket; //serveur
     connect(socket, &QTcpSocket::readyRead, this ,&startserveur::datareceived);
     connect(socket, &QTcpSocket::connected,this,&startserveur::connected);
@@ -78,4 +78,4 @@ void Widget::processcomand(QMap<QString, QString> commend)
     }else{
         QMessageBox::critical(this, tr("erreur"), tr("un packet de comande a été recu mais la comande est incomprise."));
     }
-}
+}*/

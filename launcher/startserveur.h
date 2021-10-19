@@ -21,8 +21,8 @@ public:
 
 private slots:
     void on_wifi_clicked();
-    void starclient();
-    void datareceived();
+    //void starclient();
+    //void datareceived();
 
 private:
     Ui::startserveur *ui;
