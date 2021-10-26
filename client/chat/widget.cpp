@@ -38,7 +38,7 @@ Widget::Widget(QWidget *parent)
         settings->setValue("succes/server/nbserveur", 0);
     }
     ui->setupUi(this);
-   version = "5.1";
+   version = "5.0";
    NbOfMessage = 0;
    nbuser=0;
    startTrayIcon();
@@ -194,13 +194,13 @@ void Widget::on_sentbuton_clicked()
     QString message = ui->mesage->text(); // si le if prend trop de temps l'utilisateur ne pouras pas modifier son message
     QString msg = message;
     if(message==""){
-        QMessageBox::information(this,tr("erreur pasive | securitée anti DDOS"),tr("vous ne pouvez pas envoyer un message vide"));
+        QMessageBox::information(this,tr("Erreur passive: Securitée anti-DDOS"),tr("Vous ne pouvez pas envoyer un message vide."));
         return;
     }
     if(settings->value("succes/succes").toBool()==true){
         settings->setValue("succes/nbmessage",settings->value("succes/nbmessage").toInt()+1);
     }
-    //supression des widgetule de politesse des point et des majuscule
+    //suppression des widgetule de politesse des point et des majuscule
     message = message.toLower();
     if (message.contains(tr("stp","diminutif de s'il te plait")))
         message = message.remove(tr("stp","diminutif de s'il te plait"));
@@ -217,14 +217,14 @@ void Widget::on_sentbuton_clicked()
     if(message.startsWith("/")){
         message = message.remove("/");
         client_processechatbot(message);
-    }else if(message.startsWith(tr("chat bot"))){
-        message.remove(tr("chat bot"));
+    }else if(message.startsWith(tr("tchat bot"))){
+        message.remove(tr("tchat bot"));
         client_processechatbot(message);
-    }else if(message.startsWith(tr("ananta systeme"))){
-        message.remove(tr("ananta systeme"));
+    }else if(message.startsWith(tr("ananta system"))){
+        message.remove(tr("ananta system"));
         client_processechatbot(message);
-    }else if(message.startsWith(tr("ananta système"))){
-        message.remove(tr("ananta système"));
+    }else if(message.startsWith(tr("ananta system"))){
+        message.remove(tr("ananta system"));
        client_processechatbot(message);
     }else{
         client_sentdatamap("msg",msg);
@@ -238,25 +238,25 @@ void Widget::client_processechatbot(QString command)
    if (command==tr("bonjour")||command==tr("salut")||command==tr("hello")){//posibilier de question
        int random = rand() % 5 + 1;//on fait l'aleatoire
        if(random == 1){
-           ui->messagelist->append(client_generatemesage(tr("bonjour") + ui->psedo->text()+".",tr("chat bot")));
+           ui->messagelist->append(client_generatemesage(tr("Bonjour") + ui->psedo->text()+".",tr("Tchat Bot")));
        }else if(random == 2){
-           ui->messagelist->append(client_generatemesage(tr("salut") + ui->psedo->text()+".",tr("chat bot")));
+           ui->messagelist->append(client_generatemesage(tr("Salut") + ui->psedo->text()+".",tr("Tchat Bot")));
        }else if(random == 3){
-           ui->messagelist->append(client_generatemesage(tr("salut") + ui->psedo->text()+".",tr("chat bot")));
+           ui->messagelist->append(client_generatemesage(tr("Salut🖖") + ui->psedo->text()+".",tr("Tchat Bot")));
        }else if(random == 4){
-           ui->messagelist->append(client_generatemesage(tr("hello") + ui->psedo->text()+".",tr("chat bot")));
+           ui->messagelist->append(client_generatemesage(tr("Hello") + ui->psedo->text()+".",tr("Tchat Bot")));
        }else if(random == 5){
-           ui->messagelist->append(client_generatemesage(tr("hello👋") + ui->psedo->text()+".",tr("chat bot")));
+           ui->messagelist->append(client_generatemesage(tr("Hello👋") + ui->psedo->text()+".",tr("Tchat Bot")));
        }
    }else if (command==tr("comment t'apelle tu")||command==tr("quel est ton nom")){
        int random = rand() % 2 + 1;
        if(random == 1){
-           ui->messagelist->append(client_generatemesage(tr("tu peut mapeller ANANTA SYSTÈME."),tr("chat bot")));
+           ui->messagelist->append(client_generatemesage(tr("Tu peux m'appeller Tchat Bot."),tr("Tchat Bot")));
        }else if(random == 2){
-           ui->messagelist->append(client_generatemesage(tr("tu peut mapeller chat bot."),tr("chat bot")));
+           ui->messagelist->append(client_generatemesage(tr("Tu peux m'appeller Tchat Bot 😊."),tr("Tchat Bot")));
        }
    }else if (command==tr("qui est tu")){
-       ui->messagelist->append(client_generatemesage(tr("je suis le chat bot crée par ananta systeme je suis encors tres inachever."),tr("chat bot")));
+       ui->messagelist->append(client_generatemesage(tr("Je suis le Tchat Bot crée par les développeurs de Ananta System, je suis encore très inachevé."),tr("Tchat Bot")));
    }else if (command=="clear"){
        ui->messagelist->clear();
    }else if (command=="actualise"||command=="update"){
@@ -264,53 +264,51 @@ void Widget::client_processechatbot(QString command)
    }else if (command==tr("merci")){
        int random = rand() % 7 + 1;
        if(random == 1){
-           ui->messagelist->append(client_generatemesage(tr("de rien 😀"),tr("chat bot")));
+           ui->messagelist->append(client_generatemesage(tr("De rien 😀"),tr("Tchat Bot")));
        }else if(random == 2){
-           ui->messagelist->append(client_generatemesage(tr("tout le plaisire et pour moi 😀"),tr("chat bot")));
+           ui->messagelist->append(client_generatemesage(tr("Tout le plaisir est pour moi 😀"),tr("Tchat Bot")));
        }else if(random == 3){
-           ui->messagelist->append(client_generatemesage(tr("tout le plaisire et pour moi!"),tr("chat bot")));
+           ui->messagelist->append(client_generatemesage(tr("Tout le plaisir est pour moi!"),tr("Tchat Bot")));
        }else if(random == 3){
-           ui->messagelist->append(client_generatemesage(tr("de rien !"),tr("chat bot")));
+           ui->messagelist->append(client_generatemesage(tr("De rien !"),tr("Tchat Bot")));
        }else if(random == 4){
-           ui->messagelist->append(client_generatemesage(tr("mais je suis la pour ca bien sur 😀"),tr("chat bot")));
+           ui->messagelist->append(client_generatemesage(tr("Mais je suis là pour ça bien sûr 😀"),tr("Tchat Bot")));
        }else if(random == 5){
-           ui->messagelist->append(client_generatemesage(tr("mais je suis la pour ca bien sur !"),tr("chat bot")));
+           ui->messagelist->append(client_generatemesage(tr("Mais je suis là pour ça bien sûr !"),tr("Tchat Bot")));
        }else if (random == 6){
-            ui->messagelist->append(client_generatemesage(tr("quand tu ne me parle pas je fait que des acion repetitive... recevoir des message te les aficher😥"),tr("chat bot")));
+            ui->messagelist->append(client_generatemesage(tr("Quand tu ne me parle pas je fais que des actions répétitives, recevoir des messages et les afficher😥..."),tr("Tchat Bot")));
        }else if (random == 7){
-            ui->messagelist->append(client_generatemesage(tr("quand tu ne me parle pas je m'enuie 😥"),tr("chat bot")));
+            ui->messagelist->append(client_generatemesage(tr("Quand tu ne me parle pas je m'ennuie 😥"),tr("Tchat Bot")));
    }else if (command==tr("condenses")||command==tr("condense")||command==tr("condense menu")){
        condesed();
     }else if (command==tr("comment condenser la fenetre")||command==tr("comment condenser le menu")||command==tr("compacter la fenetre")){
-       int random = rand() % 3 + 1;
+       int random = rand() % 2 + 1;
        if(random == 1){
-           client_displayMessagelist(client_generatemesage(tr("il sufit de taper la commende /condense", "atension a metre la meme sytax que la ligne de juste au dessu"),tr("chat bot")));
+           client_displayMessagelist(client_generatemesage(tr("Il suffit de taper la commande /condense", "Attention bien taper la même commande!"),tr("Tchat Bot")));
        }else if(random == 2){
-           ui->messagelist->append(client_generatemesage(tr("tu peut allez dans parametre et cliquer sur passer en mode condensé"),tr("chat bot")));
-       }else if(random == 3){
-           ui->messagelist->append(client_generatemesage(tr("il te sufit de faire clique droit sur l'icone dans la bare des tache et cliquer sur passer en mode condensé"),tr("chat bot")));
+           ui->messagelist->append(client_generatemesage(tr("Tu peux faire clique droit sur l'icône en bas à droite dans ta barre des tâches -> Condenser la fenêtre"),tr("Tchat Bot")));
        }
    }
    }else{
-      client_displayMessagelist(client_generatemesage(tr("desolée je n'ai pas compris"),tr("chat bot")));
+      client_displayMessagelist(client_generatemesage(tr("Je suis desolé, mais je n'ai pas compris votre demande, vérifiez l'orthographe."),tr("Tchat Bot")));
   }
 }
 //serveur
 void Widget::client_connectto(QString ip, int port)
 {
-    client_displayMessagelist(client_generatemesage(tr("tentative de connexion en cour"),tr("chat bot")));
+    client_displayMessagelist(client_generatemesage(tr("Tentative de connexion en cours..."),tr("Tchat Bot")));
     client_changestateconnectbuton(false);
     socket->abort();
     socket->connectToHost(ip, port);
-    client_displayconnectlabel(tr("<font color=\"#894B23\">tenetative lancé</font>"));
+    client_displayconnectlabel(tr("<font color=\"#894B23\">Connexion lancée</font>"));
 }
 void Widget::client_connected()
 {
-    QString textmessage = client_generatemesage(tr("conexion reusi"), tr("chat bot"));
-    client_sentdatamap("connection","Serveur Tchat Bot");
+    QString textmessage = client_generatemesage(tr("Connexion établie!"), tr("Tchat Bot"));
+    client_sentcommende("connection");
     client_displayMessagelist(textmessage);
     client_changestateconnectbuton(true);
-    client_displayconnectlabel(tr("<font color=\"#70AD47\">connecté</font>"));
+    client_displayconnectlabel(tr("<font color=\"#70AD47\">Connecté</font>"));
     for (int compteur {settings->value("succes/server/nbserveur").toInt()}; compteur > 0; --compteur)
     {
         if(socket->peerAddress().Any==settings->value("succes/server/"+QString::number(settings->value("succes/server/nbserveur").toInt()))){
@@ -325,7 +323,7 @@ void Widget::client_connected()
 }
 void Widget::client_desconnect()
 {
-    QString textmessage = client_generatemesage(tr("déconecter du serveur"),tr("chat bot"));
+    QString textmessage = client_generatemesage(tr("Déconnecté du serveur"),tr("Tchat Bot"));
     client_displayconnectlabel(tr("<font color=\"#ff0000\">Déconnecté</font>"));
     client_displayMessagelist(textmessage);
     client_changestateconnectbuton(true);
@@ -336,95 +334,95 @@ void Widget::client_socketerror(QAbstractSocket::SocketError erreur)
     switch(erreur) // On affiche un message diff?rent selon l'erreur qu'on nous indique
     {
         case QAbstractSocket::HostNotFoundError:
-            client_displayMessagelist(client_generatemesage(QObject::tr("ERREUR : le serveur primaire n'a pas pu étre trouvé. Vérifiez le nom du serveur et le mot de passe."),tr("chat bot")));
+            client_displayMessagelist(client_generatemesage(QObject::tr("Erreur: Le serveur n'a pas pu être trouvé. Vérifiez l'adresse et le pin."),tr("System Tchat Bot")));
             client_changestateconnectbuton(true);
         break;
 
         case QAbstractSocket::ConnectionRefusedError:
-            client_displayMessagelist(client_generatemesage(QObject::tr("ERREUR : le serveur primaire a refusé la connexion. Vérifiez si le programme \"serveur\" a bien été lancé. Vérifiez aussi l'IP et le port."),tr("chat bot")));
+            client_displayMessagelist(client_generatemesage(QObject::tr("Erreur: Le serveur a refusé la connexion. Vérifiez si le programme \"serveur\" a bien été lancé. Vérifiez aussi l'adresse et le pin."),tr("System Tchat Bot")));
             client_changestateconnectbuton(true);
         break;
 
         case QAbstractSocket::RemoteHostClosedError:
-            client_displayMessagelist(client_generatemesage(QObject::tr("ERREUR : le serveur primaire a coupé la connexion."),tr("chat bot")));
+            client_displayMessagelist(client_generatemesage(QObject::tr("Erreur: Le serveur a coupé la connexion."),tr("System Tchat Bot")));
             client_changestateconnectbuton(true);
         break;
 
         case QAbstractSocket::SocketAccessError:
-            client_displayMessagelist(client_generatemesage(QObject::tr("L'opération a échoué car l'application ne dispose pas des privilèges requis."),tr("chat bot")));
+            client_displayMessagelist(client_generatemesage(QObject::tr("Erreur: L'opération a échoué car l'application ne dispose pas des privilèges requis."),tr("System Tchat Bot")));
             client_changestateconnectbuton(true);
         break;
         case QAbstractSocket::SocketResourceError:
-            client_displayMessagelist(client_generatemesage(QObject::tr("Le système local a manqué de ressources (par exemple, trop de sockets)."),tr("chat bot")));
+            client_displayMessagelist(client_generatemesage(QObject::tr("Erreur: Le système local a manqué de ressources."),tr("System Tchat Bot")));
             client_changestateconnectbuton(true);
         break;
 
         case QAbstractSocket::SocketTimeoutError:
-            client_displayMessagelist(client_generatemesage(QObject::tr("loperation a expirée"),tr("chat bot")));
+            client_displayMessagelist(client_generatemesage(QObject::tr("Erreur: L'opération a expirée."),tr("System Tchat Bot")));
             client_changestateconnectbuton(true);
         break;
 
         case QAbstractSocket::DatagramTooLargeError:
-            client_displayMessagelist(client_generatemesage(QObject::tr("Le datagramme était plus grand que la limite du système d'exploitation (qui peut être aussi basse que 8192 octets)"),tr("chat bot")));
+            client_displayMessagelist(client_generatemesage(QObject::tr("Erreur: Le datagramme était plus grand que la limite du système d'exploitation (qui peut être aussi basse que 8192 octets)."),tr("System Tchat Bot")));
             client_changestateconnectbuton(true);
         break;
         case QAbstractSocket::NetworkError:
-            client_displayMessagelist(client_generatemesage(QObject::tr("Une erreur s'est produite avec le réseau (par exemple, le câble réseau a été \"accidentellement\" débranché)."),tr("chat bot")));
+            client_displayMessagelist(client_generatemesage(QObject::tr("Erreur: Une erreur s'est produite avec le réseau ."),tr("System Tchat Bot")));
             client_changestateconnectbuton(true);
         break;
 
         case QAbstractSocket::UnsupportedSocketOperationError:
-            client_displayMessagelist(client_generatemesage(QObject::tr("L'opération de socket demandée n'est pas prise en charge par le système d'exploitation local (par exemple, absence de prise en charge d'IPv6)."),tr("chat bot")));
+            client_displayMessagelist(client_generatemesage(QObject::tr("Erreur: L'opération de socket demandée n'est pas prise en charge par le système d'exploitation."),tr("System Tchat Bot")));
             client_changestateconnectbuton(true);
         break;
 
         case QAbstractSocket::ProxyAuthenticationRequiredError:
-            client_displayMessagelist(client_generatemesage(QObject::tr(" le proxy requiert une authentification."),tr("chat bot")));
+            client_displayMessagelist(client_generatemesage(QObject::tr("Erreur: Le proxy requiert une authentification."),tr("System Tchat Bot")));
             client_changestateconnectbuton(true);
         break;
 
         case QAbstractSocket::ProxyConnectionRefusedError:
-            client_displayMessagelist(client_generatemesage(QObject::tr("Impossible de contacter le serveur proxy car la connexion à ce serveur a été refusée"),tr("chat bot")));
+            client_displayMessagelist(client_generatemesage(QObject::tr("Erreur: Impossible de contacter le serveur proxy car la connexion à celui-ci a été refusée."),tr("System Tchat Bot")));
             client_changestateconnectbuton(true);
         break;
 
         case QAbstractSocket::ProxyConnectionClosedError:
-            client_displayMessagelist(client_generatemesage(QObject::tr("La connexion au serveur proxy a été fermée de manière inattendue (avant que la connexion au pair final ne soit établie)"),tr("chat bot")));
+            client_displayMessagelist(client_generatemesage(QObject::tr("Erreur: La connexion au serveur proxy a été fermée de manière inattendue."),tr("System Tchat Bot")));
             client_changestateconnectbuton(true);
         break;
 
         case QAbstractSocket::ProxyConnectionTimeoutError:
-            client_displayMessagelist(client_generatemesage(QObject::tr("La connexion au serveur proxy a expiré ou le serveur proxy a cessé de répondre lors de la phase d'authentification."),tr("chat bot")));
+            client_displayMessagelist(client_generatemesage(QObject::tr("Erreur: La connexion au serveur proxy a expiré ou le serveur proxy a cessé de répondre lors de la phase d'authentification."),tr("System Tchat Bot")));
             client_changestateconnectbuton(true);
         break;
 
         case QAbstractSocket::ProxyNotFoundError:
-            client_displayMessagelist(client_generatemesage(QObject::tr("le proxi est inrouvable"),tr("chat bot")));
+            client_displayMessagelist(client_generatemesage(QObject::tr("Erreur: Le proxy est introuvable."),tr("System Tchat Bot")));
             client_changestateconnectbuton(true);
         break;
 
         case QAbstractSocket::ProxyProtocolError:
-            client_displayMessagelist(client_generatemesage(QObject::tr("La négociation de connexion avec le serveur proxy a échoué, car la réponse du serveur proxy n'a pas pu être comprise."),tr("chat bot")));
+            client_displayMessagelist(client_generatemesage(QObject::tr("Erreur: La connexion avec le serveur proxy a échouée, car la réponse de celui-ci n'a pas pu être comprise."),tr("System Tchat Bot")));
             client_changestateconnectbuton(true);
         break;
 
         case QAbstractSocket::OperationError:
-            client_displayMessagelist(client_generatemesage(QObject::tr("Une opération a été tentée alors que le socket était dans un état qui ne l'autorisait pas."),tr("chat bot")));
+            client_displayMessagelist(client_generatemesage(QObject::tr("Erreur: Une opération a été tentée alors que le socket était dans un état qui ne l'autorisait pas."),tr("System Tchat Bot")));
             client_changestateconnectbuton(true);
         break;
 
         case QAbstractSocket::TemporaryError:
-            client_displayMessagelist(client_generatemesage(QObject::tr("Une erreur temporaire s'est produite (par exemple, l'opération bloquerait et le socket n'est pas bloquant)."),tr("chat bot")));
+            client_displayMessagelist(client_generatemesage(QObject::tr("Erreur: Une erreur temporaire s'est produite (Réssayer dans un moment.)."),tr("System Tchat Bot")));
             client_changestateconnectbuton(true);
         break;
 
         case QAbstractSocket::UnknownSocketError:
-            client_displayMessagelist(client_generatemesage(QObject::tr("Une erreur non identifiée s'est produite."),tr("chat bot")));
+            client_displayMessagelist(client_generatemesage(QObject::tr("Erreur: Une erreur non identifiée s'est produite."),tr("System Tchat Bot")));
             client_changestateconnectbuton(true);
         break;
 
     default:
-            client_displayMessagelist(client_generatemesage(QObject::tr("ERREUR : ") + socket->errorString(),tr("chat bot")));
+            client_displayMessagelist(client_generatemesage(QObject::tr("Erreur : ") + socket->errorString(),tr("System Tchat Bot")));
             client_changestateconnectbuton(true);
         break;
     }
@@ -441,11 +439,26 @@ void Widget::client_sentdatamap(const QMap<QString,QString> sendmap)
     out << (quint16) (paquet.size() - sizeof(quint16));
     socket->write(paquet); // On envoie le paquet
 }
-void Widget::client_sentdatamap(const QString type, QString message, QString pseudo, QDateTime seconde, QDateTime minute, QDateTime heures, QDateTime NoJour, QDate jour){
+void Widget::client_sentcommende(const QString type){
+    QMap<QString,QString> sendmap;
+    sendmap["type"]=type;
+    sendmap["psedo"]=client_returnpsedo();
+    sendmap["version"]=version;
+    sendmap["secondofsending"]=QDateTime::currentDateTime().toString("ss");;
+    sendmap["minuteofsending"]=QDateTime::currentDateTime().toString("mm");;
+    sendmap["sendingtime"]=QDateTime::currentDateTime().toString("hh");
+    sendmap["sendingdate"]=QDateTime::currentDateTime().toString("d");
+    sendmap["shippingday"]=QDateTime::currentDateTime().toString("dddd");
+    sendmap["shippingmonth"]=QDateTime::currentDateTime().toString("MMMM");
+    sendmap["shippingyears"]=QDateTime::currentDateTime().toString("yyyy");
+    client_sentdatamap(sendmap);
+
+}
+void Widget::client_sentdatamap(const QString type, QString message, QString psedo, QDateTime seconde, QDateTime minute, QDateTime heures, QDateTime NoJour, QDate jour){
     QMap<QString,QString> sendmap;
     sendmap["type"]=type;
     sendmap["message"]=message;
-    sendmap["pseudo"]=pseudo;
+    sendmap["psedo"]=psedo;
     sendmap["version"]=version;
     sendmap["secondofsending"]=seconde.toString();
     sendmap["minuteofsending"]=minute.toString();
@@ -454,11 +467,11 @@ void Widget::client_sentdatamap(const QString type, QString message, QString pse
     sendmap["shippingday"]=jour.toString();
     client_sentdatamap(sendmap);
 }
-void Widget::client_sentdatamap(const QString type, QString message, QString pseudo){
+void Widget::client_sentdatamap(const QString type, QString message, QString psedo){
     QMap<QString,QString> sendmap;
     sendmap["type"]=type;
     sendmap["message"]=message;
-    sendmap["pseudo"]=pseudo;
+    sendmap["psedo"]=psedo;
     sendmap["version"]=version;
     sendmap["secondofsending"]=QDateTime::currentDateTime().toString("ss");;
     sendmap["minuteofsending"]=QDateTime::currentDateTime().toString("mm");;
@@ -473,22 +486,7 @@ void Widget::client_sentdatamap(const QString type, QString message){
     QMap<QString,QString> sendmap;
     sendmap["type"]=type;
     sendmap["message"]=message;
-    sendmap["pseudo"]=client_returnpsedo();
-    sendmap["version"]=version;
-    sendmap["secondofsending"]=QDateTime::currentDateTime().toString("ss");;
-    sendmap["minuteofsending"]=QDateTime::currentDateTime().toString("mm");;
-    sendmap["sendingtime"]=QDateTime::currentDateTime().toString("hh");
-    sendmap["sendingdate"]=QDateTime::currentDateTime().toString("d");
-    sendmap["shippingday"]=QDateTime::currentDateTime().toString("dddd");
-    sendmap["shippingmonth"]=QDateTime::currentDateTime().toString("MMMM");
-    sendmap["shippingyears"]=QDateTime::currentDateTime().toString("yyyy");
-    client_sentdatamap(sendmap);
-}
-void Widget::client_sentcommende(const QString commande){
-    QMap<QString,QString> sendmap;
-    sendmap["type"]="cmd";
-    sendmap["message"]=commande;
-    sendmap["pseudo"]=client_returnpsedo();
+    sendmap["psedo"]=client_returnpsedo();
     sendmap["version"]=version;
     sendmap["secondofsending"]=QDateTime::currentDateTime().toString("ss");;
     sendmap["minuteofsending"]=QDateTime::currentDateTime().toString("mm");;
@@ -504,7 +502,7 @@ void Widget::client_sentcommende(const QString commande, QString arg){
     sendmap["type"]="cmd";
     sendmap["message"]=commande;
     sendmap["arg"]=arg;
-    sendmap["pseudo"]=client_returnpsedo();
+    sendmap["psedo"]=client_returnpsedo();
     sendmap["version"]=version;
     sendmap["secondofsending"]=QDateTime::currentDateTime().toString("ss");;
     sendmap["minuteofsending"]=QDateTime::currentDateTime().toString("m");;
@@ -529,7 +527,7 @@ void Widget::client_datareceived()
 
         if (socket->bytesAvailable() < messagesize)
             return;
-        // Si on arrive jusqu'? cette ligne, on peut r?cup?rer le message entier
+        // Si on arrive jusqu'? cette ligne, on peut récupérer le message entier
         QMap<QString,QString> messageRecu;
         in >> messageRecu;
         client_processthemessage(messageRecu);
@@ -554,7 +552,7 @@ void Widget::client_processthemessage(QMap<QString,QString> message)
             settings->setValue("succes/100userSimultaneously", true);
         }
     }else{
-        QMessageBox::critical(this, tr("erreur"), tr("un packet a été recu mais l'indantificateur : ") + message["type"] + tr(" est inconu."));
+        QMessageBox::critical(this, tr("Erreur"), tr("Un paquet a été recu mais l'indentificateur : ") + message["type"] + tr(" est inconnu."));
     }
 
 }
@@ -562,41 +560,41 @@ void Widget::client_processcomand(QMap<QString, QString> commend)
 {
     if (commend["message"] == "psedo?"){
         client_sentcommende("psedo_", client_returnpsedo());
-    }else if (commend["message"]=="vertion?"){
+    }else if (commend["message"]=="version?"){
         client_sentcommende("version",version);
-    }else if (commend["message"]=="pesdoAnonimousinvalid"){
-        QMessageBox::critical(this, tr("erreur"), tr("il faut un autre psedo que anonimous ou rien pour se conecter"));
+    }else if (commend["message"]=="psedoanonymousinvalid"){
+        QMessageBox::critical(this, tr("Erreur"), tr("Il vous faut un psedo pour vous connecter (Anonymous est interdit)."));
     }else if(commend["message"]=="psedoalreadyuse"){
-        QMessageBox::critical(this, tr("erreur"), tr("un autre client porte deja ce psedo changer de psedo pour vous connecter"));
-    }else if(commend["message"]=="pseudoresembling"){
-        QMessageBox::critical(this, tr("erreur"), tr("un autre client porte deja un psedo resemblant changer de psedo pour vous connecter"));
+        QMessageBox::critical(this, tr("Erreur"), tr("Un autre client porte déjà ce psedo. Veuillez changer de psedo pour vous connecter."));
+    }else if(commend["message"]=="psedoresembling"){
+        QMessageBox::critical(this, tr("Erreur"), tr("Un autre client porte déjà un psedo ressemblant. Veuillez changer de psedo pour vous connecter."));
     }else if (commend["message"]=="update_") {
         client_displayMessagelist(commend["arg"]);
     }else if (commend["message"]=="isconnected"){
         ui->clientlist->addItem(commend["arg"]);
         ++nbuser;
-    }else if(commend["message"]=="desconnected"){
+    }else if(commend["message"]=="disconnecting"){
         if(ui->clientlist->findItems(commend["arg"],Qt::MatchCaseSensitive).size()==1){
             ui->clientlist->removeItemWidget(ui->clientlist->findItems(commend["arg"],Qt::MatchCaseSensitive)[1]); //on suprime le nom specifier
-            QMessageBox::critical(this, tr("supression de client"), tr("le client vien d'etre suprimer"));
+            QMessageBox::critical(this, tr("Suppression de client"), tr("Le client vient d'être supprimé."));
         }else{
             for (int compteur {ui->clientlist->findItems(commend["arg"],Qt::MatchCaseSensitive).size()-1}; compteur > 0; --compteur) //tan que des utilistateur porte le nom specifier
             {
                 ui->clientlist->removeItemWidget(ui->clientlist->findItems(commend["arg"],Qt::MatchCaseSensitive)[1]); //on suprime le nom specifier
-                QMessageBox::critical(this, tr("supression de client"), tr("le client vien d'etre suprimer"));
+                QMessageBox::critical(this, tr("Suppression de client"), tr("Le client vient d'être supprimé."));
                 --nbuser;
             }
         }
     }else{
-        QMessageBox::critical(this, tr("erreur"), tr("un packet de comande a été recu mais la comande est incomprise."));
+        QMessageBox::critical(this, tr("Erreur"), tr("Un paquet de comande a été reçu mais la commande est incomprise."));
     }
 }
 QString Widget::client_generatedate()
 {
-    QString heurs = QDateTime::currentDateTime().toString("hh:mm:ss");
+    QString heures = QDateTime::currentDateTime().toString("hh:mm:ss");
     QString Date = QDateTime::currentDateTime().toString(" dd MM yyyy");
-    QDateTime::fromString(heurs, "hh:mm:ss");
-    return(tr("<span style=\"font-size: 10px\"> Le ")+Date+tr("</span> <span style=\"font-size: 10px\">à ")+heurs+tr(" </span><br/>"));
+    QDateTime::fromString(heures, "hh:mm:ss");
+    return(tr("<span style=\"font-size: 10px\"> Le ")+Date+tr("</span> <span style=\"font-size: 10px\">à ")+heures+tr(" </span><br/>"));
 
 }
 QString Widget::client_generatedate(QMap<QString, QString> date)
@@ -620,6 +618,5 @@ QString Widget::client_generatemesage(QMap<QString, QString> message){
 
 void Widget::on_psedo_editingFinished()
 {
-   client_sentcommende("change_psedo",ui->psedo->text());
+    client_sentcommende("change_psedo",ui->psedo->text());
 }
-
