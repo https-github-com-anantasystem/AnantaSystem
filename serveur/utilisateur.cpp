@@ -60,9 +60,9 @@ bool utilisateur::isconnecteed()
         return true;
     }
 }
-QString utilisateur::safe(QString psedo, QString version){
+QString utilisateur::safe(){
     if((pseudo!="anonymous"&&pseudo!="")&&(vertion=="5.0")){
-        if(psedo==pseudo&&version==vertion){
+        if(pseudo==pseudo&&vertion==vertion){
             return "high";
         }else{
             return "medium";
@@ -71,4 +71,24 @@ QString utilisateur::safe(QString psedo, QString version){
         return "low";
     }
 }
-
+bool utilisateur::highSafe(){
+    if(safe()=="high"){
+        return true;
+    }else{
+        return false;
+    }
+}
+bool utilisateur::medumSafeOrSuperior(){
+    if(safe()=="medium"||safe()=="high"){
+        return true;
+    }else{
+        return false;
+    }
+}
+bool utilisateur::lowSafeOrSuperior(){
+    if(safe()=="low"||safe()=="medium"||safe()=="high"){
+        return true;
+    }else{
+        return false;
+    }
+}

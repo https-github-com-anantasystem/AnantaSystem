@@ -345,7 +345,7 @@ void Widget::server_datareceived()
         if(message["type"]=="cmd"){
             server_processcomand(message,index);
         }else if(message["type"]=="msg"){
-            //if((levelOfSecure=="high" && sendingClient->safe(message["pseudo"],message["version"])=="high")/* si la securitée est haute*/   || (levelOfSecure=="low")/*on test meme pas tout est acepter*/){
+
                 server_sentmessagetoall(message);
                 if(settings->value("settings/SaveMessage").toBool()){
                     server_writetofile(message);

@@ -18,7 +18,10 @@ public:
     QString getpseudo();
     QString getversion();
     bool isconnecteed();
-    QString safe(QString psedo, QString version);
+    QString safe();
+    bool highSafe();
+    bool medumSafeOrSuperior();
+    bool lowSafeOrSuperior();
     ~utilisateur();
 private:
     QString vertion;
