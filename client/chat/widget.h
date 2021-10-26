@@ -38,7 +38,6 @@ private slots:
     void on_parametrebuton_2_clicked();
     void on_psedo_editingFinished();
     void on_conectbuton_clicked();
-
     void on_sentbuton_clicked();
 
 private:

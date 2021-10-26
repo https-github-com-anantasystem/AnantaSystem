@@ -300,6 +300,17 @@ void Widget::server_connect(const QMap<QString, QString> &connectpack, int usern
     clientsList[usernaime]->editpseudo(connectpack["pseudo"]);
     clientsList[usernaime]->editversion(connectpack["version"]);
     server_sentmessagetoall(connectpack);
+    srand (time(NULL));
+    int random = rand() % 4 + 1;
+    if(random == 1){
+        server_sentmessagetoall("msg",clientsList[usernaime]->getpseudo() + tr(" est connecté."),tr("Tchat Bot"));
+    }else if(random == 2){
+         server_sentmessagetoall("msg",clientsList[usernaime]->getpseudo() + tr(" vient d'arriver dans le salon."),tr("Tchat Bot"));
+    }else if(random == 3){
+        server_sentmessagetoall("msg",clientsList[usernaime]->getpseudo() + tr(" vient de nous rejoindre."),tr("Tchat Bot"));
+    }else if(random == 4){
+        server_sentmessagetoall("msg",tr("Il ne nous manquait plus que ")+clientsList[usernaime]->getpseudo()+ tr(" heureusement il nous a rejoint."),tr("Tchat Bot"));
+    }
 }
 void Widget::server_datareceived()
 {
@@ -452,7 +463,7 @@ void Widget::server_processcomand(QMap<QString, QString> command, int noclient)
         }
     }else if(command["message"]=="version"){
         clientsList[noclient]->editversion(command["arg"]);
-    }else if (command["message"]=="change_psedo") {
+    }else if (command["message"]=="change_psedo") {//                                      changer psedo
         for(int i = 1; i < clientsList.size(); i++)
         {
             if(clientsList[i]->getpseudo()==command["arg"] && i != noclient){//si c'est le meme on coupe et on envoie une erreur
