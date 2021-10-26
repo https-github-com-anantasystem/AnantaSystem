@@ -345,16 +345,16 @@ void Widget::server_datareceived()
         if(message["type"]=="cmd"){
             server_processcomand(message,index);
         }else if(message["type"]=="msg"){
-            if(sendingClient->safe(message["pseudo"],message["version"])==levelOfSecure){//si la securitée est a la hoteur choisie
+            //if((levelOfSecure=="high" && sendingClient->safe(message["pseudo"],message["version"])=="high")/* si la securitée est haute*/   || (levelOfSecure=="low")/*on test meme pas tout est acepter*/){
                 server_sentmessagetoall(message);
                 if(settings->value("settings/SaveMessage").toBool()){
                     server_writetofile(message);
                 }
-            }else if(sendingClient->safe(message["pseudo"],message["version"])=="medium"||sendingClient->safe(message["pseudo"],message["version"])=="high"){
+            /*}else if(sendingClient->safe(message["pseudo"],message["version"])=="medium"||sendingClient->safe(message["pseudo"],message["version"])=="high"){
                 server_sentmessageto(tr("erreur les metadonnée ne coresponde pas avec celle du serveur"),tr("Serveur Tchat Bot"),index);
             }else if(sendingClient->safe(message["pseudo"],message["version"])=="low"||sendingClient->safe(message["pseudo"],message["version"])=="medium"||sendingClient->safe(message["pseudo"],message["version"])=="high"){
                 server_sentmessageto(tr("erreur votre n° de vertion ou votre identifient est incorect"),tr("Serveur Tchat Bot"),index);
-            }
+            }*/
         }else if(message["type"]=="connection"){
             server_connect(message, index);
         }else{
@@ -378,7 +378,6 @@ void Widget::server_disconnectclients()
     int index = server_findIndex(disconnectingClientSocket);
     utilisateur* disconnectingClient = clientsList[index];
     serveur_sentcommande("disconnected",disconnectingClient->getpseudo());
-    //server_sentmessagetoall("msg",disconnectingClient->getpseudo()+tr("</strong> vient de se déconnecter !"),tr("serveur bot"));
 
     clientsList.removeOne(disconnectingClient);
     delete disconnectingClient;
@@ -425,45 +424,7 @@ void Widget::server_recoverallfile()
 }
 void Widget::server_processcomand(QMap<QString, QString> command, int noclient)
 {
-    if (command["message"]=="pseudo"){
-        if(command["arg"]=="anonymous"){
-            server_sentcomandto("pseudoanonymousinvalid", noclient);
-            return;
-        }else{
-            for(int i = 1; i < clientsList.size(); i++)
-            {
-                if(clientsList[i]->getpseudo()==command["pseudo"] && i != noclient){
-                    server_sentcomandto("pseudoalreadyuse",noclient);
-                    return;
-                }else if(clientsList[i]->getpseudo().remove(" ")==command.remove(" ") && i != noclient){
-                    server_sentcomandto("pseudoresembling",noclient);
-                    return;
-                }
-            }
-            clientsList[noclient]->editpseudo(command["arg"]);
-            srand (time(NULL));
-            int random = rand() % 4 + 1;
-            if(random == 1){
-                server_sentmessagetoall("msg",clientsList[noclient]->getpseudo() + tr(" est connecté."),tr("Tchat Bot"));
-            }else if(random == 2){
-                 server_sentmessagetoall("msg",clientsList[noclient]->getpseudo() + tr(" vient d'arriver dans le salon."),tr("Tchat Bot"));
-            }else if(random == 3){
-                server_sentmessagetoall("msg",clientsList[noclient]->getpseudo() + tr(" vient de nous rejoindre."),tr("Tchat Bot"));
-            }else if(random == 4){
-                server_sentmessagetoall("msg",tr("Il ne nous manquait plus que ")+clientsList[noclient]->getpseudo()+ tr(" heureusement il nous a rejoint."),tr("Tchat Bot"));
-            }
-            //serveur_sentcommande("isconnected", clientsList[noclient]->getpseudo());
-            if(noclient==0){return;}
-            for(int i = 1; i < clientsList.size(); i++)
-            {
-                if(i==noclient){i++;}
-                if(i>clientsList.size()){return;}
-                server_sentcomandto("isconnected", clientsList[i-1]->getpseudo(),noclient);
-            }
-        }
-    }else if(command["message"]=="version"){
-        clientsList[noclient]->editversion(command["arg"]);
-    }else if (command["message"]=="change_psedo") {//                                      changer psedo
+    if (command["message"]=="change_psedo") {//                                      changer psedo
         for(int i = 1; i < clientsList.size(); i++)
         {
             if(clientsList[i]->getpseudo()==command["arg"] && i != noclient){//si c'est le meme on coupe et on envoie une erreur
@@ -877,10 +838,8 @@ void Widget::client_datareceived()
         {
             if (socket->bytesAvailable() < (int)sizeof(quint16))
                  return;
-
             in >> messagesize;
         }
-
         if (socket->bytesAvailable() < messagesize)
             return;
         // Si on arrive jusqu'? cette ligne, on peut récupérer le message entier

@@ -610,8 +610,8 @@ QString Widget::client_generatemesage(QString message, QString psedo)
     return(tr("<span style=\"font-size: 12px; font-weight: bold;\">")+psedo+tr("</span>")+client_generatedate()+tr("<span style=\"font-size: 14px; \">")+message+tr("</span><br/><br/>"));
 }
 QString Widget::client_generatemesage(QMap<QString, QString> message){
-    if(message["psedo"] == "" ||message["psedo"] == " "){
-        message["psedo"] = "anonymous";
+    if(message["pseudo"] == "" ||message["pseudo"] == " "){
+        message["pseudo"] = "anonymous";
     }
     return(tr("<span style=\"font-size: 12px; font-weight: bold;\">")+message["psedo"]+tr("</span>")+client_generatedate(message)+tr("<span style=\"font-size: 14px; \">")+message["message"]+tr("</span><br/><br/>"));
 }

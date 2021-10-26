@@ -20,7 +20,7 @@
    <string>Ananta systeme tchat</string>
   </property>
   <property name="windowIcon">
-   <iconset resource="resources.qrc">
+   <iconset resource="../../serveur/resource.qrc">
     <normaloff>:/image/Ananta.png</normaloff>:/image/Ananta.png</iconset>
   </property>
   <layout class="QGridLayout" name="gridLayout">
@@ -172,9 +172,7 @@ p, li { white-space: pre-wrap; }
    </item>
   </layout>
  </widget>
- <resources>
-  <include location="resources.qrc"/>
- </resources>
+ <resources/>
  <connections>
   <connection>
    <sender>mesage</sender>
@@ -205,6 +203,22 @@ p, li { white-space: pre-wrap; }
     <hint type="destinationlabel">
      <x>504</x>
      <y>103</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>sentbuton</sender>
+   <signal>clicked()</signal>
+   <receiver>mesage</receiver>
+   <slot>setFocus()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>660</x>
+     <y>441</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>464</x>
+     <y>441</y>
     </hint>
    </hints>
   </connection>
