@@ -339,9 +339,9 @@ void Widget::server_datareceived()
                 if(settings->value("settings/SaveMessage").toBool()){
                     server_writetofile(message);
                 }
-            }else if(sendingClient->safe(message["pseudo"],message["version"])=="medium"){
+            }else if(sendingClient->safe(message["pseudo"],message["version"])=="medium"||sendingClient->safe(message["pseudo"],message["version"])=="high"){
                 server_sentmessageto(tr("erreur les metadonnée ne coresponde pas avec celle du serveur"),tr("Serveur Tchat Bot"),index);
-            }else if(sendingClient->safe(message["pseudo"],message["version"])=="low"){
+            }else if(sendingClient->safe(message["pseudo"],message["version"])=="low"||sendingClient->safe(message["pseudo"],message["version"])=="medium"||sendingClient->safe(message["pseudo"],message["version"])=="high"){
                 server_sentmessageto(tr("erreur votre n° de vertion ou votre identifient est incorect"),tr("Serveur Tchat Bot"),index);
             }
         }else if(message["type"]=="connection"){
