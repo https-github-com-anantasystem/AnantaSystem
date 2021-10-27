@@ -117,25 +117,25 @@ void parametre::on_comboBox_activated(const QString &arg1)
 }
 void parametre::on_site_clicked()
 {
-    if(!QDesktopServices::openUrl(QUrl("anantasystem.com"))){
+    if(!QDesktopServices::openUrl(QUrl("https://anantasystem.com"))){
         QMessageBox::information(this,tr("erreur a louverture du lien"),tr("le lien ne veut pas souvrir le probleme vien de votre navigateur par default taper anantasystem.com dans votre navigateur et faite nous un raport de bug sur le discord"));
     }
 }
 void parametre::on_discord_clicked()
 {
-    if(!QDesktopServices::openUrl(QUrl("anantasystem.com/discord.html"))){
+    if(!QDesktopServices::openUrl(QUrl("https://anantasystem.com/discord.html"))){
         QMessageBox::information(this,tr("erreur a louverture du lien"),tr("le lien ne veut pas souvrir le probleme vien de votre navigateur par default taper anantasystem.com/discord.html dans votre navigateur et faite nous un raport de bug sur le discord"));
     }
 }
 void parametre::on_tweter_clicked()
 {
-    if(!QDesktopServices::openUrl(QUrl("anantasystem.com/twitter.html"))){
+    if(!QDesktopServices::openUrl(QUrl("https://anantasystem.com/twitter.html"))){
         QMessageBox::information(this,tr("erreur a louverture du lien"),tr("le lien ne veut pas souvrir le probleme vien de votre navigateur par default taper anantasystem.com/twitter.html dans votre navigateur et faite nous un raport de bug sur le discord"));
     }
 }
 
 void parametre::on_don_clicked(){
-    if(!QDesktopServices::openUrl(QUrl("anantasystem.com/tip.html"))){
+    if(!QDesktopServices::openUrl(QUrl("https://anantasystem.com/tip.html"))){
         QMessageBox::information(this,tr("erreur a louverture du lien"),tr("le lien ne veut pas souvrir le probleme vien de votre navigateur par default taper anantasystem.com/tip.html dans votre navigateur et faite nous un raport de bug sur le discord"));
     }
 }
