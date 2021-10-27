@@ -345,14 +345,14 @@ void Widget::server_datareceived()
         if(message["type"]=="cmd"){
             server_processcomand(message,index);
         }else if(message["type"]=="msg"){
-
+            //if((levelOfSecure=="high"&&clientsList[index]->highSafe()) ||  (levelOfSecure=="medum"&&clientsList[index]->medumSafeOrSuperior())  ||  (levelOfSecure=="low"&&clientsList[index]->lowSafeOrSuperior())){
                 server_sentmessagetoall(message);
                 if(settings->value("settings/SaveMessage").toBool()){
                     server_writetofile(message);
                 }
-            /*}else if(sendingClient->safe(message["pseudo"],message["version"])=="medium"||sendingClient->safe(message["pseudo"],message["version"])=="high"){
+            /*}else if(levelOfSecure=="medum"&&clientsList[index]->medumSafeOrSuperior()){
                 server_sentmessageto(tr("erreur les metadonnée ne coresponde pas avec celle du serveur"),tr("Serveur Tchat Bot"),index);
-            }else if(sendingClient->safe(message["pseudo"],message["version"])=="low"||sendingClient->safe(message["pseudo"],message["version"])=="medium"||sendingClient->safe(message["pseudo"],message["version"])=="high"){
+            }else if(levelOfSecure=="low"&&clientsList[index]->lowSafeOrSuperior()){
                 server_sentmessageto(tr("erreur votre n° de vertion ou votre identifient est incorect"),tr("Serveur Tchat Bot"),index);
             }*/
         }else if(message["type"]=="connection"){

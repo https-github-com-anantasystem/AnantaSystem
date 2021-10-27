@@ -46,7 +46,7 @@ Widget::Widget(QWidget *parent)
    QString name = qgetenv("USER");
    if (name.isEmpty())
        name = qgetenv("USERNAME");
-   ui->psedo->setText(name);
+   ui->pseudo->setText(name);
 
    socket = new QTcpSocket; //serveur
    connect(socket, &QTcpSocket::readyRead, this ,&Widget::client_datareceived);
@@ -55,7 +55,7 @@ Widget::Widget(QWidget *parent)
    connect(socket, &QTcpSocket::errorOccurred, this, &Widget::client_socketerror);
    messagesize = 0;
    //conexion
-   ui->psedo->setText(QDir::home().dirName());//on afiche le nom d'utilisateur en psedo par defaut
+   ui->pseudo->setText(QDir::home().dirName());//on afiche le nom d'utilisateur en psedo par defaut
    autoconnect();
    //selection de la couleur du theme
 }
@@ -119,7 +119,7 @@ void Widget::condesed(){
         {
             //ui->label->setVisible(false);
             ui->serveurip->setVisible(false);
-            ui->psedo->setVisible(false);
+            ui->pseudo->setVisible(false);
             ui->label_4->setVisible(false);
             ui->serveurport->setVisible(false);
             ui->parametrebuton_2->setVisible(false);
@@ -131,7 +131,7 @@ void Widget::condesed(){
         }else if (condenser == true){
             //ui->label->setVisible(true);
             ui->serveurip->setVisible(true);
-            ui->psedo->setVisible(true);
+            ui->pseudo->setVisible(true);
             ui->label_4->setVisible(true);
             ui->serveurport->setVisible(true);
             ui->parametrebuton_2->setVisible(true);
@@ -173,11 +173,11 @@ void Widget::client_changestateconnectbuton(bool state)
 }
 QString Widget::client_returnpsedo()
 {
-    return ui->psedo->text();
+    return ui->pseudo->text();
 }
 void Widget::on_conectbuton_clicked()
 {
-    if(ui->psedo->text()==""||ui->psedo->text()==" "||ui->psedo->text()=="anonymous"){
+    if(ui->pseudo->text()==""||ui->pseudo->text()==" "||ui->pseudo->text()=="anonymous"){
         QMessageBox::critical(this,tr("psedo invalid"),tr("vous ne pouvez avoir anonymous ou aucun psedo"));
         return;
     }
@@ -238,15 +238,15 @@ void Widget::client_processechatbot(QString command)
    if (command==tr("bonjour")||command==tr("salut")||command==tr("hello")){//posibilier de question
        int random = rand() % 5 + 1;//on fait l'aleatoire
        if(random == 1){
-           ui->messagelist->append(client_generatemesage(tr("Bonjour") + ui->psedo->text()+".",tr("Tchat Bot")));
+           ui->messagelist->append(client_generatemesage(tr("Bonjour") + ui->pseudo->text()+".",tr("Tchat Bot")));
        }else if(random == 2){
-           ui->messagelist->append(client_generatemesage(tr("Salut") + ui->psedo->text()+".",tr("Tchat Bot")));
+           ui->messagelist->append(client_generatemesage(tr("Salut") + ui->pseudo->text()+".",tr("Tchat Bot")));
        }else if(random == 3){
-           ui->messagelist->append(client_generatemesage(tr("Salut🖖") + ui->psedo->text()+".",tr("Tchat Bot")));
+           ui->messagelist->append(client_generatemesage(tr("Salut🖖") + ui->pseudo->text()+".",tr("Tchat Bot")));
        }else if(random == 4){
-           ui->messagelist->append(client_generatemesage(tr("Hello") + ui->psedo->text()+".",tr("Tchat Bot")));
+           ui->messagelist->append(client_generatemesage(tr("Hello") + ui->pseudo->text()+".",tr("Tchat Bot")));
        }else if(random == 5){
-           ui->messagelist->append(client_generatemesage(tr("Hello👋") + ui->psedo->text()+".",tr("Tchat Bot")));
+           ui->messagelist->append(client_generatemesage(tr("Hello👋") + ui->pseudo->text()+".",tr("Tchat Bot")));
        }
    }else if (command==tr("comment t'apelle tu")||command==tr("quel est ton nom")){
        int random = rand() % 2 + 1;
@@ -442,7 +442,7 @@ void Widget::client_sentdatamap(const QMap<QString,QString> sendmap)
 void Widget::client_sentcommende(const QString type){
     QMap<QString,QString> sendmap;
     sendmap["type"]=type;
-    sendmap["psedo"]=client_returnpsedo();
+    sendmap["pseudo"]=client_returnpsedo();
     sendmap["version"]=version;
     sendmap["secondofsending"]=QDateTime::currentDateTime().toString("ss");;
     sendmap["minuteofsending"]=QDateTime::currentDateTime().toString("mm");;
@@ -458,7 +458,7 @@ void Widget::client_sentdatamap(const QString type, QString message, QString pse
     QMap<QString,QString> sendmap;
     sendmap["type"]=type;
     sendmap["message"]=message;
-    sendmap["psedo"]=psedo;
+    sendmap["pseudo"]=psedo;
     sendmap["version"]=version;
     sendmap["secondofsending"]=seconde.toString();
     sendmap["minuteofsending"]=minute.toString();
@@ -471,7 +471,7 @@ void Widget::client_sentdatamap(const QString type, QString message, QString pse
     QMap<QString,QString> sendmap;
     sendmap["type"]=type;
     sendmap["message"]=message;
-    sendmap["psedo"]=psedo;
+    sendmap["pseudo"]=psedo;
     sendmap["version"]=version;
     sendmap["secondofsending"]=QDateTime::currentDateTime().toString("ss");;
     sendmap["minuteofsending"]=QDateTime::currentDateTime().toString("mm");;
@@ -486,7 +486,7 @@ void Widget::client_sentdatamap(const QString type, QString message){
     QMap<QString,QString> sendmap;
     sendmap["type"]=type;
     sendmap["message"]=message;
-    sendmap["psedo"]=client_returnpsedo();
+    sendmap["pseudo"]=client_returnpsedo();
     sendmap["version"]=version;
     sendmap["secondofsending"]=QDateTime::currentDateTime().toString("ss");;
     sendmap["minuteofsending"]=QDateTime::currentDateTime().toString("mm");;
@@ -502,7 +502,7 @@ void Widget::client_sentcommende(const QString commande, QString arg){
     sendmap["type"]="cmd";
     sendmap["message"]=commande;
     sendmap["arg"]=arg;
-    sendmap["psedo"]=client_returnpsedo();
+    sendmap["pseudo"]=client_returnpsedo();
     sendmap["version"]=version;
     sendmap["secondofsending"]=QDateTime::currentDateTime().toString("ss");;
     sendmap["minuteofsending"]=QDateTime::currentDateTime().toString("m");;
@@ -542,7 +542,7 @@ void Widget::client_processthemessage(QMap<QString,QString> message)
     }else if(message["type"]=="msg"){
         client_displayMessagelist(client_generatemesage(message));
     }else if(message["type"]=="connection"){
-        ui->clientlist->addItem(message["psedo"]);
+        ui->clientlist->addItem(message["pseudo"]);
         ++nbuser;
         if(nbuser==10){
             settings->setValue("succes/10userSimultaneously", true);
@@ -613,10 +613,10 @@ QString Widget::client_generatemesage(QMap<QString, QString> message){
     if(message["pseudo"] == "" ||message["pseudo"] == " "){
         message["pseudo"] = "anonymous";
     }
-    return(tr("<span style=\"font-size: 12px; font-weight: bold;\">")+message["psedo"]+tr("</span>")+client_generatedate(message)+tr("<span style=\"font-size: 14px; \">")+message["message"]+tr("</span><br/><br/>"));
+    return(tr("<span style=\"font-size: 12px; font-weight: bold;\">")+message["pseudo"]+tr("</span>")+client_generatedate(message)+tr("<span style=\"font-size: 14px; \">")+message["message"]+tr("</span><br/><br/>"));
 }
 
 void Widget::on_psedo_editingFinished()
 {
-    client_sentcommende("change_psedo",ui->psedo->text());
+    client_sentcommende("change_psedo",ui->pseudo->text());
 }

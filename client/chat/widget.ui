@@ -142,7 +142,7 @@ p, li { white-space: pre-wrap; }
       </widget>
      </item>
      <item alignment="Qt::AlignLeft">
-      <widget class="QLineEdit" name="psedo"/>
+      <widget class="QLineEdit" name="pseudo"/>
      </item>
      <item>
       <widget class="QLabel" name="label_message_3">
