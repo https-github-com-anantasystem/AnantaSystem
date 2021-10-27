@@ -4,101 +4,101 @@
 <context>
     <name>QObject</name>
     <message>
-        <location filename="widget.cpp" line="667"/>
+        <location filename="widget.cpp" line="639"/>
         <source>Erreur: Le serveur n&apos;a pas pu être trouvé. Vérifiez l&apos;adresse et le pin.</source>
-        <translation type="unfinished"></translation>
+        <translation>Erreur: Le serveur n&apos;a pas pu être trouvé. Vérifiez l&apos;adresse et le pin.</translation>
+    </message>
+    <message>
+        <location filename="widget.cpp" line="644"/>
+        <source>Erreur: Le serveur a refusé la connexion. Vérifiez si le programme &quot;serveur&quot; a bien été lancé. Vérifiez aussi l&apos;adresse et le pin.</source>
+        <oldsource>La connexion au serveur proxy a expiré ou le serveur proxy a cessé de répondre lors de la phase d&apos;authentification.</oldsource>
+        <translation>Erreur: Le serveur a refusé la connexion. Vérifiez si le programme &quot;serveur&quot; a bien été lancé. Vérifiez aussi l&apos;adresse et le pin.</translation>
+    </message>
+    <message>
+        <location filename="widget.cpp" line="649"/>
+        <source>Erreur: Le serveur a coupé la connexion.</source>
+        <translation>Erreur: Le serveur a coupé la connexion.</translation>
+    </message>
+    <message>
+        <location filename="widget.cpp" line="658"/>
+        <source>Erreur: Le système local a manqué de ressources.</source>
+        <translation>Erreur: Le système local a manqué de ressources.</translation>
+    </message>
+    <message>
+        <location filename="widget.cpp" line="663"/>
+        <source>Erreur: L&apos;opération a expirée.</source>
+        <translation>Erreur: L&apos;opération a expirée.</translation>
+    </message>
+    <message>
+        <location filename="widget.cpp" line="668"/>
+        <source>Erreur: Le datagramme était plus grand que la limite du système d&apos;exploitation (qui peut être aussi basse que 8192 octets).</source>
+        <translation>Erreur: Le datagramme était plus grand que la limite du système d&apos;exploitation (qui peut être aussi basse que 8192 octets).</translation>
     </message>
     <message>
         <location filename="widget.cpp" line="672"/>
-        <source>Erreur: Le serveur a refusé la connexion. Vérifiez si le programme &quot;serveur&quot; a bien été lancé. Vérifiez aussi l&apos;adresse et le pin.</source>
-        <oldsource>La connexion au serveur proxy a expiré ou le serveur proxy a cessé de répondre lors de la phase d&apos;authentification.</oldsource>
-        <translation type="unfinished"></translation>
+        <source>Erreur: Une erreur s&apos;est produite avec le réseau .</source>
+        <translation>Erreur: Une erreur s&apos;est produite avec le réseau.</translation>
     </message>
     <message>
         <location filename="widget.cpp" line="677"/>
-        <source>Erreur: Le serveur a coupé la connexion.</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location filename="widget.cpp" line="686"/>
-        <source>Erreur: Le système local a manqué de ressources.</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location filename="widget.cpp" line="691"/>
-        <source>Erreur: L&apos;opération a expirée.</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location filename="widget.cpp" line="696"/>
-        <source>Erreur: Le datagramme était plus grand que la limite du système d&apos;exploitation (qui peut être aussi basse que 8192 octets).</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location filename="widget.cpp" line="700"/>
-        <source>Erreur: Une erreur s&apos;est produite avec le réseau .</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location filename="widget.cpp" line="705"/>
         <source>Erreur: L&apos;opération de socket demandée n&apos;est pas prise en charge par le système d&apos;exploitation.</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location filename="widget.cpp" line="710"/>
-        <source>Erreur: Le proxy requiert une authentification.</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location filename="widget.cpp" line="715"/>
-        <source>Erreur: Impossible de contacter le serveur proxy car la connexion à celui-ci a été refusée.</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location filename="widget.cpp" line="720"/>
-        <source>Erreur: La connexion au serveur proxy a été fermée de manière inattendue.</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location filename="widget.cpp" line="725"/>
-        <source>Erreur: La connexion au serveur proxy a expiré ou le serveur proxy a cessé de répondre lors de la phase d&apos;authentification.</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location filename="widget.cpp" line="730"/>
-        <source>Erreur: Le proxy est introuvable.</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location filename="widget.cpp" line="735"/>
-        <source>Erreur: La connexion avec le serveur proxy a échouée, car la réponse de celui-ci n&apos;a pas pu être comprise.</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location filename="widget.cpp" line="740"/>
-        <source>Erreur: Une opération a été tentée alors que le socket était dans un état qui ne l&apos;autorisait pas.</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location filename="widget.cpp" line="745"/>
-        <source>Erreur: Une erreur temporaire s&apos;est produite (Réssayer dans un moment.).</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location filename="widget.cpp" line="750"/>
-        <source>Erreur: Une erreur non identifiée s&apos;est produite.</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location filename="widget.cpp" line="755"/>
-        <source>Erreur : </source>
-        <translation type="unfinished"></translation>
+        <translation>Erreur: L&apos;opération de socket demandée n&apos;est pas prise en charge par le système d&apos;exploitation.</translation>
     </message>
     <message>
         <location filename="widget.cpp" line="682"/>
+        <source>Erreur: Le proxy requiert une authentification.</source>
+        <translation>Erreur: Le proxy requiert une authentification.</translation>
+    </message>
+    <message>
+        <location filename="widget.cpp" line="687"/>
+        <source>Erreur: Impossible de contacter le serveur proxy car la connexion à celui-ci a été refusée.</source>
+        <translation>Erreur: Impossible de contacter le serveur proxy car la connexion à celui-ci a été refusée.</translation>
+    </message>
+    <message>
+        <location filename="widget.cpp" line="692"/>
+        <source>Erreur: La connexion au serveur proxy a été fermée de manière inattendue.</source>
+        <translation>Erreur: La connexion au serveur proxy a été fermée de manière inattendue.</translation>
+    </message>
+    <message>
+        <location filename="widget.cpp" line="697"/>
+        <source>Erreur: La connexion au serveur proxy a expiré ou le serveur proxy a cessé de répondre lors de la phase d&apos;authentification.</source>
+        <translation>Erreur: La connexion au serveur proxy a expiré ou le serveur proxy a cessé de répondre lors de la phase d&apos;authentification.</translation>
+    </message>
+    <message>
+        <location filename="widget.cpp" line="702"/>
+        <source>Erreur: Le proxy est introuvable.</source>
+        <translation>Erreur: Le proxy est introuvable.</translation>
+    </message>
+    <message>
+        <location filename="widget.cpp" line="707"/>
+        <source>Erreur: La connexion avec le serveur proxy a échouée, car la réponse de celui-ci n&apos;a pas pu être comprise.</source>
+        <translation>Erreur: La connexion avec le serveur proxy a échouée, car la réponse de celui-ci n&apos;a pas pu être comprise.</translation>
+    </message>
+    <message>
+        <location filename="widget.cpp" line="712"/>
+        <source>Erreur: Une opération a été tentée alors que le socket était dans un état qui ne l&apos;autorisait pas.</source>
+        <translation></translation>
+    </message>
+    <message>
+        <location filename="widget.cpp" line="717"/>
+        <source>Erreur: Une erreur temporaire s&apos;est produite (Réssayer dans un moment.).</source>
+        <translation>Erreur: Une erreur temporaire s&apos;est produite (Réssayer dans un moment.).</translation>
+    </message>
+    <message>
+        <location filename="widget.cpp" line="722"/>
+        <source>Erreur: Une erreur non identifiée s&apos;est produite.</source>
+        <translation>Erreur: Une erreur non identifiée s&apos;est produite.</translation>
+    </message>
+    <message>
+        <location filename="widget.cpp" line="727"/>
+        <source>Erreur : </source>
+        <translation>Erreur: </translation>
+    </message>
+    <message>
+        <location filename="widget.cpp" line="654"/>
         <source>Erreur: L&apos;opération a échoué car l&apos;application ne dispose pas des privilèges requis.</source>
         <oldsource>La négociation de connexion avec le serveur proxy a échoué, car la réponse du serveur proxy n&apos;a pas pu être comprise.</oldsource>
-        <translation type="unfinished"></translation>
+        <translation>Erreur: L&apos;opération a échoué car l&apos;application ne dispose pas des privilèges requis.</translation>
     </message>
 </context>
 <context>
@@ -106,7 +106,7 @@
     <message>
         <location filename="widget.ui" line="14"/>
         <source>ananta systeme tchat</source>
-        <translation type="unfinished"></translation>
+        <translation>Ananta System Tchat</translation>
     </message>
     <message>
         <location filename="widget.ui" line="92"/>
@@ -115,607 +115,608 @@
 p, li { white-space: pre-wrap; }
 &lt;/style&gt;&lt;/head&gt;&lt;body style=&quot; font-family:&apos;MS Shell Dlg 2&apos;; font-size:7.8pt; font-weight:400; font-style:normal;&quot;&gt;
 &lt;p style=&quot;-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;br /&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
-        <translation type="unfinished"></translation>
+        <translation>&lt;!DOCTYPE HTML PUBLIC &quot;-//W3C//DTD HTML 4.0//EN&quot; &quot;http://www.w3.org/TR/REC-html40/strict.dtd&quot;&gt;
+&lt;html&gt;&lt;head&gt;&lt;meta name=&quot;qrichtext&quot; content=&quot;1&quot; /&gt;&lt;style type=&quot;text/css&quot;&gt;
+p, li { white-space: pre-wrap; }
+&lt;/style&gt;&lt;/head&gt;&lt;body style=&quot; font-family:&apos;MS Shell Dlg 2&apos;; font-size:7.8pt; font-weight:400; font-style:normal;&quot;&gt;
+&lt;p style=&quot;-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;br /&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
     </message>
     <message>
         <location filename="widget.ui" line="130"/>
         <source>127.0.0.1</source>
-        <translation type="unfinished"></translation>
+        <translation>127.0.0.1</translation>
     </message>
     <message>
         <location filename="widget.ui" line="137"/>
         <source>Adresse:</source>
-        <translation type="unfinished"></translation>
+        <translation>Adresse:</translation>
     </message>
     <message>
         <location filename="widget.ui" line="144"/>
         <source>Pin:</source>
-        <translation type="unfinished"></translation>
+        <translation>Pin:</translation>
     </message>
     <message>
         <location filename="widget.ui" line="157"/>
         <source>Parametres</source>
-        <translation type="unfinished"></translation>
+        <translation>Paramètres</translation>
     </message>
     <message>
         <location filename="widget.ui" line="171"/>
         <source>Pseudo:</source>
-        <translation type="unfinished"></translation>
+        <translation>Pseudo:</translation>
     </message>
     <message>
         <location filename="widget.ui" line="181"/>
-        <location filename="widget.cpp" line="495"/>
+        <location filename="widget.cpp" line="467"/>
         <source>Message:</source>
-        <translation type="unfinished"></translation>
+        <translation>Message:</translation>
     </message>
     <message>
         <location filename="widget.ui" line="194"/>
         <source>Envoyer</source>
-        <translation type="unfinished"></translation>
+        <translation>Envoyer</translation>
     </message>
     <message>
         <location filename="widget.cpp" line="97"/>
         <source>Le serveur n&apos;a pas pu être démarré. Raison :&lt;br /&gt;</source>
-        <translation type="unfinished"></translation>
+        <translation>Le serveur n&apos;a pas pu être démarré. Raison :&lt;br /&gt;</translation>
     </message>
     <message>
-        <location filename="widget.cpp" line="311"/>
-        <location filename="widget.cpp" line="351"/>
+        <location filename="widget.cpp" line="322"/>
+        <location filename="widget.cpp" line="362"/>
         <source>serveur bot</source>
-        <translation type="unfinished"></translation>
+        <translation>Serveur Bot</translation>
     </message>
     <message>
         <location filename="widget.cpp" line="104"/>
         <source>Le serveur a été démarré sur le port &lt;strong&gt;</source>
-        <translation type="unfinished"></translation>
+        <translation>Le serveur a été démarré sur le port &lt;strong&gt;</translation>
     </message>
     <message>
         <location filename="widget.cpp" line="75"/>
         <source>Quitter</source>
-        <translation type="unfinished"></translation>
+        <translation>Quitter</translation>
     </message>
     <message>
         <location filename="widget.cpp" line="76"/>
         <source>Condenser la fenêtre</source>
-        <translation type="unfinished"></translation>
+        <translation>Condenser la fenêtre</translation>
     </message>
     <message>
         <location filename="widget.cpp" line="97"/>
-        <location filename="widget.cpp" line="362"/>
+        <location filename="widget.cpp" line="373"/>
         <source>Serveur Bot</source>
-        <translation type="unfinished"></translation>
+        <translation>Serveur Bot</translation>
     </message>
     <message>
         <location filename="widget.cpp" line="104"/>
         <source>&lt;/strong&gt;.&lt;br /&gt;Des clients peuvent maintenant se connecter.</source>
-        <translation type="unfinished"></translation>
+        <translation>&lt;/strong&gt;.&lt;br /&gt;Des utilisateurs peuvent maintenant se connecter.</translation>
     </message>
     <message>
         <location filename="widget.cpp" line="104"/>
         <source>Chat Bot</source>
-        <translation type="unfinished"></translation>
+        <translation>Chat Bot</translation>
     </message>
     <message>
         <location filename="widget.cpp" line="157"/>
         <source>Erreur, un boolean est en défaut. Veuillez nous contacter sur notre Discord dans: Paramètres -&gt; Discord</source>
-        <translation type="unfinished"></translation>
+        <translation>Erreur, un boolean est en défaut. Veuillez nous contacter sur notre Discord dans: Paramètres -&gt; Discord</translation>
     </message>
     <message>
         <location filename="widget.cpp" line="160"/>
         <source>Vous ne pouvez passer l&apos;app en mode condensé qu&apos;une fois connecté.</source>
-        <translation type="unfinished"></translation>
+        <translation>Vous ne pouvez passer en mode condensé qu&apos;une fois connecté.</translation>
     </message>
     <message>
-        <location filename="widget.cpp" line="343"/>
         <source>erreur les metadonnée ne coresponde pas avec celle du serveur</source>
-        <translation type="unfinished"></translation>
+        <translation type="vanished">Erreur: Les metadonnées ne correspondent pas avec celles du serveur.</translation>
     </message>
     <message>
-        <location filename="widget.cpp" line="343"/>
-        <location filename="widget.cpp" line="345"/>
         <source>Serveur Tchat Bot</source>
-        <translation type="unfinished"></translation>
+        <translation type="vanished">Serveur Tchat Bot</translation>
     </message>
     <message>
-        <location filename="widget.cpp" line="345"/>
         <source>erreur votre n° de vertion ou votre identifient est incorect</source>
-        <translation type="unfinished"></translation>
+        <translation type="vanished">Erreur: Votre numéro de version ou votre identifiant est incorrect.</translation>
     </message>
     <message>
-        <location filename="widget.cpp" line="350"/>
-        <location filename="widget.cpp" line="351"/>
-        <source>un paquet de comande a été recu mais la l&apos;idantificateur </source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location filename="widget.cpp" line="350"/>
-        <location filename="widget.cpp" line="351"/>
-        <source>est incompri.</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
+        <location filename="widget.cpp" line="361"/>
         <location filename="widget.cpp" line="362"/>
+        <source>un paquet de comande a été recu mais la l&apos;idantificateur </source>
+        <translation>Un paquet de commande a été reçu mais la l&apos;identificateur </translation>
+    </message>
+    <message>
+        <location filename="widget.cpp" line="361"/>
+        <location filename="widget.cpp" line="362"/>
+        <source>est incompri.</source>
+        <translation>est inconnu.</translation>
+    </message>
+    <message>
+        <location filename="widget.cpp" line="373"/>
         <source>Erreur fatal: les clients ne peuvent pas être supprimés. Tentative de suppression puis fermeture!</source>
-        <translation type="unfinished"></translation>
+        <translation>Erreur fatal: Les clients ne peuvent pas être supprimés. Tentative de suppression puis fermeture!</translation>
     </message>
     <message>
-        <location filename="widget.cpp" line="363"/>
+        <location filename="widget.cpp" line="374"/>
         <source>Erreur fatal</source>
-        <translation type="unfinished"></translation>
+        <translation>Erreur fatal</translation>
     </message>
     <message>
-        <location filename="widget.cpp" line="363"/>
+        <location filename="widget.cpp" line="374"/>
         <source>Les clients ne peuvent pas être supprimés. Nouvelle tentative de suppression puis fermeture!</source>
-        <translation type="unfinished"></translation>
+        <translation>Les clients ne peuvent pas être supprimés. Nouvelle tentative de suppression puis fermeture!</translation>
     </message>
     <message>
-        <location filename="widget.cpp" line="392"/>
-        <location filename="widget.cpp" line="436"/>
-        <location filename="widget.cpp" line="438"/>
-        <location filename="widget.cpp" line="440"/>
-        <location filename="widget.cpp" line="442"/>
+        <location filename="widget.cpp" line="306"/>
+        <location filename="widget.cpp" line="308"/>
+        <location filename="widget.cpp" line="310"/>
+        <location filename="widget.cpp" line="312"/>
+        <location filename="widget.cpp" line="402"/>
+        <location filename="widget.cpp" line="543"/>
+        <location filename="widget.cpp" line="545"/>
+        <location filename="widget.cpp" line="547"/>
+        <location filename="widget.cpp" line="549"/>
+        <location filename="widget.cpp" line="551"/>
+        <location filename="widget.cpp" line="556"/>
+        <location filename="widget.cpp" line="558"/>
+        <location filename="widget.cpp" line="561"/>
+        <location filename="widget.cpp" line="569"/>
         <location filename="widget.cpp" line="571"/>
         <location filename="widget.cpp" line="573"/>
         <location filename="widget.cpp" line="575"/>
         <location filename="widget.cpp" line="577"/>
         <location filename="widget.cpp" line="579"/>
-        <location filename="widget.cpp" line="584"/>
-        <location filename="widget.cpp" line="586"/>
+        <location filename="widget.cpp" line="581"/>
+        <location filename="widget.cpp" line="583"/>
         <location filename="widget.cpp" line="589"/>
-        <location filename="widget.cpp" line="597"/>
-        <location filename="widget.cpp" line="599"/>
+        <location filename="widget.cpp" line="591"/>
+        <location filename="widget.cpp" line="595"/>
         <location filename="widget.cpp" line="601"/>
-        <location filename="widget.cpp" line="603"/>
-        <location filename="widget.cpp" line="605"/>
-        <location filename="widget.cpp" line="607"/>
         <location filename="widget.cpp" line="609"/>
-        <location filename="widget.cpp" line="611"/>
-        <location filename="widget.cpp" line="617"/>
-        <location filename="widget.cpp" line="619"/>
-        <location filename="widget.cpp" line="623"/>
-        <location filename="widget.cpp" line="629"/>
-        <location filename="widget.cpp" line="637"/>
-        <location filename="widget.cpp" line="656"/>
+        <location filename="widget.cpp" line="628"/>
         <source>Tchat Bot</source>
         <oldsource>chat bot</oldsource>
-        <translation type="unfinished"></translation>
+        <translation>Tchat Bot</translation>
     </message>
     <message>
-        <location filename="widget.cpp" line="392"/>
+        <location filename="widget.cpp" line="402"/>
         <source>Il est impossible d&apos;écrire dans le fichier.</source>
-        <translation type="unfinished"></translation>
+        <translation>Il est impossible d&apos;écrire dans le fichier.</translation>
     </message>
     <message>
-        <location filename="widget.cpp" line="411"/>
+        <location filename="widget.cpp" line="421"/>
         <source>Le fichier est inaxcessible</source>
-        <translation type="unfinished"></translation>
+        <translation>Le fichier est inaccessible</translation>
     </message>
     <message>
-        <location filename="widget.cpp" line="411"/>
-        <location filename="widget.cpp" line="667"/>
+        <location filename="widget.cpp" line="421"/>
+        <location filename="widget.cpp" line="639"/>
+        <location filename="widget.cpp" line="644"/>
+        <location filename="widget.cpp" line="649"/>
+        <location filename="widget.cpp" line="654"/>
+        <location filename="widget.cpp" line="658"/>
+        <location filename="widget.cpp" line="663"/>
+        <location filename="widget.cpp" line="668"/>
         <location filename="widget.cpp" line="672"/>
         <location filename="widget.cpp" line="677"/>
         <location filename="widget.cpp" line="682"/>
-        <location filename="widget.cpp" line="686"/>
-        <location filename="widget.cpp" line="691"/>
-        <location filename="widget.cpp" line="696"/>
-        <location filename="widget.cpp" line="700"/>
-        <location filename="widget.cpp" line="705"/>
-        <location filename="widget.cpp" line="710"/>
-        <location filename="widget.cpp" line="715"/>
-        <location filename="widget.cpp" line="720"/>
-        <location filename="widget.cpp" line="725"/>
-        <location filename="widget.cpp" line="730"/>
-        <location filename="widget.cpp" line="735"/>
-        <location filename="widget.cpp" line="740"/>
-        <location filename="widget.cpp" line="745"/>
-        <location filename="widget.cpp" line="750"/>
-        <location filename="widget.cpp" line="755"/>
+        <location filename="widget.cpp" line="687"/>
+        <location filename="widget.cpp" line="692"/>
+        <location filename="widget.cpp" line="697"/>
+        <location filename="widget.cpp" line="702"/>
+        <location filename="widget.cpp" line="707"/>
+        <location filename="widget.cpp" line="712"/>
+        <location filename="widget.cpp" line="717"/>
+        <location filename="widget.cpp" line="722"/>
+        <location filename="widget.cpp" line="727"/>
         <source>System Tchat Bot</source>
-        <translation type="unfinished"></translation>
+        <translation>System Tchat Bot</translation>
     </message>
     <message>
-        <location filename="widget.cpp" line="436"/>
+        <location filename="widget.cpp" line="306"/>
         <source> est connecté.</source>
-        <translation type="unfinished"></translation>
+        <translation> est connecté(e).</translation>
     </message>
     <message>
-        <location filename="widget.cpp" line="438"/>
+        <location filename="widget.cpp" line="308"/>
         <source> vient d&apos;arriver dans le salon.</source>
-        <translation type="unfinished"></translation>
+        <translation> vient d&apos;arriver dans le salon.</translation>
     </message>
     <message>
-        <location filename="widget.cpp" line="440"/>
+        <location filename="widget.cpp" line="310"/>
         <source> vient de nous rejoindre.</source>
-        <translation type="unfinished"></translation>
+        <translation> vient de nous rejoindre.</translation>
     </message>
     <message>
-        <location filename="widget.cpp" line="442"/>
+        <location filename="widget.cpp" line="312"/>
         <source>Il ne nous manquait plus que </source>
-        <translation type="unfinished"></translation>
+        <translation>Il ne nous manquait plus que </translation>
     </message>
     <message>
-        <location filename="widget.cpp" line="442"/>
+        <location filename="widget.cpp" line="312"/>
         <source> heureusement il nous a rejoint.</source>
-        <translation type="unfinished"></translation>
+        <translation> heureusement il nous a rejoint.</translation>
     </message>
     <message>
-        <location filename="widget.cpp" line="469"/>
+        <location filename="widget.cpp" line="441"/>
         <source>Un paquet de commande a été reçu mais la commande est incomprise.</source>
-        <translation type="unfinished"></translation>
+        <translation>Un paquet de commande a été reçu mais la commande est inconnue.</translation>
     </message>
     <message>
-        <location filename="widget.cpp" line="512"/>
+        <location filename="widget.cpp" line="484"/>
         <source>pseudo invalid</source>
-        <translation type="unfinished"></translation>
+        <translation>Pseudo invalide</translation>
     </message>
     <message>
-        <location filename="widget.cpp" line="512"/>
+        <location filename="widget.cpp" line="484"/>
         <source>Vous devez posseder un pseudo (anonymous est interdit).</source>
-        <translation type="unfinished"></translation>
+        <translation>Vous devez posseder un pseudo (anonymous est interdit).</translation>
     </message>
     <message>
-        <location filename="widget.cpp" line="527"/>
+        <location filename="widget.cpp" line="499"/>
         <source>Erreur passive: Securitée anti-DDOS</source>
-        <translation type="unfinished"></translation>
+        <translation>Erreur passive: Securité anti-DDOS</translation>
     </message>
     <message>
-        <location filename="widget.cpp" line="527"/>
+        <location filename="widget.cpp" line="499"/>
         <source>Vous ne pouvez pas envoyer un message vide.</source>
-        <translation type="unfinished"></translation>
+        <translation>Vous ne pouvez pas envoyer de message vide.</translation>
     </message>
     <message>
-        <location filename="widget.cpp" line="550"/>
-        <location filename="widget.cpp" line="551"/>
+        <location filename="widget.cpp" line="522"/>
+        <location filename="widget.cpp" line="523"/>
         <source>tchat bot</source>
-        <translation type="unfinished"></translation>
+        <translation>Tchat Bot</translation>
     </message>
     <message>
-        <location filename="widget.cpp" line="553"/>
-        <location filename="widget.cpp" line="554"/>
-        <location filename="widget.cpp" line="556"/>
-        <location filename="widget.cpp" line="557"/>
+        <location filename="widget.cpp" line="525"/>
+        <location filename="widget.cpp" line="526"/>
+        <location filename="widget.cpp" line="528"/>
+        <location filename="widget.cpp" line="529"/>
         <source>ananta system</source>
-        <translation type="unfinished"></translation>
+        <translation>Ananta System</translation>
+    </message>
+    <message>
+        <location filename="widget.cpp" line="543"/>
+        <source>Bonjour</source>
+        <translation>Bonjour</translation>
+    </message>
+    <message>
+        <location filename="widget.cpp" line="545"/>
+        <source>Salut</source>
+        <translation>Salut</translation>
+    </message>
+    <message>
+        <location filename="widget.cpp" line="547"/>
+        <source>Salut🖖</source>
+        <translation>Salut🖖</translation>
+    </message>
+    <message>
+        <location filename="widget.cpp" line="549"/>
+        <source>Hello</source>
+        <translation>Hello</translation>
+    </message>
+    <message>
+        <location filename="widget.cpp" line="551"/>
+        <source>Hello👋</source>
+        <translation>Hello👋</translation>
+    </message>
+    <message>
+        <location filename="widget.cpp" line="556"/>
+        <source>Tu peux m&apos;appeller Tchat Bot.</source>
+        <translation>Tu peux m&apos;appeller Tchat Bot.</translation>
+    </message>
+    <message>
+        <location filename="widget.cpp" line="558"/>
+        <source>Tu peux m&apos;appeller Tchat Bot 😊.</source>
+        <translation>Tu peux m&apos;appeller Tchat Bot 😊.</translation>
+    </message>
+    <message>
+        <location filename="widget.cpp" line="561"/>
+        <source>Je suis le Tchat Bot crée par les développeurs de Ananta System, je suis encore très inachevé.</source>
+        <translation>Je suis le Tchat Bot crée par les développeurs de Ananta System, je suis encore très inachevé.</translation>
+    </message>
+    <message>
+        <location filename="widget.cpp" line="569"/>
+        <source>De rien 😀</source>
+        <translation>De rien 😀</translation>
     </message>
     <message>
         <location filename="widget.cpp" line="571"/>
-        <source>Bonjour</source>
-        <translation type="unfinished"></translation>
+        <source>Tout le plaisir est pour moi 😀</source>
+        <translation>Tout le plaisir est pour moi 😀</translation>
     </message>
     <message>
         <location filename="widget.cpp" line="573"/>
-        <source>Salut</source>
-        <translation type="unfinished"></translation>
+        <source>Tout le plaisir est pour moi!</source>
+        <translation>Tout le plaisir est pour moi!</translation>
     </message>
     <message>
         <location filename="widget.cpp" line="575"/>
-        <source>Salut🖖</source>
-        <translation type="unfinished"></translation>
+        <source>De rien !</source>
+        <translation>De rien !</translation>
     </message>
     <message>
         <location filename="widget.cpp" line="577"/>
-        <source>Hello</source>
-        <translation type="unfinished"></translation>
+        <source>Mais je suis là pour ça bien sûr 😀</source>
+        <translation>Mais je suis là pour ça bien sûr 😀</translation>
     </message>
     <message>
         <location filename="widget.cpp" line="579"/>
-        <source>Hello👋</source>
-        <translation type="unfinished"></translation>
+        <source>Mais je suis là pour ça bien sûr !</source>
+        <translation>Mais je suis là pour ça bien sûr !</translation>
     </message>
     <message>
-        <location filename="widget.cpp" line="584"/>
-        <source>Tu peux m&apos;appeller Tchat Bot.</source>
-        <translation type="unfinished"></translation>
+        <location filename="widget.cpp" line="581"/>
+        <source>Quand tu ne me parle pas je fais que des actions répétitives, recevoir des messages et les afficher😥...</source>
+        <translation>Quand tu ne me parle pas je fais que des actions répétitives, recevoir des messages et les afficher😥...</translation>
     </message>
     <message>
-        <location filename="widget.cpp" line="586"/>
-        <source>Tu peux m&apos;appeller Tchat Bot 😊.</source>
-        <translation type="unfinished"></translation>
+        <location filename="widget.cpp" line="583"/>
+        <source>Quand tu ne me parle pas je m&apos;ennuie 😥</source>
+        <translation>Quand tu ne me parle pas je m&apos;ennuie 😥</translation>
     </message>
     <message>
         <location filename="widget.cpp" line="589"/>
-        <source>Je suis le Tchat Bot crée par les développeurs de Ananta System, je suis encore très inachevé.</source>
-        <translation type="unfinished"></translation>
+        <source>Il suffit de taper la commande /condense</source>
+        <comment>Attention bien taper la même commande!</comment>
+        <translation>Il suffit de taper la commande /condense</translation>
     </message>
     <message>
-        <location filename="widget.cpp" line="597"/>
-        <source>De rien 😀</source>
-        <translation type="unfinished"></translation>
+        <location filename="widget.cpp" line="591"/>
+        <source>Tu peux faire clique droit sur l&apos;icône en bas à droite dans ta barre des tâches -&gt; Condenser la fenêtre</source>
+        <translation>Tu peux faire clique droit sur l&apos;icône en bas à droite dans ta barre des tâches -&gt; Condenser la fenêtre</translation>
     </message>
     <message>
-        <location filename="widget.cpp" line="599"/>
-        <source>Tout le plaisir est pour moi 😀</source>
-        <translation type="unfinished"></translation>
+        <location filename="widget.cpp" line="595"/>
+        <source>Je suis desolé, mais je n&apos;ai pas compris votre demande, vérifiez l&apos;orthographe.</source>
+        <translation>Je suis desolé, mais je n&apos;ai pas compris votre demande, vérifiez l&apos;orthographe.</translation>
     </message>
     <message>
         <location filename="widget.cpp" line="601"/>
-        <source>Tout le plaisir est pour moi!</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location filename="widget.cpp" line="603"/>
-        <source>De rien !</source>
-        <translation type="unfinished"></translation>
+        <source>Tentative de connexion en cours...</source>
+        <translation>Tentative de connexion en cours...</translation>
     </message>
     <message>
         <location filename="widget.cpp" line="605"/>
-        <source>Mais je suis là pour ça bien sûr 😀</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location filename="widget.cpp" line="607"/>
-        <source>Mais je suis là pour ça bien sûr !</source>
-        <translation type="unfinished"></translation>
+        <source>&lt;font color=&quot;#894B23&quot;&gt;Connexion lancée&lt;/font&gt;</source>
+        <translation>&lt;font color=&quot;#894B23&quot;&gt;Connexion lancée&lt;/font&gt;</translation>
     </message>
     <message>
         <location filename="widget.cpp" line="609"/>
-        <source>Quand tu ne me parle pas je fais que des actions répétitives, recevoir des messages et les afficher😥...</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location filename="widget.cpp" line="611"/>
-        <source>Quand tu ne me parle pas je m&apos;ennuie 😥</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location filename="widget.cpp" line="617"/>
-        <source>Il suffit de taper la commande /condense</source>
-        <comment>Attention bien taper la même commande!</comment>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location filename="widget.cpp" line="619"/>
-        <source>Tu peux faire clique droit sur l&apos;icône en bas à droite dans ta barre des tâches -&gt; Condenser la fenêtre</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location filename="widget.cpp" line="623"/>
-        <source>Je suis desolé, mais je n&apos;ai pas compris votre demande, vérifiez l&apos;orthographe.</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location filename="widget.cpp" line="629"/>
-        <source>Tentative de connexion en cours...</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location filename="widget.cpp" line="633"/>
-        <source>&lt;font color=&quot;#894B23&quot;&gt;Connexion lancée&lt;/font&gt;</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location filename="widget.cpp" line="637"/>
         <source>Connexion établie!</source>
-        <translation type="unfinished"></translation>
+        <translation>Connexion établie!</translation>
     </message>
     <message>
-        <location filename="widget.cpp" line="641"/>
+        <location filename="widget.cpp" line="613"/>
         <source>&lt;font color=&quot;#70AD47&quot;&gt;Connecté&lt;/font&gt;</source>
-        <translation type="unfinished"></translation>
+        <translatorcomment>Changement de la couleur du texte de 70AD47 à 00E242</translatorcomment>
+        <translation>&lt;font color=&quot;#00E242&quot;&gt;Connecté&lt;/font&gt;</translation>
     </message>
     <message>
-        <location filename="widget.cpp" line="656"/>
+        <location filename="widget.cpp" line="628"/>
         <source>Déconnecté du serveur</source>
-        <translation type="unfinished"></translation>
+        <translation>Déconnecté du serveur</translation>
     </message>
     <message>
-        <location filename="widget.cpp" line="900"/>
-        <location filename="widget.cpp" line="911"/>
-        <location filename="widget.cpp" line="913"/>
-        <location filename="widget.cpp" line="915"/>
-        <location filename="widget.cpp" line="934"/>
+        <location filename="widget.cpp" line="870"/>
+        <location filename="widget.cpp" line="881"/>
+        <location filename="widget.cpp" line="883"/>
+        <location filename="widget.cpp" line="885"/>
+        <location filename="widget.cpp" line="904"/>
         <source>Erreur</source>
-        <translation type="unfinished"></translation>
+        <translation>Erreur</translation>
     </message>
     <message>
-        <location filename="widget.cpp" line="900"/>
+        <location filename="widget.cpp" line="870"/>
         <source>Un paquet a été recu mais l&apos;indentificateur : </source>
-        <translation type="unfinished"></translation>
+        <translation>Un paquet a été reçu mais l&apos;indentificateur : </translation>
     </message>
     <message>
-        <location filename="widget.cpp" line="900"/>
+        <location filename="widget.cpp" line="870"/>
         <source> est inconnu.</source>
-        <translation type="unfinished"></translation>
+        <translation> est inconnu.</translation>
     </message>
     <message>
-        <location filename="widget.cpp" line="911"/>
+        <location filename="widget.cpp" line="881"/>
         <source>Il vous faut un pseudo pour vous connecter (Anonymous est interdit).</source>
-        <translation type="unfinished"></translation>
+        <translation>Il vous faut un pseudo pour vous connecter (Anonymous est interdit).</translation>
     </message>
     <message>
-        <location filename="widget.cpp" line="913"/>
+        <location filename="widget.cpp" line="883"/>
         <source>Un autre client porte déjà ce pseudo. Veuillez changer de pseudo pour vous connecter.</source>
-        <translation type="unfinished"></translation>
+        <translation>Un autre utilisateur porte déjà ce pseudo. Veuillez changer de pseudo pour vous connecter.</translation>
     </message>
     <message>
-        <location filename="widget.cpp" line="915"/>
+        <location filename="widget.cpp" line="885"/>
         <source>Un autre client porte déjà un pseudo ressemblant. Veuillez changer de pseudo pour vous connecter.</source>
-        <translation type="unfinished"></translation>
+        <translation>Un autre utilisateur porte un pseudo ressemblant. Veuillez changer de pseudo pour vous connecter.</translation>
     </message>
     <message>
-        <location filename="widget.cpp" line="924"/>
-        <location filename="widget.cpp" line="929"/>
+        <location filename="widget.cpp" line="894"/>
+        <location filename="widget.cpp" line="899"/>
         <source>Suppression de client</source>
-        <translation type="unfinished"></translation>
+        <translation>Déconnection d&apos;utilisateur</translation>
     </message>
     <message>
-        <location filename="widget.cpp" line="924"/>
-        <location filename="widget.cpp" line="929"/>
+        <location filename="widget.cpp" line="894"/>
+        <location filename="widget.cpp" line="899"/>
         <source>Le client vient d&apos;être supprimé.</source>
-        <translation type="unfinished"></translation>
+        <translation>L&apos;utilisateur vient d&apos;être déconnecté.</translation>
     </message>
     <message>
-        <location filename="widget.cpp" line="934"/>
+        <location filename="widget.cpp" line="904"/>
         <source>Un paquet de comande a été reçu mais la commande est incomprise.</source>
-        <translation type="unfinished"></translation>
+        <translation>Un paquet de commande a été reçu mais la commande est inconnu.</translation>
     </message>
     <message>
         <location filename="widget.cpp" line="157"/>
         <source>bool condesed</source>
-        <translation type="unfinished"></translation>
+        <translation>Valeur non attendue</translation>
     </message>
     <message>
         <location filename="widget.cpp" line="160"/>
         <source>passage en mode condensée</source>
-        <translation type="unfinished"></translation>
+        <translation>Passage en mode condensé</translation>
     </message>
     <message>
-        <location filename="widget.cpp" line="311"/>
+        <location filename="widget.cpp" line="322"/>
         <source>erreur lors de la recherche du client qui a envoyé le paquet (non il y a pas de jeux de mot pouris)</source>
-        <translation type="unfinished"></translation>
+        <translation>Erreur lors de la recherche du client qui a envoyé le paquet</translation>
     </message>
     <message>
-        <location filename="widget.cpp" line="350"/>
-        <location filename="widget.cpp" line="469"/>
+        <location filename="widget.cpp" line="361"/>
+        <location filename="widget.cpp" line="441"/>
         <source>erreur</source>
-        <translation type="unfinished"></translation>
+        <translation>Erreur</translation>
     </message>
     <message>
-        <location filename="widget.cpp" line="477"/>
-        <location filename="widget.cpp" line="942"/>
-        <location filename="widget.cpp" line="947"/>
+        <location filename="widget.cpp" line="449"/>
+        <location filename="widget.cpp" line="912"/>
+        <location filename="widget.cpp" line="917"/>
         <source>&lt;span style=&quot;font-size: 10px&quot;&gt; Le </source>
-        <translation type="unfinished"></translation>
+        <translation>&lt;span style=&quot;font-size: 10px&quot;&gt; Le </translation>
     </message>
     <message>
-        <location filename="widget.cpp" line="477"/>
-        <location filename="widget.cpp" line="942"/>
+        <location filename="widget.cpp" line="449"/>
+        <location filename="widget.cpp" line="912"/>
         <source>&lt;/span&gt; &lt;span style=&quot;font-size: 10px&quot;&gt;à </source>
-        <translation type="unfinished"></translation>
+        <translation>&lt;/span&gt; &lt;span style=&quot;font-size: 10px&quot;&gt;à </translation>
     </message>
     <message>
-        <location filename="widget.cpp" line="477"/>
-        <location filename="widget.cpp" line="942"/>
-        <location filename="widget.cpp" line="947"/>
+        <location filename="widget.cpp" line="449"/>
+        <location filename="widget.cpp" line="912"/>
+        <location filename="widget.cpp" line="917"/>
         <source> &lt;/span&gt;&lt;br/&gt;</source>
-        <translation type="unfinished"></translation>
+        <translation> &lt;/span&gt;&lt;br/&gt;</translation>
     </message>
     <message>
-        <location filename="widget.cpp" line="481"/>
+        <location filename="widget.cpp" line="453"/>
         <source>&lt;span style=&quot;font-size: 12px; color:#000000; font-weight: bold;&quot;&gt;</source>
-        <translation type="unfinished"></translation>
+        <translation>&lt;span style=&quot;font-size: 12px; color:#000000; font-weight: bold;&quot;&gt;</translation>
     </message>
     <message>
-        <location filename="widget.cpp" line="481"/>
-        <location filename="widget.cpp" line="955"/>
-        <location filename="widget.cpp" line="961"/>
+        <location filename="widget.cpp" line="453"/>
+        <location filename="widget.cpp" line="925"/>
+        <location filename="widget.cpp" line="931"/>
         <source>&lt;/span&gt;</source>
-        <translation type="unfinished"></translation>
+        <translation>&lt;/span&gt;</translation>
     </message>
     <message>
-        <location filename="widget.cpp" line="481"/>
+        <location filename="widget.cpp" line="453"/>
         <source>&lt;span style=&quot;font-size: 14px; color:#2F2F2F&quot;&gt;</source>
-        <translation type="unfinished"></translation>
+        <translation>&lt;span style=&quot;font-size: 14px; color:#2F2F2F&quot;&gt;</translation>
     </message>
     <message>
-        <location filename="widget.cpp" line="481"/>
-        <location filename="widget.cpp" line="955"/>
-        <location filename="widget.cpp" line="961"/>
+        <location filename="widget.cpp" line="453"/>
+        <location filename="widget.cpp" line="925"/>
+        <location filename="widget.cpp" line="931"/>
         <source>&lt;/span&gt;&lt;br/&gt;&lt;br/&gt;</source>
-        <translation type="unfinished"></translation>
+        <translation>&lt;/span&gt;&lt;br/&gt;&lt;br/&gt;</translation>
     </message>
     <message>
-        <location filename="widget.cpp" line="517"/>
-        <location filename="widget.cpp" line="657"/>
-        <location filename="widget.cpp" line="663"/>
+        <location filename="widget.cpp" line="489"/>
+        <location filename="widget.cpp" line="629"/>
+        <location filename="widget.cpp" line="635"/>
         <source>&lt;font color=&quot;#ff0000&quot;&gt;Déconnecté&lt;/font&gt;</source>
-        <translation type="unfinished"></translation>
+        <translation>&lt;font color=&quot;#ff0000&quot;&gt;Déconnecté&lt;/font&gt;</translation>
     </message>
     <message>
-        <location filename="widget.cpp" line="535"/>
-        <location filename="widget.cpp" line="536"/>
+        <location filename="widget.cpp" line="507"/>
+        <location filename="widget.cpp" line="508"/>
         <source>stp</source>
         <comment>diminutif de s&apos;il te plait</comment>
-        <translation type="unfinished"></translation>
+        <translation>stp</translation>
     </message>
     <message>
-        <location filename="widget.cpp" line="537"/>
-        <location filename="widget.cpp" line="538"/>
+        <location filename="widget.cpp" line="509"/>
+        <location filename="widget.cpp" line="510"/>
         <source>s&apos;il te plait</source>
-        <translation type="unfinished"></translation>
+        <translation>s&apos;il te plait</translation>
     </message>
     <message>
-        <location filename="widget.cpp" line="568"/>
+        <location filename="widget.cpp" line="540"/>
         <source>bonjour</source>
-        <translation type="unfinished"></translation>
+        <translation>bonjour</translation>
     </message>
     <message>
-        <location filename="widget.cpp" line="568"/>
+        <location filename="widget.cpp" line="540"/>
         <source>salut</source>
-        <translation type="unfinished"></translation>
+        <translation>salut</translation>
     </message>
     <message>
-        <location filename="widget.cpp" line="568"/>
+        <location filename="widget.cpp" line="540"/>
         <source>hello</source>
-        <translation type="unfinished"></translation>
+        <translation>hello</translation>
     </message>
     <message>
-        <location filename="widget.cpp" line="581"/>
+        <location filename="widget.cpp" line="553"/>
         <source>comment t&apos;apelle tu</source>
-        <translation type="unfinished"></translation>
+        <translation>comment t&apos;apelle tu</translation>
     </message>
     <message>
-        <location filename="widget.cpp" line="581"/>
+        <location filename="widget.cpp" line="553"/>
         <source>quel est ton nom</source>
-        <translation type="unfinished"></translation>
+        <translation>quel est ton nom</translation>
     </message>
     <message>
-        <location filename="widget.cpp" line="588"/>
+        <location filename="widget.cpp" line="560"/>
         <source>qui est tu</source>
-        <translation type="unfinished"></translation>
+        <translation>qui est tu</translation>
     </message>
     <message>
-        <location filename="widget.cpp" line="594"/>
+        <location filename="widget.cpp" line="566"/>
         <source>merci</source>
-        <translation type="unfinished"></translation>
+        <translation>merci</translation>
     </message>
     <message>
-        <location filename="widget.cpp" line="612"/>
+        <location filename="widget.cpp" line="584"/>
         <source>condenses</source>
-        <translation type="unfinished"></translation>
+        <translation>condenses</translation>
     </message>
     <message>
-        <location filename="widget.cpp" line="612"/>
+        <location filename="widget.cpp" line="584"/>
         <source>condense</source>
-        <translation type="unfinished"></translation>
+        <translation>condense</translation>
     </message>
     <message>
-        <location filename="widget.cpp" line="612"/>
+        <location filename="widget.cpp" line="584"/>
         <source>condense menu</source>
-        <translation type="unfinished"></translation>
+        <translation>condense menu</translation>
     </message>
     <message>
-        <location filename="widget.cpp" line="614"/>
+        <location filename="widget.cpp" line="586"/>
         <source>comment condenser la fenetre</source>
-        <translation type="unfinished"></translation>
+        <translation>comment condenser la fenêtre</translation>
     </message>
     <message>
-        <location filename="widget.cpp" line="614"/>
+        <location filename="widget.cpp" line="586"/>
         <source>comment condenser le menu</source>
-        <translation type="unfinished"></translation>
+        <translation>comment condenser le menu</translation>
     </message>
     <message>
-        <location filename="widget.cpp" line="614"/>
+        <location filename="widget.cpp" line="586"/>
         <source>compacter la fenetre</source>
-        <translation type="unfinished"></translation>
+        <translation>compacter la fenêtre</translation>
     </message>
     <message>
-        <location filename="widget.cpp" line="947"/>
+        <location filename="widget.cpp" line="917"/>
         <source>&lt;/span&gt; &lt;span style=&quot;font-size: 10px&quot;&gt; à </source>
-        <translation type="unfinished"></translation>
+        <translation>&lt;/span&gt; &lt;span style=&quot;font-size: 10px&quot;&gt; à </translation>
     </message>
     <message>
-        <location filename="widget.cpp" line="955"/>
-        <location filename="widget.cpp" line="961"/>
+        <location filename="widget.cpp" line="925"/>
+        <location filename="widget.cpp" line="931"/>
         <source>&lt;span style=&quot;font-size: 12px; font-weight: bold;&quot;&gt;</source>
-        <translation type="unfinished"></translation>
+        <translation>&lt;span style=&quot;font-size: 12px; font-weight: bold;&quot;&gt;</translation>
     </message>
     <message>
-        <location filename="widget.cpp" line="955"/>
-        <location filename="widget.cpp" line="961"/>
+        <location filename="widget.cpp" line="925"/>
+        <location filename="widget.cpp" line="931"/>
         <source>&lt;span style=&quot;font-size: 14px; &quot;&gt;</source>
-        <translation type="unfinished"></translation>
+        <translation>&lt;span style=&quot;font-size: 14px; &quot;&gt;</translation>
     </message>
 </context>
 <context>
@@ -723,320 +724,320 @@ p, li { white-space: pre-wrap; }
     <message>
         <location filename="parametre.cpp" line="36"/>
         <source>Erreur de lecture</source>
-        <translation type="unfinished"></translation>
+        <translation>Erreur de lecture</translation>
     </message>
     <message>
         <location filename="parametre.cpp" line="36"/>
         <source>Il est impossible de lire la couleur par défaut. Elle est donc définit sur blanc</source>
-        <translation type="unfinished"></translation>
+        <translation>Il est impossible de lire le thème par défaut. Il est donc définit sur blanc</translation>
     </message>
     <message>
         <location filename="parametre.cpp" line="37"/>
         <location filename="parametre.cpp" line="99"/>
         <source>Blanc</source>
         <comment>Attention même chose que dans l&apos;ui la combo box de couleur</comment>
-        <translation type="unfinished"></translation>
+        <translation>Blanc</translation>
     </message>
     <message>
         <location filename="parametre.cpp" line="95"/>
         <source>traduction</source>
-        <translation type="unfinished"></translation>
+        <translation>Langue</translation>
     </message>
     <message>
         <location filename="parametre.cpp" line="95"/>
         <source>pour rendre effective ce changement il faut recharger l&apos;aplication</source>
         <comment>doit etre en anglais dans l&apos;aplication francaise et anglaise dans l&apos;app anglaise et toute les autre langue en anglais</comment>
-        <translation type="unfinished"></translation>
+        <translation>To make this change effective, you must restart the application</translation>
     </message>
     <message>
         <location filename="parametre.cpp" line="101"/>
         <source>Noir</source>
         <comment>Attention même chose que dans l&apos;ui la combo box de couleur</comment>
-        <translation type="unfinished"></translation>
+        <translation>Noir</translation>
     </message>
     <message>
         <location filename="parametre.cpp" line="104"/>
         <source>Couleur non trouvée</source>
-        <translation type="unfinished"></translation>
+        <translation>Thème non trouvé</translation>
     </message>
     <message>
         <location filename="parametre.cpp" line="104"/>
         <source>Attention cette couleur n&apos;existe pas dans la version actuelle du tchat</source>
-        <translation type="unfinished"></translation>
+        <translation>Attention ce thème n&apos;existe pas dans cette version du tchat</translation>
     </message>
     <message>
         <location filename="parametre.cpp" line="112"/>
         <source>Personnalisée</source>
         <comment>Attention même chose que dans l&apos;ui la combo box de sélection de musique</comment>
-        <translation type="unfinished"></translation>
+        <translation>Personnalisée</translation>
     </message>
     <message>
         <location filename="parametre.cpp" line="114"/>
         <source>Charger une musique</source>
-        <translation type="unfinished"></translation>
+        <translation>Charger une sonnerie</translation>
     </message>
     <message>
         <location filename="parametre.cpp" line="117"/>
         <source>Erreur de chemin</source>
-        <translation type="unfinished"></translation>
+        <translation>Erreur de chemin</translation>
     </message>
     <message>
         <location filename="parametre.cpp" line="117"/>
         <source>Attention le chemin de fichier et inutilisable, passage en musique par défaut</source>
-        <translation type="unfinished"></translation>
+        <translation>Attention le chemin de fichier et inutilisable, passage en sonnerie par défaut</translation>
     </message>
     <message>
         <location filename="parametre.cpp" line="120"/>
         <source>Blup Blup</source>
         <comment>Attention même chose que dans l&apos;ui la combo box de sélection de musique</comment>
-        <translation type="unfinished"></translation>
+        <translation>Blup Blup</translation>
     </message>
     <message>
         <location filename="parametre.cpp" line="122"/>
         <source>Sonnerie par défaut</source>
         <comment>Attention même chose que dans l&apos;ui la combo box de sélection de musique</comment>
-        <translation type="unfinished"></translation>
+        <translation>Sonnerie par défaut</translation>
     </message>
     <message>
         <location filename="parametre.cpp" line="133"/>
         <source>Supression réussi</source>
-        <translation type="unfinished"></translation>
+        <translation>Supression réussite</translation>
     </message>
     <message>
         <location filename="parametre.cpp" line="133"/>
         <source>La supression a été un effectuée)</source>
-        <translation type="unfinished"></translation>
+        <translation>La supression a été effectuée</translation>
     </message>
     <message>
         <location filename="parametre.cpp" line="135"/>
         <source>Supression raté</source>
-        <translation type="unfinished"></translation>
+        <translation>La supression a échouée</translation>
     </message>
     <message>
         <location filename="parametre.cpp" line="135"/>
         <source>La supression a échouée pour une raison indéfini</source>
-        <translation type="unfinished"></translation>
+        <translation>La supression a échouée pour une raison indéfinit</translation>
     </message>
     <message>
         <location filename="parametre.cpp" line="142"/>
         <location filename="parametre.cpp" line="148"/>
         <location filename="parametre.cpp" line="154"/>
         <source>Erreur a l&apos;ouverture du lien</source>
-        <translation type="unfinished"></translation>
+        <translation>Erreur a l&apos;ouverture du lien</translation>
     </message>
     <message>
         <location filename="parametre.cpp" line="142"/>
         <source>Le lien ne veut pas s&apos;ouvrir le probleme vient de votre navigateur.Veuillez aller sur anantasystem.com et faites-nous un rapport de bug sur le Discord</source>
-        <translation type="unfinished"></translation>
+        <translation>Le lien ne s&apos;ouvre pas. Le probleme vient sûrement de votre navigateur. Veuillez aller sur anantasystem.com et faites-nous un rapport de bug sur Discord.</translation>
     </message>
     <message>
         <location filename="parametre.cpp" line="148"/>
         <location filename="parametre.cpp" line="154"/>
         <source>Le lien ne veut pas s&apos;ouvrir le probleme vient de votre navigateur. Veuillez aller sur anantasystem.com et faites-nous un rapport de bug sur le Discord</source>
-        <translation type="unfinished"></translation>
+        <translation>Le lien ne s&apos;ouvre pas. Le probleme vient sûrement de votre navigateur. Veuillez aller sur anantasystem.com et faites-nous un rapport de bug sur Discord.</translation>
     </message>
     <message>
         <location filename="parametre.cpp" line="165"/>
         <source>Erreur checkbox</source>
-        <translation type="unfinished"></translation>
+        <translation>Erreur checkbox</translation>
     </message>
     <message>
         <location filename="parametre.cpp" line="165"/>
         <source>Cette boite de dialogue est dans un troisème état inexistant. Veuillez nous faire un rapport de bug dans le Discord</source>
-        <translation type="unfinished"></translation>
+        <translation>Cette boite de dialogue est dans un troisème état inexistant. Veuillez nous faire un rapport de bug sur Discord.</translation>
     </message>
     <message>
         <location filename="parametre.cpp" line="184"/>
         <source>redemarage requis</source>
-        <translation type="unfinished"></translation>
+        <translation>Redémarrage requis.</translation>
     </message>
     <message>
         <location filename="parametre.cpp" line="184"/>
         <source>il faut redemarer laplication pour apliquer les changement</source>
-        <translation type="unfinished"></translation>
+        <translation>Redémarrer l&apos;application pour appliquer les changements.</translation>
     </message>
     <message>
         <location filename="parametre.cpp" line="114"/>
         <source>fichier audio (*.MP3 *.WAV)</source>
-        <translation type="unfinished"></translation>
+        <translation>Fichier audio (*.MP3 *.WAV)</translation>
     </message>
     <message>
         <location filename="parametre.cpp" line="129"/>
         <source>atention supression</source>
-        <translation type="unfinished"></translation>
+        <translation>Attention suppression</translation>
     </message>
     <message>
         <location filename="parametre.cpp" line="129"/>
         <source>atention le fichier va etre definitivement suprimer il ne sera pas deplacer dans la corbeille voulez vous continuer</source>
-        <translation type="unfinished"></translation>
+        <translation>Attention le fichier va définitivement être supprimé. Voulez vous continuer ?</translation>
     </message>
     <message>
         <location filename="parametre.ui" line="14"/>
         <source>parametre</source>
-        <translation type="unfinished"></translation>
+        <translation>Paramètres</translation>
     </message>
     <message>
         <location filename="parametre.ui" line="33"/>
         <source>Serveur</source>
-        <translation type="unfinished"></translation>
+        <translation>Serveur</translation>
     </message>
     <message>
         <location filename="parametre.ui" line="60"/>
         <source>haut</source>
-        <translation type="unfinished"></translation>
+        <translation>Élevé</translation>
     </message>
     <message>
         <location filename="parametre.ui" line="65"/>
         <source>moyen</source>
-        <translation type="unfinished"></translation>
+        <translation>Normal</translation>
     </message>
     <message>
         <location filename="parametre.ui" line="70"/>
         <source>bas</source>
-        <translation type="unfinished"></translation>
+        <translation>Bas</translation>
     </message>
     <message>
         <location filename="parametre.ui" line="78"/>
         <source>niveaux de securitée</source>
-        <translation type="unfinished"></translation>
+        <translation>Niveau de sécurité</translation>
     </message>
     <message>
         <location filename="parametre.ui" line="85"/>
         <source>Faire un récapitulatif (mode de debug)</source>
-        <translation type="unfinished"></translation>
+        <translation>Faire un récapitulatif (mode de debug)</translation>
     </message>
     <message>
         <location filename="parametre.ui" line="96"/>
         <source>Supprimer les messages enregistrés</source>
-        <translation type="unfinished"></translation>
+        <translation>Supprimer les messages enregistrés</translation>
     </message>
     <message>
         <location filename="parametre.ui" line="107"/>
         <source>Sauvgarder les messages</source>
-        <translation type="unfinished"></translation>
+        <translation>Sauvgarder les messages</translation>
     </message>
     <message>
         <location filename="parametre.ui" line="140"/>
         <source>Interface</source>
-        <translation type="unfinished"></translation>
+        <translation>Interface</translation>
     </message>
     <message>
         <location filename="parametre.ui" line="147"/>
         <source>Francais</source>
-        <translation type="unfinished"></translation>
+        <translation>Français</translation>
     </message>
     <message>
         <location filename="parametre.ui" line="152"/>
         <source>Anglais</source>
-        <translation type="unfinished"></translation>
+        <translation>Anglais</translation>
     </message>
     <message>
         <location filename="parametre.ui" line="160"/>
         <source>Langue</source>
-        <translation type="unfinished"></translation>
+        <translation>Langue</translation>
     </message>
     <message>
         <location filename="parametre.ui" line="187"/>
         <source>Thème</source>
-        <translation type="unfinished"></translation>
+        <translation>Thème</translation>
     </message>
     <message>
         <location filename="parametre.ui" line="215"/>
         <source>Blanc</source>
-        <translation type="unfinished"></translation>
+        <translation>Blanc</translation>
     </message>
     <message>
         <location filename="parametre.ui" line="220"/>
         <source>Noir</source>
-        <translation type="unfinished"></translation>
+        <translation>Noir</translation>
     </message>
     <message>
         <location filename="parametre.ui" line="228"/>
         <source>Activer la transparence du mode condensé (Non disponible sur Windows 11)</source>
-        <translation type="unfinished"></translation>
+        <translation>Activer la transparence du mode condensé (Non disponible sur Windows 11)</translation>
     </message>
     <message>
         <location filename="parametre.ui" line="241"/>
         <source>Contact</source>
-        <translation type="unfinished"></translation>
+        <translation>Contact</translation>
     </message>
     <message>
         <location filename="parametre.ui" line="247"/>
         <source>Le site</source>
-        <translation type="unfinished"></translation>
+        <translation>Le site</translation>
     </message>
     <message>
         <location filename="parametre.ui" line="258"/>
         <source>Le Discord (Aide/Bug/Problème de traduction)</source>
-        <translation type="unfinished"></translation>
+        <translation>Le Discord (Aide/Bug/Problème de traduction)</translation>
     </message>
     <message>
         <location filename="parametre.ui" line="269"/>
         <source>Le Twitter</source>
-        <translation type="unfinished"></translation>
+        <translation>Le Twitter</translation>
     </message>
     <message>
         <location filename="parametre.ui" line="280"/>
         <source>Faire un don</source>
-        <translation type="unfinished"></translation>
+        <translation>Faire un don</translation>
     </message>
     <message>
         <location filename="parametre.ui" line="294"/>
         <source>Notification</source>
-        <translation type="unfinished"></translation>
+        <translation>Notification</translation>
     </message>
     <message>
         <location filename="parametre.ui" line="300"/>
         <location filename="parametre.ui" line="303"/>
         <source>permet de definire lactivation des notification sonore</source>
-        <translation type="unfinished"></translation>
+        <translation>Permet d&apos;activer les notifications sonores</translation>
     </message>
     <message>
         <location filename="parametre.ui" line="306"/>
         <source>Notification sonore</source>
-        <translation type="unfinished"></translation>
+        <translation>Notifications sonores</translation>
     </message>
     <message>
         <location filename="parametre.ui" line="317"/>
         <source>Sonnerie par défaut</source>
-        <translation type="unfinished"></translation>
+        <translation>Sonnerie par défaut</translation>
     </message>
     <message>
         <location filename="parametre.ui" line="322"/>
         <source>Blup Blup</source>
-        <translation type="unfinished"></translation>
+        <translation>Blup Blup</translation>
     </message>
     <message>
         <location filename="parametre.ui" line="327"/>
         <source>Personnaliser</source>
-        <translation type="unfinished"></translation>
+        <translation>Personnaliser</translation>
     </message>
     <message>
         <location filename="parametre.ui" line="335"/>
         <location filename="parametre.ui" line="338"/>
         <location filename="parametre.ui" line="341"/>
         <source>permet de definire lactivation des notification visuelle</source>
-        <translation type="unfinished"></translation>
+        <translation>Permet d&apos;activer les notifications visuelles</translation>
     </message>
     <message>
         <location filename="parametre.ui" line="344"/>
         <source>Clignotement lors d&apos;une notification</source>
-        <translation type="unfinished"></translation>
+        <translation>Clignotement quand une notification arrive</translation>
     </message>
     <message>
         <location filename="parametre.ui" line="357"/>
         <source>Succès</source>
-        <translation type="unfinished"></translation>
+        <translation>Succès</translation>
     </message>
     <message>
         <location filename="parametre.ui" line="363"/>
         <source>Voir mes succès</source>
-        <translation type="unfinished"></translation>
+        <translation>Voir mes succès</translation>
     </message>
     <message>
         <location filename="parametre.ui" line="374"/>
         <source>Nombre de messages :</source>
-        <translation type="unfinished"></translation>
+        <translation>Nombre de messages:</translation>
     </message>
 </context>
 <context>
@@ -1044,157 +1045,157 @@ p, li { white-space: pre-wrap; }
     <message>
         <location filename="succees.ui" line="14"/>
         <source>les sucées</source>
-        <translation type="unfinished"></translation>
+        <translation>Les succès</translation>
     </message>
     <message>
         <location filename="succees.ui" line="20"/>
         <source>Nombre de message : non resgné</source>
-        <translation type="unfinished"></translation>
+        <translation>Nombre de message: Non renseigné</translation>
     </message>
     <message>
         <location filename="succees.ui" line="27"/>
         <source>Succès :</source>
-        <translation type="unfinished"></translation>
+        <translation>Succès:</translation>
     </message>
     <message>
         <location filename="succees.ui" line="33"/>
         <source>Amateur</source>
-        <translation type="unfinished"></translation>
+        <translation>Amateur</translation>
     </message>
     <message>
         <location filename="succees.ui" line="40"/>
         <source>il vous faut 100 message</source>
-        <translation type="unfinished"></translation>
+        <translation>Il vous faut avoir envoyé 100 messages.</translation>
     </message>
     <message>
         <location filename="succees.ui" line="43"/>
         <source>100 messages</source>
-        <translation type="unfinished"></translation>
+        <translation>100 messages</translation>
     </message>
     <message>
         <location filename="succees.ui" line="53"/>
         <source>il vous faut 1000 message</source>
-        <translation type="unfinished"></translation>
+        <translation>Il vous faut avoir envoyé 1000 messages.</translation>
     </message>
     <message>
         <location filename="succees.ui" line="56"/>
         <source>1 000 messages</source>
-        <translation type="unfinished"></translation>
+        <translation>1 000 messages</translation>
     </message>
     <message>
         <location filename="succees.ui" line="73"/>
         <source>Sais converser</source>
-        <translation type="unfinished"></translation>
+        <translation>Sais converser</translation>
     </message>
     <message>
         <location filename="succees.ui" line="80"/>
         <source>A des relations</source>
-        <translation type="unfinished"></translation>
+        <translation>A eu plusieurs conversations</translation>
     </message>
     <message>
         <location filename="succees.ui" line="87"/>
         <source>il vous faut 2 147 483 647  message</source>
-        <translation type="unfinished"></translation>
+        <translation>Il vous faut avoir envoyé 2 147 483 647 messages.</translation>
     </message>
     <message>
         <location filename="succees.ui" line="90"/>
         <source>2 147 483 647 messages</source>
-        <translation type="unfinished"></translation>
+        <translation>2 147 482 647 messages</translation>
     </message>
     <message>
         <location filename="succees.ui" line="100"/>
         <source>10 utilisateurs connectés</source>
-        <translation type="unfinished"></translation>
+        <translation>10 utilisateurs connectés simultanément</translation>
     </message>
     <message>
         <location filename="succees.ui" line="110"/>
         <source>il vous faut 10 message</source>
-        <translation type="unfinished"></translation>
+        <translation>Il vous faut avoir envoyé 10 messages.</translation>
     </message>
     <message>
         <location filename="succees.ui" line="113"/>
         <source>10 messages</source>
-        <translation type="unfinished"></translation>
+        <translation>10 messages</translation>
     </message>
     <message>
         <location filename="succees.ui" line="137"/>
         <source>Objectif</source>
-        <translation type="unfinished"></translation>
+        <translation>Objectif</translation>
     </message>
     <message>
         <location filename="succees.ui" line="144"/>
         <source>Fait peté le int</source>
-        <translation type="unfinished"></translation>
+        <translation>Fait peter le int</translation>
     </message>
     <message>
         <location filename="succees.ui" line="151"/>
         <source>Un boss</source>
-        <translation type="unfinished"></translation>
+        <translation>Un boss</translation>
     </message>
     <message>
         <location filename="succees.ui" line="158"/>
         <source>100 utilisateurs connectés</source>
-        <translation type="unfinished"></translation>
+        <translation>100 utilisateurs connectés simultanément</translation>
     </message>
     <message>
         <location filename="succees.ui" line="168"/>
         <source>A ramené sa classe</source>
-        <translation type="unfinished"></translation>
+        <translation>A ramené sa classe</translation>
     </message>
     <message>
         <location filename="succees.ui" line="175"/>
         <source>30 utilisateurs connectés</source>
-        <translation type="unfinished"></translation>
+        <translation>30 utilisateur connectés</translation>
     </message>
     <message>
         <location filename="succees.ui" line="185"/>
         <source>Nom du succès</source>
-        <translation type="unfinished"></translation>
+        <translation>Nom du succès</translation>
     </message>
     <message>
         <location filename="succees.ui" line="192"/>
         <source>A trouvé le bouton Envoyer</source>
-        <translation type="unfinished"></translation>
+        <translation>A trouvé le bouton &quot;Envoyer&quot;</translation>
     </message>
     <message>
         <location filename="succees.ui" line="199"/>
         <source>Connexion à 20 serveurs</source>
-        <translation type="unfinished"></translation>
+        <translation>Connexion à 20 serveurs</translation>
     </message>
     <message>
         <location filename="succees.ui" line="209"/>
         <source>A ammené sa communautée</source>
-        <translation type="unfinished"></translation>
+        <translation>A amené sa communauté</translation>
     </message>
     <message>
         <location filename="succees.ui" line="219"/>
         <source>Parametres des succès</source>
-        <translation type="unfinished"></translation>
+        <translation>Paramètres des succès</translation>
     </message>
     <message>
         <location filename="succees.ui" line="225"/>
         <source>Generer ma clé de sychronysation</source>
-        <translation type="unfinished"></translation>
+        <translation>Générer ma clé de synchronisation</translation>
     </message>
     <message>
         <location filename="succees.ui" line="232"/>
         <source>Enregistrer le nombre de message</source>
-        <translation type="unfinished"></translation>
+        <translation>Enregistrer le nombre de message(s)</translation>
     </message>
     <message>
         <location filename="succees.ui" line="242"/>
         <source>Supprimer le nombre de message enregistré</source>
-        <translation type="unfinished"></translation>
+        <translation>Supprimer le nombre de message(s) enregistrés</translation>
     </message>
     <message>
         <location filename="succees.cpp" line="14"/>
         <source>Cheat détecté</source>
-        <translation type="unfinished"></translation>
+        <translation>Triche détécté</translation>
     </message>
     <message>
         <location filename="succees.cpp" line="14"/>
         <source>Alors comme ça, on veut avoir des succès gratuits ? C&apos;est mal de tricher !</source>
-        <translation type="unfinished"></translation>
+        <translation>Alors comme ça, on veut avoir tout les succès? C&apos;est mal de tricher!</translation>
     </message>
     <message>
         <location filename="succees.cpp" line="106"/>
@@ -1213,12 +1214,12 @@ p, li { white-space: pre-wrap; }
         <location filename="succees.cpp" line="192"/>
         <location filename="succees.cpp" line="194"/>
         <source>Info</source>
-        <translation type="unfinished"></translation>
+        <translation>Info</translation>
     </message>
     <message>
         <location filename="succees.cpp" line="106"/>
         <source>Pour obtenir ce succès, il faut avoir envoyé 10 messages.</source>
-        <translation type="unfinished"></translation>
+        <translation>Pour obtenir ce succès, il vous faut avoir envoyé 10 messages.</translation>
     </message>
     <message>
         <location filename="succees.cpp" line="108"/>
@@ -1230,12 +1231,12 @@ p, li { white-space: pre-wrap; }
         <location filename="succees.cpp" line="182"/>
         <location filename="succees.cpp" line="192"/>
         <source>Vous avez obtenu ce succès.</source>
-        <translation type="unfinished"></translation>
+        <translation>Vous avez obtenu ce succès.</translation>
     </message>
     <message>
         <location filename="succees.cpp" line="110"/>
         <source>Pour obtenir ce succès, il faut avoir envoyé 10 messages, mais vous avez desactivé les succès.</source>
-        <translation type="unfinished"></translation>
+        <translation>Pour obtenir ce succès, il vous faut avoir envoyé 10 messages. Mais vous avez désactivé les succès.</translation>
     </message>
     <message>
         <location filename="succees.cpp" line="116"/>
@@ -1248,97 +1249,97 @@ p, li { white-space: pre-wrap; }
         <location filename="succees.cpp" line="138"/>
         <location filename="succees.cpp" line="140"/>
         <source>info</source>
-        <translation type="unfinished"></translation>
+        <translation>Info</translation>
     </message>
     <message>
         <location filename="succees.cpp" line="116"/>
         <source>Pour obtenir ce succès, il faut avoir envoyé 100 messages.</source>
-        <translation type="unfinished"></translation>
+        <translation>Pour obtenir ce succès, il vous faut avoir envoyé 100 messages.</translation>
     </message>
     <message>
         <location filename="succees.cpp" line="120"/>
         <source>Pour obtenir ce succès, il faut avoir envoyé 100 messages, mais vous avez desactivé les succès.</source>
-        <translation type="unfinished"></translation>
+        <translation>Pour obtenir ce succès, il vous faut avoir envoyé 100 messages. Mais vous avez désactivé les succès.</translation>
     </message>
     <message>
         <location filename="succees.cpp" line="126"/>
         <source>Pour obtenir ce succès, il faut avoir envoyé 1000 messages.</source>
-        <translation type="unfinished"></translation>
+        <translation>Pour obtenir ce succès, il vous faut avoir envoyé 1000 messages.</translation>
     </message>
     <message>
         <location filename="succees.cpp" line="130"/>
         <source>Pour obtenir ce succès, il faut avoir envoyé 1000 messages, mais vous avez désactivé les succès.</source>
-        <translation type="unfinished"></translation>
+        <translation>Pour obtenir ce succès, il vous faut avoir envoyé 1000 messages. Mais vous avez désactivé les succès.</translation>
     </message>
     <message>
         <location filename="succees.cpp" line="136"/>
         <source>Pour obtenir ce succès, il faut avoir envoyé 2 147 483 647 messages.</source>
-        <translation type="unfinished"></translation>
+        <translation>Pour obtenir ce succès, il vous faut avoir envoyé 2 147 483 647 messages.</translation>
     </message>
     <message>
         <location filename="succees.cpp" line="140"/>
         <source>Pour obtenir ce succès, il faut avoir envoyé 2 147 483 647 messages, mais vous avez désactiver les succès.</source>
-        <translation type="unfinished"></translation>
+        <translation>Pour obtenir ce succès, il vous faut avoir envoyé 2 147 483 647 messages. Mais vous avez désactivé les succès.</translation>
     </message>
     <message>
         <location filename="succees.cpp" line="150"/>
         <source>confirmation</source>
-        <translation type="unfinished"></translation>
+        <translation>Confirmation</translation>
     </message>
     <message>
         <location filename="succees.cpp" line="150"/>
         <source>le nombre de vos message va etre supimer et uniquemment le nombre atention cette option ne suprimeras pas vos message ecrit. voulez vous continuer ?</source>
-        <translation type="unfinished"></translation>
+        <translation>Le compteur de message va être réinitialisé. Voulez vous continuer ?</translation>
     </message>
     <message>
         <location filename="succees.cpp" line="153"/>
         <source>Supression prise en compte</source>
-        <translation type="unfinished"></translation>
+        <translation>Suppression prise en compte</translation>
     </message>
     <message>
         <location filename="succees.cpp" line="153"/>
         <source>La suppression de message(s) a bien été effectué. Vous avez actuellement 0 message enregistré.</source>
-        <translation type="unfinished"></translation>
+        <translation>La suppression du nombre de message(s) a bien été effectué. Vous avez actuellement 0 message enregistré.</translation>
     </message>
     <message>
         <location filename="succees.cpp" line="160"/>
         <source>Pour obtenu ce succès, il faut être connecté en même temps que 10 autres utilisateurs sur le même serveur.</source>
-        <translation type="unfinished"></translation>
+        <translation>Pour obtenir ce succès, il vous faut être connecté en même temps que 10 autres utilisateurs sur le même serveur.</translation>
     </message>
     <message>
         <location filename="succees.cpp" line="164"/>
         <source>Pour avoir ce succès, il faut être connecté en même temps que 10 autres utilisateurs sur le même serveur, mais vous avez désactiver les succès.</source>
-        <translation type="unfinished"></translation>
+        <translation>Pour avoir ce succès, il vous faut être connecté en même temps que 10 autres utilisateurs sur le même serveur. Mais vous avez désactivé les succès.</translation>
     </message>
     <message>
         <location filename="succees.cpp" line="170"/>
         <source>Pour obtenir ce succès, il faut être connecté en même temps que 30 autres utilisateurs sur le même serveur.</source>
-        <translation type="unfinished"></translation>
+        <translation>Pour obtenir ce succès, il vous faut être connecté en même temps que 30 autres utilisateurs sur le même serveur.</translation>
     </message>
     <message>
         <location filename="succees.cpp" line="174"/>
         <source>Pour obtenir ce succès, il faut être connecté en même temps que 30 autres utilisateurs sur le même serveur, mais vous avez désactivé les succès.</source>
-        <translation type="unfinished"></translation>
+        <translation>Pour obtenir ce succès, il vous faut être connecté en même temps que 30 autres utilisateurs sur le même serveur. Mais vous avez désactivé les succès.</translation>
     </message>
     <message>
         <location filename="succees.cpp" line="180"/>
         <source>Pour obtenir ce succès, il faut être connecté en même temps que 100 autres utilisateurs sur le même serveur.</source>
-        <translation type="unfinished"></translation>
+        <translation>Pour obtenir ce succès, il vous faut être connecté en même temps que 100 autres utilisateurs sur le même serveur.</translation>
     </message>
     <message>
         <location filename="succees.cpp" line="184"/>
         <source>Pour obtenir ce succès, il faut être connecté en même temps que 100 autres utilisateurs sur le même serveur, mais vous avez désactivé les succès.</source>
-        <translation type="unfinished"></translation>
+        <translation>Pour obtenir ce succès, il vous faut être connecté en même temps que 100 autres utilisateurs sur le même serveur. Mais vous avez désactivé les succès.</translation>
     </message>
     <message>
         <location filename="succees.cpp" line="190"/>
         <source>Pour obtenir ce succès, il faut s&apos;être connecté à 20 serveurs différents.</source>
-        <translation type="unfinished"></translation>
+        <translation>Pour obtenir ce succès, il vous faut avoir été connecté à 20 serveurs différents.</translation>
     </message>
     <message>
         <location filename="succees.cpp" line="194"/>
         <source>Pour obtenir ce succès, il faut s&apos;être connecté à 20 serveurs différents, mais vous avez désactivé les succès.</source>
-        <translation type="unfinished"></translation>
+        <translation>Pour obtenir ce succès, il vous faut avoir été connecté à 20 serveurs différents. Mais vous avez désactivé les succès.</translation>
     </message>
 </context>
 </TS>

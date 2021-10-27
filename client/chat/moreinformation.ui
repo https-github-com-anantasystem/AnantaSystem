@@ -104,7 +104,7 @@
       <item row="0" column="3">
        <widget class="QLabel" name="label_9">
         <property name="text">
-         <string>Wiwok sur la base de DevSec Studio </string>
+         <string>internet</string>
         </property>
        </widget>
       </item>
