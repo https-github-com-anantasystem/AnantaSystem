@@ -10,21 +10,24 @@ CONFIG += c++11
 
 SOURCES += \
     main.cpp \
-    parametre.cpp \
     succees.cpp \
     utilisateur.cpp \
-    widget.cpp
+    widget.cpp \
+    parametre.cpp \
+    moreinformation.cpp
 
 HEADERS += \
-    parametre.h \
     succees.h \
     utilisateur.h \
-    widget.h
+    widget.h \
+    parametre.h \
+    moreinformation.h
 
 FORMS += \
-    parametre.ui \
     succees.ui \
-    widget.ui
+    widget.ui \
+    parametre.ui \
+    moreinformation.ui
 
 TRANSLATIONS += \
     serveur_fr_FR.ts

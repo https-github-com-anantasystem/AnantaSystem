@@ -9,7 +9,9 @@
 #include <QFileDialog>
 #include <QDesktopServices>
 #include <QSettings>
+#include <QtDebug>
 #include "succees.h"
+#include "moreinformation.h"
 
 namespace Ui {
 class parametre;
@@ -18,31 +20,49 @@ class parametre;
 class parametre : public QDialog
 {
     sucees *succes;
+    moreinformation *moreinformations;
     Q_OBJECT
 public:
     QSettings* settings;
-    explicit parametre(QList<QMap<QString, QString> > &ref, QWidget *parent = nullptr);
+    explicit parametre(QWidget *parent = nullptr);
     ~parametre();
 public slots:
     QPalette starttheme();
+private slots:
+
+    void on_checkBox_toggled(bool checked);
+
+    void on_checkBox_2_toggled(bool checked);
+
+    void on_pushButton_3_clicked();
+
+    void on_site_clicked();
+
+    void on_discord_clicked();
+
+    void on_tweter_clicked();
+
+    void on_don_clicked();
+
+    void on_pushButton_4_clicked();
+
+    void on_checkboxmodecondensee_toggled(bool checked);
+
+    void on_setcollor_activated(const QString &arg1);
+
+    void on_comboBox_2_activated(const QString &arg1);
+
+    void on_comboBox_activated(const QString &arg1);
+
+    void on_pushButton_clicked();
+
+    void on_pushButton_2_clicked();
+
 private:
     Ui::parametre *ui;
-private slots:
+private:
     QPalette darkmode();
     QPalette whitemode();
-    void on_checkBox_3_toggled(bool checked);
-    void on_checkBox_2_toggled(bool checked);
-    void on_checkBox_toggled(bool checked);
-    void on_comboBox_2_activated(const QString &arg1);
-    void on_comboBox_3_activated(const QString &arg1);
-    void on_comboBox_activated(const QString &arg1);
-    void on_deletbuton_clicked();
-    void on_site_clicked();
-    void on_discord_clicked();
-    void on_tweter_clicked();
-    void on_checkboxmodecondensee_toggled(bool checked);
-    void on_pushButton_3_clicked();
-    void on_comboBox_4_currentIndexChanged(int index);
 };
 
 #endif // PARAMETRE_H

@@ -6,8 +6,8 @@
    <rect>
     <x>0</x>
     <y>0</y>
-    <width>556</width>
-    <height>733</height>
+    <width>369</width>
+    <height>587</height>
    </rect>
   </property>
   <property name="windowTitle">
@@ -27,107 +27,90 @@
    <string/>
   </property>
   <layout class="QGridLayout" name="gridLayout">
-   <item row="2" column="0">
-    <widget class="QGroupBox" name="groupBox_3">
+   <item row="0" column="0">
+    <widget class="QGroupBox" name="groupBox">
      <property name="title">
-      <string>Serveur</string>
+      <string>notification</string>
      </property>
-     <layout class="QGridLayout" name="gridLayout_4">
-      <item row="2" column="2">
-       <widget class="QPushButton" name="pushButton_5">
-        <property name="sizePolicy">
-         <sizepolicy hsizetype="Fixed" vsizetype="Fixed">
-          <horstretch>0</horstretch>
-          <verstretch>0</verstretch>
-         </sizepolicy>
+     <layout class="QGridLayout" name="gridLayout_2">
+      <item row="1" column="0">
+       <widget class="QCheckBox" name="checkBox_2">
+        <property name="toolTip">
+         <string>permet de definire lactivation des notification visuelle</string>
+        </property>
+        <property name="whatsThis">
+         <string>permet de definire lactivation des notification visuelle</string>
+        </property>
+        <property name="accessibleDescription">
+         <string>permet de definire lactivation des notification visuelle</string>
         </property>
         <property name="text">
-         <string/>
-        </property>
-        <property name="icon">
-         <iconset resource="resource.qrc">
-          <normaloff>:/image/Blue_question_mark_icon.svg.png</normaloff>:/image/Blue_question_mark_icon.svg.png</iconset>
-        </property>
-        <property name="flat">
-         <bool>true</bool>
-        </property>
-       </widget>
-      </item>
-      <item row="3" column="1">
-       <widget class="QComboBox" name="comboBox_4">
-        <item>
-         <property name="text">
-          <string>haut</string>
-         </property>
-        </item>
-        <item>
-         <property name="text">
-          <string>moyen</string>
-         </property>
-        </item>
-        <item>
-         <property name="text">
-          <string>bas</string>
-         </property>
-        </item>
-       </widget>
-      </item>
-      <item row="3" column="0">
-       <widget class="QLabel" name="label_4">
-        <property name="text">
-         <string>niveaux de securitée</string>
-        </property>
-       </widget>
-      </item>
-      <item row="2" column="0" colspan="2">
-       <widget class="QPushButton" name="pushButton_4">
-        <property name="text">
-         <string>Faire un récapitulatif (mode de debug)</string>
-        </property>
-        <property name="icon">
-         <iconset resource="resource.qrc">
-          <normaloff>:/image/analyse.png</normaloff>:/image/analyse.png</iconset>
-        </property>
-       </widget>
-      </item>
-      <item row="1" column="0" colspan="3">
-       <widget class="QPushButton" name="deletbuton">
-        <property name="text">
-         <string>Supprimer les messages enregistrés</string>
-        </property>
-        <property name="icon">
-         <iconset>
-          <normaloff>:/image/suprimer.png</normaloff>:/image/suprimer.png</iconset>
-        </property>
-       </widget>
-      </item>
-      <item row="0" column="0" colspan="2">
-       <widget class="QCheckBox" name="checkBox_3">
-        <property name="text">
-         <string>Sauvgarder les messages</string>
+         <string>notification visuelle</string>
         </property>
         <property name="checked">
          <bool>true</bool>
         </property>
        </widget>
       </item>
-      <item row="3" column="2">
-       <widget class="QPushButton" name="pushButton_6">
-        <property name="sizePolicy">
-         <sizepolicy hsizetype="Fixed" vsizetype="Fixed">
-          <horstretch>0</horstretch>
-          <verstretch>0</verstretch>
-         </sizepolicy>
+      <item row="0" column="0">
+       <widget class="QCheckBox" name="checkBox">
+        <property name="toolTip">
+         <string>permet de definire lactivation des notification sonore</string>
+        </property>
+        <property name="accessibleDescription">
+         <string>permet de definire lactivation des notification sonore</string>
         </property>
         <property name="text">
-         <string/>
+         <string>notification sonore</string>
+        </property>
+        <property name="checked">
+         <bool>true</bool>
+        </property>
+       </widget>
+      </item>
+      <item row="0" column="1">
+       <widget class="QComboBox" name="comboBox">
+        <item>
+         <property name="text">
+          <string>son par default</string>
+         </property>
+        </item>
+        <item>
+         <property name="text">
+          <string>blup blup</string>
+         </property>
+        </item>
+        <item>
+         <property name="text">
+          <string>selectioner une musique</string>
+         </property>
+        </item>
+       </widget>
+      </item>
+     </layout>
+    </widget>
+   </item>
+   <item row="2" column="0">
+    <widget class="QGroupBox" name="groupBox_5">
+     <property name="title">
+      <string>sucées</string>
+     </property>
+     <layout class="QGridLayout" name="gridLayout_6">
+      <item row="1" column="0">
+       <widget class="QPushButton" name="pushButton_3">
+        <property name="text">
+         <string>voir mes sucée</string>
         </property>
         <property name="icon">
          <iconset resource="resource.qrc">
-          <normaloff>:/image/Blue_question_mark_icon.svg.png</normaloff>:/image/Blue_question_mark_icon.svg.png</iconset>
+          <normaloff>:/image/succes.png</normaloff>:/image/succes.png</iconset>
         </property>
-        <property name="flat">
-         <bool>true</bool>
+       </widget>
+      </item>
+      <item row="0" column="0">
+       <widget class="QLabel" name="label_3">
+        <property name="text">
+         <string>nombre de message :</string>
         </property>
        </widget>
       </item>
@@ -137,19 +120,26 @@
    <item row="1" column="0">
     <widget class="QGroupBox" name="groupBox_2">
      <property name="title">
-      <string>Interface</string>
+      <string>interface</string>
      </property>
      <layout class="QGridLayout" name="gridLayout_3">
+      <item row="1" column="0">
+       <widget class="QLabel" name="label_2">
+        <property name="text">
+         <string>theme</string>
+        </property>
+       </widget>
+      </item>
       <item row="0" column="1" colspan="2">
        <widget class="QComboBox" name="comboBox_2">
         <item>
          <property name="text">
-          <string>Francais</string>
+          <string>francais</string>
          </property>
         </item>
         <item>
          <property name="text">
-          <string>Anglais</string>
+          <string>anglais</string>
          </property>
         </item>
        </widget>
@@ -157,7 +147,36 @@
       <item row="0" column="0">
        <widget class="QLabel" name="label">
         <property name="text">
-         <string>Langue</string>
+         <string>langue</string>
+        </property>
+       </widget>
+      </item>
+      <item row="1" column="1">
+       <widget class="QComboBox" name="setcollor">
+        <item>
+         <property name="text">
+          <string>blanc</string>
+         </property>
+        </item>
+       </widget>
+      </item>
+      <item row="1" column="2">
+       <widget class="QPushButton" name="pushButton">
+        <property name="sizePolicy">
+         <sizepolicy hsizetype="Fixed" vsizetype="Fixed">
+          <horstretch>0</horstretch>
+          <verstretch>0</verstretch>
+         </sizepolicy>
+        </property>
+        <property name="text">
+         <string/>
+        </property>
+        <property name="icon">
+         <iconset resource="resource.qrc">
+          <normaloff>:/image/Blue_question_mark_icon.svg.png</normaloff>:/image/Blue_question_mark_icon.svg.png</iconset>
+        </property>
+        <property name="flat">
+         <bool>true</bool>
         </property>
        </widget>
       </item>
@@ -181,51 +200,10 @@
         </property>
        </widget>
       </item>
-      <item row="1" column="0">
-       <widget class="QLabel" name="label_2">
-        <property name="text">
-         <string>Thème</string>
-        </property>
-       </widget>
-      </item>
-      <item row="1" column="2">
-       <widget class="QPushButton" name="pushButton">
-        <property name="sizePolicy">
-         <sizepolicy hsizetype="Fixed" vsizetype="Fixed">
-          <horstretch>0</horstretch>
-          <verstretch>0</verstretch>
-         </sizepolicy>
-        </property>
-        <property name="text">
-         <string/>
-        </property>
-        <property name="icon">
-         <iconset resource="resource.qrc">
-          <normaloff>:/image/Blue_question_mark_icon.svg.png</normaloff>:/image/Blue_question_mark_icon.svg.png</iconset>
-        </property>
-        <property name="flat">
-         <bool>true</bool>
-        </property>
-       </widget>
-      </item>
-      <item row="1" column="1">
-       <widget class="QComboBox" name="comboBox_3">
-        <item>
-         <property name="text">
-          <string>Blanc</string>
-         </property>
-        </item>
-        <item>
-         <property name="text">
-          <string>Noir</string>
-         </property>
-        </item>
-       </widget>
-      </item>
       <item row="2" column="0" colspan="2">
        <widget class="QCheckBox" name="checkboxmodecondensee">
         <property name="text">
-         <string>Activer la transparence du mode condensé (Non disponible sur Windows 11)</string>
+         <string>activer la transparence du mode condensée</string>
         </property>
         <property name="checked">
          <bool>true</bool>
@@ -238,13 +216,13 @@
    <item row="4" column="0">
     <widget class="QGroupBox" name="groupBox_4">
      <property name="title">
-      <string>Contact</string>
+      <string>contact</string>
      </property>
      <layout class="QGridLayout" name="gridLayout_5">
       <item row="0" column="0">
        <widget class="QPushButton" name="site">
         <property name="text">
-         <string>Le site</string>
+         <string>le site</string>
         </property>
         <property name="icon">
          <iconset resource="resource.qrc">
@@ -255,7 +233,7 @@
       <item row="1" column="0">
        <widget class="QPushButton" name="discord">
         <property name="text">
-         <string>Le Discord (Aide/Bug/Problème de traduction)</string>
+         <string>le discord (aide/bug/probleme de traduction)</string>
         </property>
         <property name="icon">
          <iconset resource="resource.qrc">
@@ -266,7 +244,7 @@
       <item row="2" column="0">
        <widget class="QPushButton" name="tweter">
         <property name="text">
-         <string>Le Twitter</string>
+         <string>le twiter</string>
         </property>
         <property name="icon">
          <iconset resource="resource.qrc">
@@ -277,7 +255,7 @@
       <item row="3" column="0">
        <widget class="QPushButton" name="don">
         <property name="text">
-         <string>Faire un don</string>
+         <string>faire un don</string>
         </property>
         <property name="icon">
          <iconset resource="resource.qrc">
@@ -288,94 +266,11 @@
      </layout>
     </widget>
    </item>
-   <item row="0" column="0">
-    <widget class="QGroupBox" name="groupBox">
-     <property name="title">
-      <string>Notification</string>
+   <item row="5" column="0">
+    <widget class="QPushButton" name="pushButton_4">
+     <property name="text">
+      <string>plus d'informantion</string>
      </property>
-     <layout class="QGridLayout" name="gridLayout_2">
-      <item row="0" column="0">
-       <widget class="QCheckBox" name="checkBox">
-        <property name="toolTip">
-         <string>permet de definire lactivation des notification sonore</string>
-        </property>
-        <property name="accessibleDescription">
-         <string>permet de definire lactivation des notification sonore</string>
-        </property>
-        <property name="text">
-         <string>Notification sonore</string>
-        </property>
-        <property name="checked">
-         <bool>true</bool>
-        </property>
-       </widget>
-      </item>
-      <item row="0" column="1">
-       <widget class="QComboBox" name="comboBox">
-        <item>
-         <property name="text">
-          <string>Sonnerie par défaut</string>
-         </property>
-        </item>
-        <item>
-         <property name="text">
-          <string>Blup Blup</string>
-         </property>
-        </item>
-        <item>
-         <property name="text">
-          <string>Personnaliser</string>
-         </property>
-        </item>
-       </widget>
-      </item>
-      <item row="1" column="0" colspan="2">
-       <widget class="QCheckBox" name="checkBox_2">
-        <property name="toolTip">
-         <string>permet de definire lactivation des notification visuelle</string>
-        </property>
-        <property name="whatsThis">
-         <string>permet de definire lactivation des notification visuelle</string>
-        </property>
-        <property name="accessibleDescription">
-         <string>permet de definire lactivation des notification visuelle</string>
-        </property>
-        <property name="text">
-         <string>Clignotement lors d'une notification</string>
-        </property>
-        <property name="checked">
-         <bool>true</bool>
-        </property>
-       </widget>
-      </item>
-     </layout>
-    </widget>
-   </item>
-   <item row="3" column="0">
-    <widget class="QGroupBox" name="groupBox_5">
-     <property name="title">
-      <string>Succès</string>
-     </property>
-     <layout class="QGridLayout" name="gridLayout_6">
-      <item row="1" column="0">
-       <widget class="QPushButton" name="pushButton_3">
-        <property name="text">
-         <string>Voir mes succès</string>
-        </property>
-        <property name="icon">
-         <iconset>
-          <normaloff>:/image/success.png</normaloff>:/image/success.png</iconset>
-        </property>
-       </widget>
-      </item>
-      <item row="0" column="0">
-       <widget class="QLabel" name="label_3">
-        <property name="text">
-         <string>Nombre de messages :</string>
-        </property>
-       </widget>
-      </item>
-     </layout>
     </widget>
    </item>
   </layout>

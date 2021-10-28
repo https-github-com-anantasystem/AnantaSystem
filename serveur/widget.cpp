@@ -3,7 +3,7 @@
 
 Widget::Widget(QWidget *parent)
     : QWidget(parent),
-    parametres(saveMessage,this),
+    parametres(this),
     ui(new Ui::Widget)
 {
     ui->setupUi(this);
@@ -40,7 +40,7 @@ Widget::Widget(QWidget *parent)
         settings->setValue("settings/level of secure","high");
     }
    version = "5.0";
-   parametre parametres(saveMessage,this);
+   parametre parametres(this);
    NbOfMessage = 0;
    nbuser=0;
    startTrayIcon();

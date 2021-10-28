@@ -1,17 +1,17 @@
 #include "parametre.h"
 #include "ui_parametre.h"
 
-parametre::parametre(QList<QMap<QString, QString> > &ref, QWidget *parent) :
+parametre::parametre(QWidget *parent) :
    QDialog(parent),
    ui(new Ui::parametre)
 {
     setWindowFlags(windowFlags() & ~Qt::WindowContextHelpButtonHint);
     ui->setupUi(this);
-    settings = new QSettings("Ananta System","Tchat",this);
-    ui->checkBox_3->setChecked(settings->value("settings/SaveMessage").toBool());
+    succes = new sucees(this);
+    settings = new QSettings("ananta system","tchat",this);
     ui->checkBox_2->setChecked(settings->value("settings/visualNotification").toBool());
     ui->checkBox->setChecked(settings->value("settings/SoundNotification").toBool());
-    ui->comboBox_3->setCurrentText(settings->value("settings/color").toString());
+    ui->setcollor->setCurrentText(settings->value("settings/color").toString());
     ui->comboBox->setCurrentText(settings->value("settings/path").toString());
     ui->comboBox_2->setCurrentText(settings->value("settings/langage").toString());
     if(settings->value("settings/transparency").toString()=="0.5"){
@@ -19,24 +19,25 @@ parametre::parametre(QList<QMap<QString, QString> > &ref, QWidget *parent) :
     }else if(settings->value("settings/transparency").toString()=="1.0"){
         ui->checkboxmodecondensee->setChecked(false);
     }
+    starttheme();
 }
 parametre::~parametre()
 {
     delete ui;
+    delete succes;
 }
 QPalette parametre::starttheme(){
    if(settings->value("settings/color").toString()=="black"){
-       ui->comboBox_3->setCurrentIndex(1);
+       ui->setcollor->setCurrentIndex(1);
         return darkmode();
    }else if(settings->value("settings/color").toString()=="white"){
-       ui->comboBox_3->setCurrentIndex(0);
+       ui->setcollor->setCurrentIndex(0);
        return whitemode();
    }else{
        return whitemode();
-       QMessageBox::warning(this,tr("Erreur de lecture"),tr("Il est impossible de lire la couleur par défaut. Elle est donc définit sur blanc"));
-       on_comboBox_3_activated(tr("Blanc","Attention même chose que dans l'ui la combo box de couleur"));
+       QMessageBox::warning(this,tr("erreur de lecture"),tr("il est imposible de lire la couleur par defaut. elle est donc par defaut a blanc"));
+       on_setcollor_activated(tr("blanc","atention meme chose que dans l'ui la combo box de coulleur"));
    }
-
 }
 QPalette parametre::darkmode(){
     qApp->setStyle(QStyleFactory::create("Fusion"));
@@ -54,6 +55,7 @@ QPalette parametre::darkmode(){
     darkPalette.setColor(QPalette::Link, QColor(42, 130, 218));
     darkPalette.setColor(QPalette::Highlight, QColor(42, 130, 218));
     darkPalette.setColor(QPalette::HighlightedText, Qt::black);
+
     qApp->setPalette(darkPalette);
     qApp->setStyleSheet("QToolTip { color: #ffffff; background-color: #2a82da; border: 1px solid white; }");
     return darkPalette;
@@ -77,10 +79,6 @@ QPalette parametre::whitemode(){
     qApp->setStyleSheet("QToolTip { color: #ffffff; background-color: #2a82da; border: 1px solid white; }");
     return darkPalette;
 }
-void parametre::on_checkBox_3_toggled(bool checked)
-{
-        settings->setValue("settings/SaveMessage",checked);
-}
 void parametre::on_checkBox_2_toggled(bool checked)
 {
         settings->setValue("settings/visualNotification",checked);
@@ -94,64 +92,51 @@ void parametre::on_comboBox_2_activated(const QString &arg1)
     settings->setValue("settings/langage",arg1);
     QMessageBox::information(this, tr("traduction"), tr("pour rendre effective ce changement il faut recharger l'aplication", "doit etre en anglais dans l'aplication francaise et anglaise dans l'app anglaise et toute les autre langue en anglais"));
 }
-void parametre::on_comboBox_3_activated(const QString &arg1)
+void parametre::on_setcollor_activated(const QString &arg1)
 {
-    if(arg1==tr("Blanc","Attention même chose que dans l'ui la combo box de couleur")){
-        whitemode();
-    }else if(arg1==tr("Noir","Attention même chose que dans l'ui la combo box de couleur")){
-        darkmode();
-    }else{
-        QMessageBox::warning(this,tr("Couleur non trouvée"),tr("Attention cette couleur n'existe pas dans la version actuelle du tchat"));
-        return;
-    }
     settings->setValue("settings/color",arg1);
+    starttheme();
 }
 void parametre::on_comboBox_activated(const QString &arg1)
 {
     {
-        if(arg1==tr("Personnalisée","Attention même chose que dans l'ui la combo box de sélection de musique")){
+        if(arg1==tr("selectioner une musique","atention meme chose que dans l'ui la combo box de selection de musique")){
             //path = reponse of message box
-            settings->setValue("settings/path",QFileDialog::getOpenFileName(this, tr("Charger une musique"), nullptr , tr("fichier audio (*.MP3 *.WAV)")));
+            settings->setValue("settings/path",QFileDialog::getOpenFileName(this, tr("charger une musique"), nullptr , tr("fichier audio (*.MP3 *.WAV)")));
             if(settings->value("settings/path")==""){
                 settings->setValue("settings/path",":/sound/notifdefault.wav");
-                QMessageBox::warning(this,tr("Erreur de chemin"),tr("Attention le chemin de fichier et inutilisable, passage en musique par défaut"));
+                QMessageBox::warning(this,tr("erreur de chemin"),tr("atention le chemin de fichier et inutilisablepassage en musique par default"));
 
             }
-        }else if(arg1==tr("Blup Blup","Attention même chose que dans l'ui la combo box de sélection de musique")){
+        }else if(arg1==tr("blup blup","atention meme chose que dans l'ui la combo box de selection de musique")){
             settings->setValue("sound/path",":/sound/Sonnerie_Ananta.wav");
-        }else if(arg1==tr("Sonnerie par défaut","Attention même chose que dans l'ui la combo box de sélection de musique")){
+        }else if(arg1==tr("son par default","atention meme chose que dans l'ui la combo box de selection de musique")){
             settings->setValue("sound/path",":/sound/notifdefault.wav");
-        }
-    }
-}
-void parametre::on_deletbuton_clicked()
-{
-    int reponse = QMessageBox::warning(this,tr("atention supression"),tr("atention le fichier va etre definitivement suprimer il ne sera pas deplacer dans la corbeille voulez vous continuer"), QMessageBox ::Yes | QMessageBox::No);
-    if (reponse == QMessageBox::Yes)
-    {
-        if (remove("chat.ants")){
-            QMessageBox::information(this,tr("Supression réussi"),tr("La supression a été un effectuée)"));
-        }else{
-             QMessageBox::information(this,tr("Supression raté"),tr("La supression a échouée pour une raison indéfini"));
         }
     }
 }
 void parametre::on_site_clicked()
 {
     if(!QDesktopServices::openUrl(QUrl("https://anantasystem.com"))){
-        QMessageBox::information(this,tr("Erreur a l'ouverture du lien"),tr("Le lien ne veut pas s'ouvrir le probleme vient de votre navigateur.Veuillez aller sur anantasystem.com et faites-nous un rapport de bug sur le Discord"));
+        QMessageBox::information(this,tr("erreur a louverture du lien"),tr("le lien ne veut pas souvrir le probleme vien de votre navigateur par default taper anantasystem.com dans votre navigateur et faite nous un raport de bug sur le discord"));
     }
 }
 void parametre::on_discord_clicked()
 {
     if(!QDesktopServices::openUrl(QUrl("https://anantasystem.com/discord.html"))){
-        QMessageBox::information(this,tr("Erreur a l'ouverture du lien"),tr("Le lien ne veut pas s'ouvrir le probleme vient de votre navigateur. Veuillez aller sur anantasystem.com et faites-nous un rapport de bug sur le Discord"));
+        QMessageBox::information(this,tr("erreur a louverture du lien"),tr("le lien ne veut pas souvrir le probleme vien de votre navigateur par default taper anantasystem.com/discord.html dans votre navigateur et faite nous un raport de bug sur le discord"));
     }
 }
 void parametre::on_tweter_clicked()
 {
     if(!QDesktopServices::openUrl(QUrl("https://anantasystem.com/twitter.html"))){
-        QMessageBox::information(this,tr("Erreur a l'ouverture du lien"),tr("Le lien ne veut pas s'ouvrir le probleme vient de votre navigateur. Veuillez aller sur anantasystem.com et faites-nous un rapport de bug sur le Discord"));
+        QMessageBox::information(this,tr("erreur a louverture du lien"),tr("le lien ne veut pas souvrir le probleme vien de votre navigateur par default taper anantasystem.com/twitter.html dans votre navigateur et faite nous un raport de bug sur le discord"));
+    }
+}
+
+void parametre::on_don_clicked(){
+    if(!QDesktopServices::openUrl(QUrl("https://anantasystem.com/tip.html"))){
+        QMessageBox::information(this,tr("erreur a louverture du lien"),tr("le lien ne veut pas souvrir le probleme vien de votre navigateur par default taper anantasystem.com/tip.html dans votre navigateur et faite nous un raport de bug sur le discord"));
     }
 }
 
@@ -162,25 +147,28 @@ void parametre::on_checkboxmodecondensee_toggled(bool checked)
     }else if (!checked) {
         settings->setValue("settings/transparency","1.0");
     }else{
-        QMessageBox::warning(this,tr("Erreur checkbox"),tr("Cette boite de dialogue est dans un troisème état inexistant. Veuillez nous faire un rapport de bug dans le Discord"));
+        QMessageBox::warning(this,tr("erreur checkbox"),tr("cette boite de dialogue contien normalenet que deux etat la elle en a troisfaite nous un raport dans le discord"));
     }
 }
 
 void parametre::on_pushButton_3_clicked()
 {
-    succes = new sucees(this);
     succes->show();
 }
-
-void parametre::on_comboBox_4_currentIndexChanged(int index)
+void parametre::on_pushButton_4_clicked()
 {
-    if(index==0){
-        settings->setValue("settings/level of secure","high");
-    }else if(index==1){
-        settings->setValue("settings/level of secure","medium");
-    }else if(index==2){
-        settings->setValue("settings/level of secure","low");
-    }
-    QMessageBox::information(this,tr("redemarage requis"),tr("il faut redemarer laplication pour apliquer les changement"));
+    moreinformations = new moreinformation(this);
+    moreinformations->show();
+}
+
+void parametre::on_pushButton_clicked()
+{
+    QMessageBox::information(this,tr("changement couleur","dans les boite d'aide"),tr("permet de changer la couleur par defaut","boite d'aide"));
+}
+
+
+void parametre::on_pushButton_2_clicked()
+{
+    QMessageBox::information(this,tr("parametre de mode condensée","dans les boite d'aide"),tr("permet d'activer le mode transparent dans le mode condesée ATENTION: ne fonctionne pas dans windows 11","boite d'aide"));
 }
 
