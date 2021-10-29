@@ -6,6 +6,8 @@ startserveur::startserveur(QWidget *parent) :
     ui(new Ui::startserveur)
 {
     ui->setupUi(this);
+    ui->port->setVisible(false);
+    ui->label_idantufiant->setVisible(false);
     settings = new QSettings("Ananta System","Tchat",this);
     if(!settings->contains("launcher/serveurPosition")){
         settings->setValue("launcher/serveurPosition","serveur.exe");
