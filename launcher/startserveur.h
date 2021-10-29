@@ -6,6 +6,7 @@
 #include <QMessageBox>
 #include <QUrl>
 #include <QTcpSocket>
+#include <QSettings>
 
 namespace Ui {
 class startserveur;
@@ -20,14 +21,11 @@ public:
     ~startserveur();
 
 private slots:
-    void on_wifi_clicked();
-    //void starclient();
-    //void datareceived();
+    void on_pushButton_clicked();
 
 private:
+    QSettings* settings;
     Ui::startserveur *ui;
-    QTcpSocket *socket;
-    quint16 messagesize;
 };
 
 #endif // STARTSERVEUR_H

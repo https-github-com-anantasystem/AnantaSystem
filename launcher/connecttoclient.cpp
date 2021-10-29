@@ -8,6 +8,10 @@ connecttoclient::connecttoclient(QWidget *parent) :
     ui->setupUi(this);
     ui->label_idantufiant->setVisible(false);
     ui->port->setVisible(false);
+    settings = new QSettings("Ananta System","Tchat",this);
+    if(!settings->contains("launcher/tcahtPosition")){
+        settings->setValue("launcher/tchatPosition","chat.exe");
+    }
 }
 
 connecttoclient::~connecttoclient()
@@ -29,8 +33,8 @@ void connecttoclient::on_pushButton_clicked()
     QTextStream out(&file);
     out << ui->ip->text()+"\n";
     out << ui->port->value();
-    if(!QDesktopServices::openUrl(QUrl("chat.exe"))){
-        QMessageBox::information(this,tr("erreur a louverture du lien"),tr("le lien ne veut pas souvrir le programe chat.exe a du etre modifier ou suprimer reinstaler le tchat"));
+    if(!QDesktopServices::openUrl(QUrl(settings->value("launcher/tchatPosition").toString()))){
+        QMessageBox::information(this,tr("erreur a louverture du lien"),tr("le lien ne veut pas souvrir la clef du registre a du etre modifier reinstaler le tchat"));
     }
     qApp->quit();
 }

@@ -8,6 +8,7 @@
 #include <QFile>
 #include <QTextStream>
 #include <string>
+#include <QSettings>
 
 namespace Ui {
 class connecttoclient;
@@ -27,6 +28,7 @@ private slots:
     void on_pushButton_clicked();
 
 private:
+    QSettings* settings;
     Ui::connecttoclient *ui;
 };
 
