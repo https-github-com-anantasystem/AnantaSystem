@@ -89,6 +89,11 @@ void parametre::on_checkBox_toggled(bool checked)
 }
 void parametre::on_comboBox_2_activated(const QString &arg1)
 {
+    QFile file("languages/language.ants");
+    if (!file.open(QIODevice::WriteOnly | QIODevice::Text))
+        QMessageBox::information(this, tr("traduction"), tr("erreur dans le chargement du fichier de lange vous pouvais la chager dans languages/language.ants"));
+    QTextStream out(&file);
+    out << arg1;
     settings->setValue("settings/langage",arg1);
     QMessageBox::information(this, tr("traduction"), tr("pour rendre effective ce changement il faut recharger l'aplication", "doit etre en anglais dans l'aplication francaise et anglaise dans l'app anglaise et toute les autre langue en anglais"));
 }
