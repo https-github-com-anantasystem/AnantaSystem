@@ -7,6 +7,7 @@ Widget::Widget(QWidget *parent)
     ui(new Ui::Widget)
 {
     ui->setupUi(this);
+    autoconnect();//il faut que la focntion se fasse avant le lancement du serveur
     startserveur();// j'ai peur que le serveur se démmare trop tard
     server_recoverallfile();
     settings = new QSettings("Ananta System","Tchat",this);
@@ -56,8 +57,8 @@ Widget::Widget(QWidget *parent)
    connect(socket, &QTcpSocket::disconnected,this,&Widget::client_disconnect);
    connect(socket, &QTcpSocket::errorOccurred, this, &Widget::client_socketerror);
    messagesize = 0;
-   //Connexion
-   client_connectto("127.0.0.1", ui->serveurport->value());
+   //connection
+    client_connectto("127.0.0.1",ui->serveurport->value());
    //Sélection de la couleur du theme
    qApp->setPalette(parametres.starttheme());
     levelOfSecure=settings->value("settings/level of secure").toString();
@@ -67,6 +68,18 @@ Widget::~Widget()
 {
     delete ui;
     delete sticon;
+}
+void Widget::autoconnect(){
+    QFile fichier("conect.temp"); //on ouvre le fichier de preconexion
+    if(fichier.open(QIODevice::ReadOnly | QIODevice::Text))
+    {
+        QTextStream flux(&fichier);
+        ui->serveurport->setValue(flux.readAll().toInt());
+    }
+    else
+    {
+        ui->serveurport->setValue(2048);
+    }
 }
 void Widget::startTrayIcon(){
     sticon = new QSystemTrayIcon(this); // On construit notre icône de notification
@@ -88,7 +101,7 @@ void Widget::startTrayIcon(){
 void Widget::startserveur()
 {
     m_serveur = new QTcpServer(this);
-    if (!m_serveur->listen(QHostAddress::Any, 2048)) // Démarrage du serveur sur toutes les IP disponibles et sur le port 2048
+    if (!m_serveur->listen(QHostAddress::Any, ui->serveurport->value())) // Démarrage du serveur sur toutes les IP disponibles et sur le port 2048
     {
         // Si le serveur n'a pas été démarré correctement
         if (!m_serveur->listen(QHostAddress::Any)) // Démarrage du serveur sur toutes les IP disponibles

@@ -54,6 +54,7 @@ private:
     quint16 messagesize;
 private slots:
     //ui
+    void autoconnect();
     void startTrayIcon();
     void changetransparency(Qt::ApplicationState);
     void condesed();

@@ -7,6 +7,7 @@
 #include <QUrl>
 #include <QTcpSocket>
 #include <QSettings>
+#include <QFile>
 
 namespace Ui {
 class startserveur;
