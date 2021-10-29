@@ -6,7 +6,7 @@
 int main(int argc, char *argv[])
 {
     QApplication app(argc, argv);
-    QTranslator translator;;
+    QTranslator translator;
     QString texte;
     QFile fichier("languages/language.ants");
     if(fichier.open(QIODevice::ReadOnly)){
